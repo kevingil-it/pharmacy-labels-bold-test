@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Stickers</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #e9e9eb;
+    color: #1d1d1f;h
+    min-height: 100vh;
+    padding: 32px 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+    color: #1d1d1f;
+  }
+
+  .card {
+    background: #f7f7f9;
+    border: 1px solid #c8c8cc;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-header {
+    padding: 10px 16px 9px;
+    border-bottom: 2px solid #1f3a93;
+    background: #f7f7f9;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1f;
+  }
+  .card-body {
+    padding: 18px 20px 20px;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .field-row.split {
+    grid-template-columns: 130px 1fr 90px 1fr;
+  }
+  .field-row.compact {
+    grid-template-columns: 130px 70px auto auto;
+    gap: 16px;
+  }
+  .field-row label {
+    font-size: 14px;
+    color: #1d1d1f;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .field-row input[type="text"],
+  .field-row input[type="date"],
+  .field-row input[type="number"] {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #1d1d1f;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    color: #1d1d1f;
+    height: 30px;
+  }
+  .field-row input[type="number"] {
+    width: 70px;
+  }
+  .field-row input:focus {
+    outline: none;
+    border-color: #1f3a93;
+    box-shadow: 0 0 0 2px rgba(31, 58, 147, 0.18);
+  }
+  .field-row select {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid #1d1d1f;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+    color: #1d1d1f;
+    height: 30px;
+    cursor: pointer;
+  }
+  .field-row select:focus {
+    outline: none;
+    border-color: #1f3a93;
+    box-shadow: 0 0 0 2px rgba(31, 58, 147, 0.18);
+  }
+  .radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .radio-option input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e0e0e3;
+  }
+  button {
+    padding: 6px 18px;
+    border: 1px solid #8e8e93;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f2);
+    font-size: 13px;
+    font-family: inherit;
+    color: #1d1d1f;
+    cursor: pointer;
+    min-width: 70px;
+    height: 28px;
+    transition: all 0.1s;
+  }
+  button:hover {
+    background: linear-gradient(to bottom, #f8f8fa, #e8e8ec);
+  }
+  button:active {
+    background: #d8d8dc;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  }
+  button.primary {
+    background: linear-gradient(to bottom, #4a6cd4, #1f3a93);
+    border-color: #1a3079;
+    color: white;
+    font-weight: 500;
+  }
+  button.primary:hover {
+    background: linear-gradient(to bottom, #5a7cdc, #2a48a3);
+  }
+
+  .link-row {
+    text-align: center;
+    margin-top: 14px;
+  }
+  .link-row a {
+    color: #1f3a93;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .link-row a:hover { color: #2a48a3; }
+
+  /* Advanced settings panel */
+  .advanced {
+    margin-top: 14px;
+    background: #f7f7f9;
+    border: 1px solid #c8c8cc;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .advanced[hidden] { display: none; }
+  .advanced-header {
+    padding: 8px 16px;
+    background: #efeff1;
+    border-bottom: 1px solid #c8c8cc;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .advanced-body {
+    padding: 14px 18px;
+  }
+  .advanced .field-row {
+    grid-template-columns: 150px 1fr;
+    margin-bottom: 8px;
+  }
+  .advanced .field-row.split {
+    grid-template-columns: 150px 1fr 110px 1fr;
+  }
+  .advanced .field-row label { font-size: 13px; }
+  .advanced select {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid #1d1d1f;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: inherit;
+    background: white;
+    height: 28px;
+  }
+  .advanced .checkbox-row {
+    grid-template-columns: 150px 1fr;
+  }
+  .advanced .checkbox-row label.opt {
+    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  /* Preview area */
+  .preview-wrap {
+    margin-top: 20px;
+    background: white;
+    border: 1px solid #c8c8cc;
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+  }
+  .preview-wrap[hidden] { display: none; }
+  .preview-title {
+    font-size: 13px;
+    color: #6e6e73;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .preview-stage {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .media-frame {
+    position: relative;
+    width: var(--preview-size, 360px);
+    height: var(--preview-size, 360px);
+    background: white;
+    border: 1px dashed #b8b8be;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .media-frame > #previewWrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .media-frame > #previewWrap > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .print-guide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .preview-info {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #6e6e73;
+    font-variant-numeric: tabular-nums;
+  }
+  .preview-legend {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 11px;
+    color: #8e8e93;
+  }
+  .preview-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-swatch {
+    display: inline-block;
+    width: 18px;
+    height: 0;
+    border-top: 2px dashed currentColor;
+  }
+
+  /* Off-screen print container */
+  #printOnly {
+    position: fixed;
+    left: -10000px;
+    top: 0;
+    width: 1in;
+    height: 1in;
+    pointer-events: none;
+  }
+  #printOnly .label-page {
+    width: 1in;
+    height: 1in;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  #printOnly .label-page:last-child { page-break-after: auto; }
+
+  @media print {
+    body > * { display: none !important; }
+    body { margin: 0 !important; padding: 0 !important; background: white !important; }
+    #printOnly {
+      display: block !important;
+      position: static !important;
+      left: 0 !important;
+      top: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: auto !important;
+      height: auto !important;
+    }
+    #printOnly svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 28px; }
+    .field-row, .field-row.split, .field-row.compact,
+    .advanced .field-row, .advanced .field-row.split {
+      grid-template-columns: 1fr !important;
+      gap: 4px;
+    }
+    .field-row label, .advanced .field-row label { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">  <div style="text-align: center; margin-bottom: 20px;">    <img src="black_logo.png" alt="Logo" style="height: 80px; width: auto;">  </div> 
+  <h1>Compound Stickers</h1>
+
+  <div class="card">
+    <div class="card-header">Print Options:</div>
+    <div class="card-body">
+      <div class="field-row">
+        <label for="presetSelect">Preset:</label>
+        <select id="presetSelect" onchange="applyPreset()">
+          <option value="">— Choose a preset (or type below) —</option>
+          <optgroup label="Compound formulations">
+            <option value="TAD7MG/FLUOXETINE 23MG/ ZINC30MG">TAD7MG/FLUOXETINE 23MG/ ZINC30MG</option>
+            <option value="SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU">SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU</option>
+            <option value="SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU">SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU</option>
+            <option value="TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)">TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)</option>
+            <option value="SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)">SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)</option>
+            <option value="Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2">Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</option>
+            <option value="Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2">Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</option>
+          </optgroup>
+          <optgroup label="Sildenafil">
+            <option value="SILDENAFIL 25MG">SILDENAFIL 25MG</option>
+            <option value="SILDENAFIL 50MG">SILDENAFIL 50MG</option>
+            <option value="SILDENAFIL 100MG">SILDENAFIL 100MG</option>
+          </optgroup>
+          <optgroup label="Tadalafil">
+            <option value="TADALAFIL 2.5MG">TADALAFIL 2.5MG</option>
+            <option value="TADALAFIL 5MG">TADALAFIL 5MG</option>
+            <option value="TADALAFIL 10MG">TADALAFIL 10MG</option>
+            <option value="TADALAFIL 20MG">TADALAFIL 20MG</option>
+          </optgroup>
+          <optgroup label="Hair / Other">
+            <option value="FINASTERIDE 1MG">FINASTERIDE 1MG</option>
+            <option value="MINOXIDIL 2.5MG">MINOXIDIL 2.5MG</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <label for="description">Description:</label>
+        <input id="description" type="text" value="SILDENAFIL 25 MG" oninput="onDescriptionEdit()">
+      </div>
+
+      <div class="field-row split">
+        <label for="compounded">Compounded On:</label>
+        <input id="compounded" type="text" value="" placeholder="M/D/YYYY" oninput="render()">
+        <label for="bud">Beyond Use:</label>
+        <input id="bud" type="text" value="00/00/0000" placeholder="M/D/YYYY" oninput="render()">
+      </div>
+
+      <div class="field-row split">
+        <label for="filled">Filled On:</label>
+        <input id="filled" type="text" value="" placeholder="M/D/YYYY (used if Compounded On is blank)" oninput="render()">
+        <label></label>
+        <span></span>
+      </div>
+
+      <div class="field-row split">
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" type="text" value="" placeholder="e.g. Qty: 30" oninput="render()">
+        <label for="lot">Lot #:</label>
+        <input id="lot" type="text" value="000000000" oninput="render()">
+      </div>
+
+      <div class="field-row compact">
+        <label for="copies"># Stickers:</label>
+        <input id="copies" type="number" min="1" max="500" value="1" oninput="render()">
+        <label class="radio-option">
+          <input type="radio" name="shape" value="round" checked onchange="render()"> Round
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="previewBtn" onclick="togglePreview()">Preview</button>
+        <button class="primary" onclick="printLabels()">Print</button>
+        <button onclick="resetForm()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="link-row">
+    <a onclick="toggleAdvanced()">Advanced Settings</a>
+  </div>
+
+  <div class="advanced" id="advancedPanel" hidden>
+    <div class="advanced-header">Advanced Settings</div>
+    <div class="advanced-body">
+      <div class="field-row split">
+        <label for="diameter">Label Diameter:</label>
+        <select id="diameter" onchange="render()">
+          <option value="0.75">0.75"</option>
+          <option value="1" selected>1.0" (Zebra ZT610)</option>
+          <option value="1.25">1.25"</option>
+          <option value="1.5">1.5"</option>
+          <option value="1.75">1.75"</option>
+          <option value="2">2.0"</option>
+          <option value="2.5">2.5"</option>
+          <option value="3">3.0"</option>
+        </select>
+        <label for="fontSize">Max Font (pt):</label>
+        <input type="number" id="fontSize" value="8" step="0.5" min="3" max="40" oninput="render()">
+      </div>
+
+      <div class="field-row split">
+        <label for="strokeWidth">Border (pt):</label>
+        <input type="number" id="strokeWidth" value="0.5" step="0.5" min="0" max="10" oninput="render()">
+        <label for="fontWeight">Font Weight:</label>
+        <select id="fontWeight" onchange="render()">
+          <option value="400">Regular</option>
+          <option value="600">Semi-Bold</option>
+          <option value="700" selected>Bold</option>
+        </select>
+      </div>
+
+      <div class="field-row split">
+        <label for="offsetX">X Offset (in):</label>
+        <input type="number" id="offsetX" value="0" step="0.01" min="-0.5" max="0.5" oninput="render()">
+        <label for="offsetY">Y Offset (in):</label>
+        <input type="number" id="offsetY" value="0" step="0.01" min="-0.5" max="0.5" oninput="render()">
+      </div>
+
+      <div class="field-row checkbox-row">
+        <label for="qrEnabled">QR Code:</label>
+        <label class="opt"><input type="checkbox" id="qrEnabled" checked onchange="render()"> Include QR with Lot # in center</label>
+      </div>
+
+      <div class="field-row split">
+        <label for="qrSize">QR Size (%):</label>
+        <input type="number" id="qrSize" value="38" step="1" min="20" max="60" oninput="render()">
+        <label for="qrEcc">QR Error Corr.:</label>
+        <select id="qrEcc" onchange="render()">
+          <option value="L" selected>L (Low — biggest modules)</option>
+          <option value="M">M (Medium)</option>
+          <option value="Q">Q (Quartile)</option>
+          <option value="H">H (High)</option>
+        </select>
+      </div>
+
+      <div class="button-row">
+        <button onclick="downloadSVG()">Download SVG</button>
+        <button onclick="downloadPNG()">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-wrap" id="previewPanel" hidden>
+    <div class="preview-title">Label Preview</div>
+    <div class="preview-stage">
+      <div class="media-frame" id="mediaFrame">
+        <div id="previewWrap"></div>
+        <svg class="print-guide" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="49.6" fill="rgba(220, 38, 38, 0.06)"
+                  stroke="rgba(220, 38, 38, 0.7)" stroke-width="1"
+                  stroke-dasharray="2 1.5" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+      <div class="preview-info" id="previewInfo">1.0" × 1.0" media — 8pt text</div>
+      <div class="preview-legend">
+        <span><span class="legend-swatch" style="color:#b8b8be;"></span> Media (square)</span>
+        <span><span class="legend-swatch" style="color:rgba(220,38,38,0.7);"></span> Print area (circle)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="printOnly" aria-hidden="true"></div>
+
+<script>
+/* qrcode-generator v2.0.4 (MIT License) by Kazuhiko Arase - https://github.com/kazuhikoarase/qrcode-generator */
+var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],f={},c=function(t,r){o=function(t){for(var r=new Array(t),e=0;e<t;e+=1){r[e]=new Array(t);for(var n=0;n<t;n+=1)r[e][n]=null}return r}(i=4*e+17),l(0,0),l(i-7,0),l(0,i-7),s(),h(),d(t,r),e>=7&&v(t),null==a&&(a=p(e,n,u)),w(a,r)},l=function(t,r){for(var e=-1;e<=7;e+=1)if(!(t+e<=-1||i<=t+e))for(var n=-1;n<=7;n+=1)r+n<=-1||i<=r+n||(o[t+e][r+n]=0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4)},h=function(){for(var t=8;t<i-8;t+=1)null==o[t][6]&&(o[t][6]=t%2==0);for(var r=8;r<i-8;r+=1)null==o[6][r]&&(o[6][r]=r%2==0)},s=function(){for(var t=B.getPatternPosition(e),r=0;r<t.length;r+=1)for(var n=0;n<t.length;n+=1){var i=t[r],a=t[n];if(null==o[i][a])for(var u=-2;u<=2;u+=1)for(var f=-2;f<=2;f+=1)o[i+u][a+f]=-2==u||2==u||-2==f||2==f||0==u&&0==f}},v=function(t){for(var r=B.getBCHTypeNumber(e),n=0;n<18;n+=1){var a=!t&&1==(r>>n&1);o[Math.floor(n/3)][n%3+i-8-3]=a}for(n=0;n<18;n+=1){a=!t&&1==(r>>n&1);o[n%3+i-8-3][Math.floor(n/3)]=a}},d=function(t,r){for(var e=n<<3|r,a=B.getBCHTypeInfo(e),u=0;u<15;u+=1){var f=!t&&1==(a>>u&1);u<6?o[u][8]=f:u<8?o[u+1][8]=f:o[i-15+u][8]=f}for(u=0;u<15;u+=1){f=!t&&1==(a>>u&1);u<8?o[8][i-u-1]=f:u<9?o[8][15-u-1+1]=f:o[8][15-u-1]=f}o[i-8][8]=!t},w=function(t,r){for(var e=-1,n=i-1,a=7,u=0,f=B.getMaskFunction(r),c=i-1;c>0;c-=2)for(6==c&&(c-=1);;){for(var g=0;g<2;g+=1)if(null==o[n][c-g]){var l=!1;u<t.length&&(l=1==(t[u]>>>a&1)),f(n,c-g)&&(l=!l),o[n][c-g]=l,-1==(a-=1)&&(u+=1,a=7)}if((n+=e)<0||i<=n){n-=e,e=-e;break}}},p=function(t,r,e){for(var n=A.getRSBlocks(t,r),o=b(),i=0;i<e.length;i+=1){var a=e[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var u=0;for(i=0;i<n.length;i+=1)u+=n[i].dataCount;if(o.getLengthInBits()>8*u)throw"code length overflow. ("+o.getLengthInBits()+">"+8*u+")";for(o.getLengthInBits()+4<=8*u&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=8*u||(o.put(236,8),o.getLengthInBits()>=8*u));)o.put(17,8);return function(t,r){for(var e=0,n=0,o=0,i=new Array(r.length),a=new Array(r.length),u=0;u<r.length;u+=1){var f=r[u].dataCount,c=r[u].totalCount-f;n=Math.max(n,f),o=Math.max(o,c),i[u]=new Array(f);for(var g=0;g<i[u].length;g+=1)i[u][g]=255&t.getBuffer()[g+e];e+=f;var l=B.getErrorCorrectPolynomial(c),h=k(i[u],l.getLength()-1).mod(l);for(a[u]=new Array(l.getLength()-1),g=0;g<a[u].length;g+=1){var s=g+h.getLength()-a[u].length;a[u][g]=s>=0?h.getAt(s):0}}var v=0;for(g=0;g<r.length;g+=1)v+=r[g].totalCount;var d=new Array(v),w=0;for(g=0;g<n;g+=1)for(u=0;u<r.length;u+=1)g<i[u].length&&(d[w]=i[u][g],w+=1);for(g=0;g<o;g+=1)for(u=0;u<r.length;u+=1)g<a[u].length&&(d[w]=a[u][g],w+=1);return d}(o,n)};f.addData=function(t,r){var e=null;switch(r=r||"Byte"){case"Numeric":e=M(t);break;case"Alphanumeric":e=x(t);break;case"Byte":e=m(t);break;case"Kanji":e=L(t);break;default:throw"mode:"+r}u.push(e),a=null},f.isDark=function(t,r){if(t<0||i<=t||r<0||i<=r)throw t+","+r;return o[t][r]},f.getModuleCount=function(){return i},f.make=function(){if(e<1){for(var t=1;t<40;t++){for(var r=A.getRSBlocks(t,n),o=b(),i=0;i<u.length;i++){var a=u[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var g=0;for(i=0;i<r.length;i++)g+=r[i].dataCount;if(o.getLengthInBits()<=8*g)break}e=t}c(!1,function(){for(var t=0,r=0,e=0;e<8;e+=1){c(!0,e);var n=B.getLostPoint(f);(0==e||t>n)&&(t=n,r=e)}return r}())},f.createTableTag=function(t,r){t=t||2;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+(r=void 0===r?4*t:r)+"px;",e+='">',e+="<tbody>";for(var n=0;n<f.getModuleCount();n+=1){e+="<tr>";for(var o=0;o<f.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+t+"px;",e+=" height: "+t+"px;",e+=" background-color: ",e+=f.isDark(n,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>"},f.createSvgTag=function(t,r,e,n){var o={};"object"==typeof arguments[0]&&(t=(o=arguments[0]).cellSize,r=o.margin,e=o.alt,n=o.title),t=t||2,r=void 0===r?4*t:r,(e="string"==typeof e?{text:e}:e||{}).text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,(n="string"==typeof n?{text:n}:n||{}).text=n.text||null,n.id=n.text?n.id||"qrcode-title":null;var i,a,u,c,g=f.getModuleCount()*t+2*r,l="";for(c="l"+t+",0 0,"+t+" -"+t+",0 0,-"+t+"z ",l+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',l+=o.scalable?"":' width="'+g+'px" height="'+g+'px"',l+=' viewBox="0 0 '+g+" "+g+'" ',l+=' preserveAspectRatio="xMinYMin meet"',l+=n.text||e.text?' role="img" aria-labelledby="'+y([n.id,e.id].join(" ").trim())+'"':"",l+=">",l+=n.text?'<title id="'+y(n.id)+'">'+y(n.text)+"</title>":"",l+=e.text?'<description id="'+y(e.id)+'">'+y(e.text)+"</description>":"",l+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',l+='<path d="',a=0;a<f.getModuleCount();a+=1)for(u=a*t+r,i=0;i<f.getModuleCount();i+=1)f.isDark(a,i)&&(l+="M"+(i*t+r)+","+u+c);return l+='" stroke="transparent" fill="black"/>',l+="</svg>"},f.createDataURL=function(t,r){t=t||2,r=void 0===r?4*t:r;var e=f.getModuleCount()*t+2*r,n=r,o=e-r;return I(e,e,function(r,e){if(n<=r&&r<o&&n<=e&&e<o){var i=Math.floor((r-n)/t),a=Math.floor((e-n)/t);return f.isDark(a,i)?0:1}return 1})},f.createImgTag=function(t,r,e){t=t||2,r=void 0===r?4*t:r;var n=f.getModuleCount()*t+2*r,o="";return o+="<img",o+=' src="',o+=f.createDataURL(t,r),o+='"',o+=' width="',o+=n,o+='"',o+=' height="',o+=n,o+='"',e&&(o+=' alt="',o+=y(e),o+='"'),o+="/>"};var y=function(t){for(var r="",e=0;e<t.length;e+=1){var n=t.charAt(e);switch(n){case"<":r+="&lt;";break;case">":r+="&gt;";break;case"&":r+="&amp;";break;case'"':r+="&quot;";break;default:r+=n}}return r};return f.createASCII=function(t,r){if((t=t||1)<2)return function(t){t=void 0===t?2:t;var r,e,n,o,i,a=1*f.getModuleCount()+2*t,u=t,c=a-t,g={"██":"█","█ ":"▀"," █":"▄","  ":" "},l={"██":"▀","█ ":"▀"," █":" ","  ":" "},h="";for(r=0;r<a;r+=2){for(n=Math.floor((r-u)/1),o=Math.floor((r+1-u)/1),e=0;e<a;e+=1)i="█",u<=e&&e<c&&u<=r&&r<c&&f.isDark(n,Math.floor((e-u)/1))&&(i=" "),u<=e&&e<c&&u<=r+1&&r+1<c&&f.isDark(o,Math.floor((e-u)/1))?i+=" ":i+="█",h+=t<1&&r+1>=c?l[i]:g[i];h+="\n"}return a%2&&t>0?h.substring(0,h.length-a-1)+Array(a+1).join("▀"):h.substring(0,h.length-1)}(r);t-=1,r=void 0===r?2*t:r;var e,n,o,i,a=f.getModuleCount()*t+2*r,u=r,c=a-r,g=Array(t+1).join("██"),l=Array(t+1).join("  "),h="",s="";for(e=0;e<a;e+=1){for(o=Math.floor((e-u)/t),s="",n=0;n<a;n+=1)i=1,u<=n&&n<c&&u<=e&&e<c&&f.isDark(o,Math.floor((n-u)/t))&&(i=0),s+=i?g:l;for(o=0;o<t;o+=1)h+=s+"\n"}return h.substring(0,h.length-1)},f.renderTo2dContext=function(t,r){r=r||2;for(var e=f.getModuleCount(),n=0;n<e;n++)for(var o=0;o<e;o++)t.fillStyle=f.isDark(n,o)?"black":"white",t.fillRect(o*r,n*r,r,r)},f};t.stringToBytes=(t.stringToBytesFuncs={default:function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);r.push(255&n)}return r}}).default,t.createStringToBytes=function(t,r){var e=function(){for(var e=S(t),n=function(){var t=e.read();if(-1==t)throw"eof";return t},o=0,i={};;){var a=e.read();if(-1==a)break;var u=n(),f=n()<<8|n();i[String.fromCharCode(a<<8|u)]=f,o+=1}if(o!=r)throw o+" != "+r;return i}(),n="?".charCodeAt(0);return function(t){for(var r=[],o=0;o<t.length;o+=1){var i=t.charCodeAt(o);if(i<128)r.push(i);else{var a=e[t.charAt(o)];"number"==typeof a?(255&a)==a?r.push(a):(r.push(a>>>8),r.push(255&a)):r.push(n)}}return r}};var r,e,n,o,i,a=1,u=2,f=4,c=8,g={L:1,M:0,Q:3,H:2},l=0,h=1,s=2,v=3,d=4,w=5,p=6,y=7,B=(r=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],e=1335,n=7973,i=function(t){for(var r=0;0!=t;)r+=1,t>>>=1;return r},(o={}).getBCHTypeInfo=function(t){for(var r=t<<10;i(r)-i(e)>=0;)r^=e<<i(r)-i(e);return 21522^(t<<10|r)},o.getBCHTypeNumber=function(t){for(var r=t<<12;i(r)-i(n)>=0;)r^=n<<i(r)-i(n);return t<<12|r},o.getPatternPosition=function(t){return r[t-1]},o.getMaskFunction=function(t){switch(t){case l:return function(t,r){return(t+r)%2==0};case h:return function(t,r){return t%2==0};case s:return function(t,r){return r%3==0};case v:return function(t,r){return(t+r)%3==0};case d:return function(t,r){return(Math.floor(t/2)+Math.floor(r/3))%2==0};case w:return function(t,r){return t*r%2+t*r%3==0};case p:return function(t,r){return(t*r%2+t*r%3)%2==0};case y:return function(t,r){return(t*r%3+(t+r)%2)%2==0};default:throw"bad maskPattern:"+t}},o.getErrorCorrectPolynomial=function(t){for(var r=k([1],0),e=0;e<t;e+=1)r=r.multiply(k([1,C.gexp(e)],0));return r},o.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case a:return 10;case u:return 9;case f:case c:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case a:return 12;case u:return 11;case f:return 16;case c:return 10;default:throw"mode:"+t}else{if(!(r<41))throw"type:"+r;switch(t){case a:return 14;case u:return 13;case f:return 16;case c:return 12;default:throw"mode:"+t}}},o.getLostPoint=function(t){for(var r=t.getModuleCount(),e=0,n=0;n<r;n+=1)for(var o=0;o<r;o+=1){for(var i=0,a=t.isDark(n,o),u=-1;u<=1;u+=1)if(!(n+u<0||r<=n+u))for(var f=-1;f<=1;f+=1)o+f<0||r<=o+f||0==u&&0==f||a==t.isDark(n+u,o+f)&&(i+=1);i>5&&(e+=3+i-5)}for(n=0;n<r-1;n+=1)for(o=0;o<r-1;o+=1){var c=0;t.isDark(n,o)&&(c+=1),t.isDark(n+1,o)&&(c+=1),t.isDark(n,o+1)&&(c+=1),t.isDark(n+1,o+1)&&(c+=1),0!=c&&4!=c||(e+=3)}for(n=0;n<r;n+=1)for(o=0;o<r-6;o+=1)t.isDark(n,o)&&!t.isDark(n,o+1)&&t.isDark(n,o+2)&&t.isDark(n,o+3)&&t.isDark(n,o+4)&&!t.isDark(n,o+5)&&t.isDark(n,o+6)&&(e+=40);for(o=0;o<r;o+=1)for(n=0;n<r-6;n+=1)t.isDark(n,o)&&!t.isDark(n+1,o)&&t.isDark(n+2,o)&&t.isDark(n+3,o)&&t.isDark(n+4,o)&&!t.isDark(n+5,o)&&t.isDark(n+6,o)&&(e+=40);var g=0;for(o=0;o<r;o+=1)for(n=0;n<r;n+=1)t.isDark(n,o)&&(g+=1);return e+=Math.abs(100*g/r/r-50)/5*10},o),C=function(){for(var t=new Array(256),r=new Array(256),e=0;e<8;e+=1)t[e]=1<<e;for(e=8;e<256;e+=1)t[e]=t[e-4]^t[e-5]^t[e-6]^t[e-8];for(e=0;e<255;e+=1)r[t[e]]=e;var n={glog:function(t){if(t<1)throw"glog("+t+")";return r[t]},gexp:function(r){for(;r<0;)r+=255;for(;r>=256;)r-=255;return t[r]}};return n}();function k(t,r){if(void 0===t.length)throw t.length+"/"+r;var e=function(){for(var e=0;e<t.length&&0==t[e];)e+=1;for(var n=new Array(t.length-e+r),o=0;o<t.length-e;o+=1)n[o]=t[o+e];return n}(),n={getAt:function(t){return e[t]},getLength:function(){return e.length},multiply:function(t){for(var r=new Array(n.getLength()+t.getLength()-1),e=0;e<n.getLength();e+=1)for(var o=0;o<t.getLength();o+=1)r[e+o]^=C.gexp(C.glog(n.getAt(e))+C.glog(t.getAt(o)));return k(r,0)},mod:function(t){if(n.getLength()-t.getLength()<0)return n;for(var r=C.glog(n.getAt(0))-C.glog(t.getAt(0)),e=new Array(n.getLength()),o=0;o<n.getLength();o+=1)e[o]=n.getAt(o);for(o=0;o<t.getLength();o+=1)e[o]^=C.gexp(C.glog(t.getAt(o))+r);return k(e,0).mod(t)}};return n}var A=function(){var t=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],r=function(t,r){var e={};return e.totalCount=t,e.dataCount=r,e},e={};return e.getRSBlocks=function(e,n){var o=function(r,e){switch(e){case g.L:return t[4*(r-1)+0];case g.M:return t[4*(r-1)+1];case g.Q:return t[4*(r-1)+2];case g.H:return t[4*(r-1)+3];default:return}}(e,n);if(void 0===o)throw"bad rs block @ typeNumber:"+e+"/errorCorrectionLevel:"+n;for(var i=o.length/3,a=[],u=0;u<i;u+=1)for(var f=o[3*u+0],c=o[3*u+1],l=o[3*u+2],h=0;h<f;h+=1)a.push(r(c,l));return a},e}(),b=function(){var t=[],r=0,e={getBuffer:function(){return t},getAt:function(r){var e=Math.floor(r/8);return 1==(t[e]>>>7-r%8&1)},put:function(t,r){for(var n=0;n<r;n+=1)e.putBit(1==(t>>>r-n-1&1))},getLengthInBits:function(){return r},putBit:function(e){var n=Math.floor(r/8);t.length<=n&&t.push(0),e&&(t[n]|=128>>>r%8),r+=1}};return e},M=function(t){var r=a,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+2<r.length;)t.put(o(r.substring(n,n+3)),10),n+=3;n<r.length&&(r.length-n==1?t.put(o(r.substring(n,n+1)),4):r.length-n==2&&t.put(o(r.substring(n,n+2)),7))}},o=function(t){for(var r=0,e=0;e<t.length;e+=1)r=10*r+i(t.charAt(e));return r},i=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);throw"illegal char :"+t};return n},x=function(t){var r=u,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+1<r.length;)t.put(45*o(r.charAt(n))+o(r.charAt(n+1)),11),n+=2;n<r.length&&t.put(o(r.charAt(n)),6)}},o=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);if("A"<=t&&t<="Z")return t.charCodeAt(0)-"A".charCodeAt(0)+10;switch(t){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+t}};return n},m=function(r){var e=f,n=t.stringToBytes(r),o={getMode:function(){return e},getLength:function(t){return n.length},write:function(t){for(var r=0;r<n.length;r+=1)t.put(n[r],8)}};return o},L=function(r){var e=c,n=t.stringToBytesFuncs.SJIS;if(!n)throw"sjis not supported.";!function(){var t=n("友");if(2!=t.length||38726!=(t[0]<<8|t[1]))throw"sjis not supported."}();var o=n(r),i={getMode:function(){return e},getLength:function(t){return~~(o.length/2)},write:function(t){for(var r=o,e=0;e+1<r.length;){var n=(255&r[e])<<8|255&r[e+1];if(33088<=n&&n<=40956)n-=33088;else{if(!(57408<=n&&n<=60351))throw"illegal char at "+(e+1)+"/"+n;n-=49472}n=192*(n>>>8&255)+(255&n),t.put(n,13),e+=2}if(e<r.length)throw"illegal char at "+(e+1)}};return i},D=function(){var t=[],r={writeByte:function(r){t.push(255&r)},writeShort:function(t){r.writeByte(t),r.writeByte(t>>>8)},writeBytes:function(t,e,n){e=e||0,n=n||t.length;for(var o=0;o<n;o+=1)r.writeByte(t[o+e])},writeString:function(t){for(var e=0;e<t.length;e+=1)r.writeByte(t.charCodeAt(e))},toByteArray:function(){return t},toString:function(){var r="";r+="[";for(var e=0;e<t.length;e+=1)e>0&&(r+=","),r+=t[e];return r+="]"}};return r},S=function(t){var r=t,e=0,n=0,o=0,i={read:function(){for(;o<8;){if(e>=r.length){if(0==o)return-1;throw"unexpected end of file./"+o}var t=r.charAt(e);if(e+=1,"="==t)return o=0,-1;t.match(/^\s$/)||(n=n<<6|a(t.charCodeAt(0)),o+=6)}var i=n>>>o-8&255;return o-=8,i}},a=function(t){if(65<=t&&t<=90)return t-65;if(97<=t&&t<=122)return t-97+26;if(48<=t&&t<=57)return t-48+52;if(43==t)return 62;if(47==t)return 63;throw"c:"+t};return i},I=function(t,r,e){for(var n=function(t,r){var e=t,n=r,o=new Array(t*r),i={setPixel:function(t,r,n){o[r*e+t]=n},write:function(t){t.writeString("GIF87a"),t.writeShort(e),t.writeShort(n),t.writeByte(128),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(255),t.writeByte(255),t.writeByte(255),t.writeString(","),t.writeShort(0),t.writeShort(0),t.writeShort(e),t.writeShort(n),t.writeByte(0);var r=a(2);t.writeByte(2);for(var o=0;r.length-o>255;)t.writeByte(255),t.writeBytes(r,o,255),o+=255;t.writeByte(r.length-o),t.writeBytes(r,o,r.length-o),t.writeByte(0),t.writeString(";")}},a=function(t){for(var r=1<<t,e=1+(1<<t),n=t+1,i=u(),a=0;a<r;a+=1)i.add(String.fromCharCode(a));i.add(String.fromCharCode(r)),i.add(String.fromCharCode(e));var f,c,g,l=D(),h=(f=l,c=0,g=0,{write:function(t,r){if(t>>>r!=0)throw"length over";for(;c+r>=8;)f.writeByte(255&(t<<c|g)),r-=8-c,t>>>=8-c,g=0,c=0;g|=t<<c,c+=r},flush:function(){c>0&&f.writeByte(g)}});h.write(r,n);var s=0,v=String.fromCharCode(o[s]);for(s+=1;s<o.length;){var d=String.fromCharCode(o[s]);s+=1,i.contains(v+d)?v+=d:(h.write(i.indexOf(v),n),i.size()<4095&&(i.size()==1<<n&&(n+=1),i.add(v+d)),v=d)}return h.write(i.indexOf(v),n),h.write(e,n),h.flush(),l.toByteArray()},u=function(){var t={},r=0,e={add:function(n){if(e.contains(n))throw"dup key:"+n;t[n]=r,r+=1},size:function(){return r},indexOf:function(r){return t[r]},contains:function(r){return void 0!==t[r]}};return e};return i}(t,r),o=0;o<r;o+=1)for(var i=0;i<t;i+=1)n.setPixel(i,o,e(i,o));var a=D();n.write(a);for(var u=function(){var t=0,r=0,e=0,n="",o={},i=function(t){n+=String.fromCharCode(a(63&t))},a=function(t){if(t<0);else{if(t<26)return 65+t;if(t<52)return t-26+97;if(t<62)return t-52+48;if(62==t)return 43;if(63==t)return 47}throw"n:"+t};return o.writeByte=function(n){for(t=t<<8|255&n,r+=8,e+=1;r>=6;)i(t>>>r-6),r-=6},o.flush=function(){if(r>0&&(i(t<<6-r),t=0,r=0),e%3!=0)for(var o=3-e%3,a=0;a<o;a+=1)n+="="},o.toString=function(){return n},o}(),f=a.toByteArray(),c=0;c<f.length;c+=1)u.writeByte(f[c]);return u.flush(),"data:image/gif;base64,"+u};return t}();qrcode.stringToBytesFuncs["UTF-8"]=function(t){return function(t){for(var r=[],e=0;e<t.length;e++){var n=t.charCodeAt(e);n<128?r.push(n):n<2048?r.push(192|n>>6,128|63&n):n<55296||n>=57344?r.push(224|n>>12,128|n>>6&63,128|63&n):(e++,n=65536+((1023&n)<<10|1023&t.charCodeAt(e)),r.push(240|n>>18,128|n>>12&63,128|n>>6&63,128|63&n))}return r}(t)},function(t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports&&(module.exports=t())}(function(){return qrcode});
+</script>
+
+<script>
+// ============================================================
+// State helpers
+// ============================================================
+function togglePreview() {
+  const panel = document.getElementById('previewPanel');
+  const btn = document.getElementById('previewBtn');
+  const willShow = panel.hasAttribute('hidden');
+  if (willShow) {
+    panel.removeAttribute('hidden');
+    btn.textContent = 'Hide Preview';
+    render(); // make sure preview is current when shown
+  } else {
+    panel.setAttribute('hidden', '');
+    btn.textContent = 'Preview';
+  }
+}
+
+function toggleAdvanced() {
+  const panel = document.getElementById('advancedPanel');
+  if (panel.hasAttribute('hidden')) panel.removeAttribute('hidden');
+  else panel.setAttribute('hidden', '');
+}
+
+function resetForm() {
+  document.getElementById('description').value = '';
+  document.getElementById('presetSelect').value = '';
+  document.getElementById('compounded').value = '';
+  document.getElementById('filled').value = '';
+  document.getElementById('bud').value = '';
+  document.getElementById('quantity').value = '';
+  document.getElementById('lot').value = '';
+  document.getElementById('copies').value = 1;
+  document.getElementById('offsetX').value = 0;
+  document.getElementById('offsetY').value = 0;
+  render();
+}
+
+// When user picks a preset, fill the Description field and re-render
+function applyPreset() {
+  const sel = document.getElementById('presetSelect');
+  const value = sel.value;
+  if (!value) return;
+  document.getElementById('description').value = value;
+  render();
+}
+
+// When user manually types in Description, clear the preset dropdown so it
+// doesn't show a stale selection that no longer matches what's in the field
+function onDescriptionEdit() {
+  const desc = document.getElementById('description').value;
+  const sel = document.getElementById('presetSelect');
+  // If the typed value doesn't exactly match a preset, reset the dropdown
+  let matches = false;
+  for (const opt of sel.options) {
+    if (opt.value && opt.value === desc) { matches = true; break; }
+  }
+  if (!matches) sel.value = '';
+  render();
+}
+
+// ============================================================
+// SVG / Label rendering (preserved logic)
+// ============================================================
+function escapeXML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function buildQRSvg(text, cx, cy, sizeUnits, ecc) {
+  if (!text || typeof qrcode === 'undefined') return '';
+  let qr;
+  try {
+    qr = qrcode(0, ecc || 'M');
+    qr.addData(String(text));
+    qr.make();
+  } catch (e) {
+    console.error('QR generation failed:', e);
+    return '';
+  }
+  const moduleCount = qr.getModuleCount();
+  const quietModules = 2;
+  const totalModules = moduleCount + quietModules * 2;
+  const moduleSize = sizeUnits / totalModules;
+  const startX = cx - sizeUnits / 2 + quietModules * moduleSize;
+  const startY = cy - sizeUnits / 2 + quietModules * moduleSize;
+  let svg = `<rect x="${(cx - sizeUnits/2).toFixed(3)}" y="${(cy - sizeUnits/2).toFixed(3)}" `
+          + `width="${sizeUnits.toFixed(3)}" height="${sizeUnits.toFixed(3)}" fill="white"/>`;
+  const overlap = 0.05;
+  for (let r = 0; r < moduleCount; r++) {
+    for (let c = 0; c < moduleCount; c++) {
+      if (qr.isDark(r, c)) {
+        const x = startX + c * moduleSize;
+        const y = startY + r * moduleSize;
+        svg += `<rect x="${x.toFixed(3)}" y="${y.toFixed(3)}" `
+             + `width="${(moduleSize + overlap).toFixed(3)}" `
+             + `height="${(moduleSize + overlap).toFixed(3)}" fill="black"/>`;
+      }
+    }
+  }
+  return svg;
+}
+
+const _measureCanvas = document.createElement('canvas');
+const _measureCtx = _measureCanvas.getContext('2d');
+
+function measureTextWidthPt(text, fontSizePt, fontWeight) {
+  if (!text) return 0;
+  const sizePx = fontSizePt * 96 / 72;
+  _measureCtx.font = `${fontWeight} ${sizePx}px Arial, Helvetica, sans-serif`;
+  return _measureCtx.measureText(text).width * 72 / 96;
+}
+
+function autoFitFontSize(topText, bottomText, borderRPt, maxPt, fontWeight) {
+  for (let size = maxPt; size >= 3; size -= 0.25) {
+    const capH = size * 0.72;
+    const desc = size * 0.20;
+    const margin = size * 0.22;
+    const topR = borderRPt - capH - margin;
+    const botR = borderRPt - desc - margin;
+    const topArc = Math.PI * topR;
+    const botArc = Math.PI * botR;
+    const topW = measureTextWidthPt(topText, size, fontWeight);
+    const botW = measureTextWidthPt(bottomText, size, fontWeight);
+    if (topW <= topArc * 0.96 && botW <= botArc * 0.96) return size;
+  }
+  return 3;
+}
+
+function updatePrintPageSize(diameterIn) {
+  let el = document.getElementById('dynamicPageStyle');
+  if (!el) {
+    el = document.createElement('style');
+    el.id = 'dynamicPageStyle';
+    document.head.appendChild(el);
+  }
+  el.textContent = `
+    @page { size: ${diameterIn}in ${diameterIn}in; margin: 0; }
+    @media print {
+      #printOnly .label-page { width: ${diameterIn}in !important; height: ${diameterIn}in !important; }
+      html, body { width: auto !important; height: auto !important; }
+    }`;
+}
+
+function buildLabelSVG(opts) {
+  const {
+    topText, midText, midPath, bottomText, dateValue, dateLabel, quantity, quantityBelowQR,
+    diameterIn, fontSizePt, strokePt, fontWeight,
+    size, cx, cy, borderR, topPath, bottomPath,
+    topTextRadius, bottomTextRadius, offsetXPt, offsetYPt,
+    qrEnabled, qrText, qrSizePct, qrEcc
+  } = opts;
+
+  function maxWidthAtDy(dy) {
+    const innerR = Math.min(topTextRadius, bottomTextRadius);
+    const halfWidthAtY = Math.sqrt(Math.max(0, innerR * innerR - dy * dy));
+    return halfWidthAtY * 2 * 0.95;
+  }
+
+  function fitFontSize(text, maxWidth, startPt) {
+    let pt = startPt;
+    while (pt > 3 && measureTextWidthPt(text, pt, fontWeight) > maxWidth) {
+      pt -= 0.25;
+    }
+    return pt;
+  }
+
+  let qrSvg = '', compoundedSvg = '', quantitySvg = '';
+  let qrSizeUnits = 0;
+
+  if (midText) {
+    // ── SPLIT PRESET LAYOUT ────────────────────────────────────────────────────
+    // QR sizing from circular-label-generator-14: QR gets ALL remaining space
+    // after text. This makes the QR as large as possible, which improves scanning.
+    const midR    = topTextRadius - fontSizePt * 1.05;
+    const zoneTop = cy - midR + fontSizePt * 1.0;       // just below second arc
+    const zoneBottom = cy + bottomTextRadius * 0.58;     // pulls block up
+    const zoneH   = zoneBottom - zoneTop;
+
+    const cPt     = Math.max(fontSizePt * 0.65, 4);
+    const lineGap = cPt * 0.82;
+
+    // Precise heights — consistent with what gets drawn below
+    // (date block = "COMPOUNDED" or "FILLED" header + the date itself = 2 lines)
+    const compH = dateValue ? cPt + lineGap : 0;
+    const qtyH  = quantity  ? cPt : 0;
+    const gapCQ = cPt * 0.18;  // gap between date block and QR
+    const gapQT = cPt * 0.18;  // gap between QR and quantity
+
+    // QR gets all remaining space
+    if (qrEnabled && qrText) {
+      qrSizeUnits = Math.max(zoneH - compH - gapCQ - qtyH - gapQT, 0);
+    }
+
+    const totalH = compH + gapCQ + qrSizeUnits + gapQT + qtyH;
+    let curY = zoneTop + (zoneH - totalH) / 2;
+
+    // Date block — two tight lines: "COMPOUNDED" or "FILLED" header, then the date
+    if (dateValue) {
+      const cY1 = curY + cPt * 0.5;
+      const cW  = maxWidthAtDy(cY1 - cy);
+      const label = dateLabel.toUpperCase();
+      compoundedSvg =
+        `<text x="${cx}" y="${cY1}" text-anchor="middle" dominant-baseline="middle"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="${fitFontSize(label, cW, cPt)}" font-weight="${fontWeight}" fill="black">${escapeXML(label)}</text>` +
+        `<text x="${cx}" y="${cY1 + lineGap}" text-anchor="middle" dominant-baseline="middle"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="${fitFontSize(dateValue, cW, cPt)}" font-weight="${fontWeight}" fill="black">${escapeXML(dateValue)}</text>`;
+      curY += compH + gapCQ;
+    }
+
+    // QR — middle
+    if (qrEnabled && qrText && qrSizeUnits > 0) {
+      qrSvg = buildQRSvg(qrText, cx, curY + qrSizeUnits / 2, qrSizeUnits, qrEcc);
+      curY += qrSizeUnits + gapQT;
+    }
+
+    // Quantity — bottom
+    if (quantity) {
+      const qY = curY + cPt * 0.5;
+      const qW = maxWidthAtDy(qY - cy);
+      const qFit = fitFontSize(quantity, qW, cPt);
+      quantitySvg = `<text x="${cx}" y="${qY}"
+        text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="${qFit}" font-weight="${fontWeight}" fill="black">${escapeXML(quantity)}</text>`;
+    }
+
+  } else {
+    // ── NORMAL LAYOUT (unchanged) ──────────────────────────────────────────────
+    const qrYShift = fontSizePt * 0.85;
+    const qrCenterY = cy + qrYShift;
+
+    if (qrEnabled && qrText) {
+      qrSizeUnits = (size * qrSizePct) / 100;
+      qrSvg = buildQRSvg(qrText, cx, qrCenterY, qrSizeUnits, qrEcc);
+    }
+
+    const qrTopY = (qrEnabled && qrText) ? (qrCenterY - qrSizeUnits / 2) : (cy + borderR);
+    const centerLineGap = fontSizePt * 1.15;
+
+    if (dateValue) {
+      const compoundedText = `${dateLabel}: ${dateValue}`;
+      let compY, compMaxWidth;
+      if (qrEnabled && qrText) {
+        const bottomLineY = qrTopY - fontSizePt * 0.5;
+        compY = quantity ? bottomLineY - centerLineGap : bottomLineY;
+        compMaxWidth = maxWidthAtDy(compY - cy);
+      } else {
+        compY = quantity ? cy - fontSizePt * 0.6 : cy;
+        compMaxWidth = maxWidthAtDy(compY - cy) * 0.9;
+      }
+      const compFontPt = fitFontSize(compoundedText, compMaxWidth, fontSizePt);
+      compoundedSvg = `
+      <text x="${cx}" y="${compY}" text-anchor="middle" dominant-baseline="middle"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="${compFontPt}" font-weight="${fontWeight}" fill="black">
+        ${escapeXML(compoundedText)}
+      </text>`;
+    }
+
+    if (quantity) {
+      let qtyY, qtyMaxWidth;
+      if (qrEnabled && qrText) {
+        qtyY = qrTopY - fontSizePt * 0.5;
+        qtyMaxWidth = maxWidthAtDy(qtyY - cy);
+      } else {
+        qtyY = dateValue ? cy + fontSizePt * 0.6 : cy;
+        qtyMaxWidth = maxWidthAtDy(qtyY - cy) * 0.9;
+      }
+      const qtyFontPt = fitFontSize(quantity, qtyMaxWidth, fontSizePt);
+      quantitySvg = `
+      <text x="${cx}" y="${qtyY}" text-anchor="middle" dominant-baseline="middle"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="${qtyFontPt}" font-weight="${fontWeight}" fill="black">
+        ${escapeXML(quantity)}
+      </text>`;
+    }
+  }
+
+  const hasOffset = offsetXPt !== 0 || offsetYPt !== 0;
+  const groupOpen = hasOffset
+    ? `<g transform="translate(${offsetXPt.toFixed(2)}, ${offsetYPt.toFixed(2)})">`
+    : '<g>';
+
+  return `
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 ${size} ${size}"
+     width="${diameterIn}in" height="${diameterIn}in"
+     preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <path id="topArc" d="${topPath}" />
+    ${midPath ? `<path id="midArc" d="${midPath}" />` : ''}
+    <path id="bottomArc" d="${bottomPath}" />
+  </defs>
+  ${groupOpen}
+    <circle cx="${cx}" cy="${cy}" r="${borderR}" fill="white"
+            stroke="black" stroke-width="${strokePt}" />
+    ${qrSvg}
+    ${compoundedSvg}
+    ${quantitySvg}
+    <text font-family="Arial, Helvetica, sans-serif"
+          font-size="${fontSizePt}" font-weight="${fontWeight}" fill="black">
+      <textPath href="#topArc" startOffset="50%" text-anchor="middle">${escapeXML(topText)}</textPath>
+    </text>
+    ${midText ? `
+    <text font-family="Arial, Helvetica, sans-serif"
+          font-size="${fontSizePt}" font-weight="${fontWeight}" fill="black">
+      <textPath href="#midArc" startOffset="50%" text-anchor="middle">${escapeXML(midText)}</textPath>
+    </text>` : ''}
+    <text font-family="Arial, Helvetica, sans-serif"
+          font-size="${fontSizePt}" font-weight="${fontWeight}" fill="black">
+      <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">${escapeXML(bottomText)}</textPath>
+    </text>
+  </g>
+</svg>`;
+}
+
+// ============================================================
+// Main render — reads form, builds SVG, updates preview + print
+// ============================================================
+function render() {
+  const description = document.getElementById('description').value.trim();
+  const compounded = document.getElementById('compounded').value.trim();
+  const filled = document.getElementById('filled').value.trim();
+  // If Compounded On is filled, use it; otherwise fall back to Filled On (different prefix)
+  let dateLabel = '', dateValue = '';
+  if (compounded) {
+    dateLabel = 'Compounded';
+    dateValue = compounded;
+  } else if (filled) {
+    dateLabel = 'Filled';
+    dateValue = filled;
+  }
+  const bud = document.getElementById('bud').value.trim();
+  const quantity = document.getElementById('quantity').value.trim();
+  const lot = document.getElementById('lot').value.trim();
+  const copies = Math.max(1, Math.min(500, parseInt(document.getElementById('copies').value, 10) || 1));
+
+  const diameterIn = parseFloat(document.getElementById('diameter').value) || 1;
+  const maxFontPt = parseFloat(document.getElementById('fontSize').value) || 8;
+  const strokePt = parseFloat(document.getElementById('strokeWidth').value) || 0.5;
+  const fontWeight = document.getElementById('fontWeight').value;
+  const offsetXIn = parseFloat(document.getElementById('offsetX').value) || 0;
+  const offsetYIn = parseFloat(document.getElementById('offsetY').value) || 0;
+  const offsetXPt = offsetXIn * 72;
+  const offsetYPt = offsetYIn * 72;
+  const qrEnabled = document.getElementById('qrEnabled').checked;
+  const qrSizePct = parseFloat(document.getElementById('qrSize').value) || 38;
+  const qrEcc = document.getElementById('qrEcc').value;
+
+  // Top arc = description (drug name + strength as one field)
+  const topText = description;
+  const bottomParts = [];
+  if (lot) bottomParts.push(`Lot: ${lot}`);
+  if (bud) bottomParts.push(`BUD:${bud}`);
+  const bottomText = bottomParts.join(' ');
+
+  // Long presets that need the description split across two arcs
+  const SPLIT_PRESETS = {
+    'Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2': ['Fin1.1/Min3.3/Bio2.5/L-Cys70', 'Zin10/B6 4.5/GHK-Cu2'],
+    'Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2':        ['Min1.5/Bio2.5/L-Cys70',         'Zin10/B6 4.5/GHK-Cu2']
+  };
+  const splitLines = SPLIT_PRESETS[description] || null;
+  // For split presets, quantity goes BELOW the QR instead of above
+  const quantityBelowQR = !!splitLines;
+
+  const size = diameterIn * 72;
+  const cx = size / 2;
+  const cy = size / 2;
+  const borderR = size / 2 - strokePt;
+
+  // autoFitFontSize: for split presets use the shorter first half so font isn't shrunk
+  const fitTopText = splitLines ? splitLines[0] : topText;
+  let fontSizePt = autoFitFontSize(fitTopText, bottomText, borderR, maxFontPt, fontWeight);
+
+  // For split presets, autoFitFontSize only checks the FIRST curved line.
+  // Make sure the SECOND curved line (e.g. "Zin10/B6 4.5/GHK-Cu2") also fits
+  // on its own arc; shrink further only if needed so no characters are
+  // clipped. This only affects labels that use SPLIT_PRESETS.
+  if (splitLines) {
+    while (fontSizePt > 3) {
+      const capH = fontSizePt * 0.72;
+      const margin = fontSizePt * 0.22;
+      const topR = borderR - capH - margin;
+      const midR = topR - fontSizePt * 1.05;
+      const midArc = Math.PI * midR;
+      const midW = measureTextWidthPt(splitLines[1], fontSizePt, fontWeight);
+      if (midW <= midArc * 0.96) break;
+      fontSizePt -= 0.25;
+    }
+  }
+  const textMargin = fontSizePt * 0.22;
+  const capHeight = fontSizePt * 0.72;
+  const descender = fontSizePt * 0.20;
+  const topTextRadius = borderR - capHeight - textMargin;
+  const bottomTextRadius = borderR - descender - textMargin;
+  const topPath    = `M ${cx - topTextRadius},${cy} A ${topTextRadius},${topTextRadius} 0 0,1 ${cx + topTextRadius},${cy}`;
+  const bottomPath = `M ${cx - bottomTextRadius},${cy} A ${bottomTextRadius},${bottomTextRadius} 0 0,0 ${cx + bottomTextRadius},${cy}`;
+
+  // Second arc: tighter spacing — 1.05× so the two lines sit close together
+  const midTextRadius = topTextRadius - fontSizePt * 1.05;
+  const midPath = `M ${cx - midTextRadius},${cy} A ${midTextRadius},${midTextRadius} 0 0,1 ${cx + midTextRadius},${cy}`;
+
+  const opts = {
+    topText: splitLines ? splitLines[0] : topText,
+    midText: splitLines ? splitLines[1] : null,
+    midPath,
+    bottomText, dateValue, dateLabel, quantity, quantityBelowQR,
+    diameterIn, fontSizePt, strokePt, fontWeight,
+    size, cx, cy, borderR,
+    topPath, bottomPath, topTextRadius, bottomTextRadius,
+    offsetXPt, offsetYPt,
+    qrEnabled, qrText: lot, qrSizePct, qrEcc
+  };
+
+  const svgMarkup = buildLabelSVG(opts);
+
+  // Preview (only one copy needed visually)
+  document.getElementById('previewWrap').innerHTML = svgMarkup;
+
+
+  // Visual scaling
+  const previewPx = Math.min(Math.round(diameterIn * 96 * 3.6), 460);
+  document.getElementById('mediaFrame').style.setProperty('--preview-size', previewPx + 'px');
+
+  const fitNote = (fontSizePt < maxFontPt) ? ` (auto-fit from ${maxFontPt}pt)` : '';
+  const offsetNote = (offsetXIn !== 0 || offsetYIn !== 0)
+    ? ` — offset X:${offsetXIn>0?'+':''}${offsetXIn}" Y:${offsetYIn>0?'+':''}${offsetYIn}"`
+    : '';
+  const copiesNote = copies > 1 ? ` — ${copies} stickers` : '';
+  document.getElementById('previewInfo').textContent =
+    `${diameterIn}" × ${diameterIn}" media — ${fontSizePt}pt text${fitNote}${offsetNote}${copiesNote}`;
+
+  updatePrintPageSize(diameterIn);
+}
+
+function printLabels() {
+  const copies = Math.max(1, Math.min(500, parseInt(document.getElementById('copies').value, 10) || 1));
+  const svgMarkup = document.getElementById('previewWrap').innerHTML;
+  const printOnly = document.getElementById('printOnly');
+  const pages = [];
+  for (let i = 0; i < copies; i++) {
+    pages.push(`<div class="label-page">${svgMarkup}</div>`);
+  }
+  printOnly.innerHTML = pages.join('');
+  window.print();
+  printOnly.innerHTML = '';
+}
+
+function getSingleSVGString() {
+  const wrap = document.getElementById('previewWrap');
+  return wrap.innerHTML.trim();
+}
+
+function downloadSVG() {
+  const svgData = '<?xml version="1.0" encoding="UTF-8"?>\n' + getSingleSVGString();
+  const blob = new Blob([svgData], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = buildFilename('svg');
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function downloadPNG() {
+  const svgData = getSingleSVGString();
+  const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = function () {
+    const diameterIn = parseFloat(document.getElementById('diameter').value) || 1;
+    const dpi = 600;
+    const pxSize = Math.round(diameterIn * dpi);
+    const canvas = document.createElement('canvas');
+    canvas.width = pxSize;
+    canvas.height = pxSize;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(function (b) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(b);
+      a.download = buildFilename('png');
+      a.click();
+    });
+    URL.revokeObjectURL(url);
+  };
+  img.src = url;
+}
+
+function buildFilename(ext) {
+  const desc = document.getElementById('description').value.trim().replace(/\s+/g, '_');
+  const lot = document.getElementById('lot').value.trim().replace(/\s+/g, '_');
+  const base = [desc, lot].filter(Boolean).join('-') || 'label';
+  return `${base}.${ext}`;
+}
+
+render();
+</script>
+</body>
+</html>
