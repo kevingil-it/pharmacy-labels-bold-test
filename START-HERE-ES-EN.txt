@@ -1,0 +1,94 @@
+THE PHARMACY HUB — LABEL CENTER
+Portal 1.2 · Motivated 2.4.3 · Cottonball 2.4.4
+9 November 2026 / 9 de noviembre de 2026
+
+ESPAÑOL
+
+Para un equipo que ya está imprimiendo
+1. Descarga index.html. Si descargaste el ZIP, extráelo primero.
+2. Copia únicamente index.html en la carpeta donde ya están los dos programas.
+3. Conserva los HTML existentes en su ubicación y con sus nombres habituales.
+   No los reemplaces solo para instalar el selector.
+4. Abre index.html con el mismo navegador y perfil que usan para imprimir.
+5. Elige Motivated o Cottonball. El programa se abre en otra pestaña.
+   Para cambiar de cliente, vuelve a la pestaña Label Center.
+
+Los enlaces incluidos apuntan a compound-labels-NEW.html y cottonball-labels.html
+en la misma carpeta que index.html. Si el equipo utiliza otros nombres o los
+programas están en carpetas distintas, TI debe adaptar únicamente esos dos
+enlaces en index.html para apuntar a los archivos que ya se utilizan. No renombres
+ni muevas un programa existente para hacerlo coincidir con el enlace: la ruta
+del archivo puede afectar a los datos que el navegador muestra como guardados.
+
+Para un equipo nuevo
+1. Extrae el ZIP completo en una carpeta permanente.
+2. Abre index.html en Chrome o Edge.
+3. Usa el procedimiento de puesta en servicio habitual para cada programa:
+   revisar catálogo, configurar la impresora y comprobar una etiqueta física.
+   Los datos guardados en otro equipo no se copian automáticamente con el ZIP.
+
+Uso diario
+- Los botones Motivated y Cottonball abren los programas originales en otra
+  pestaña. La portada contiene el logo, el título, esos dos accesos y una guía breve.
+- Usa Print labels dentro del programa correspondiente.
+- Puedes mantener la orden sin terminar abierta en su pestaña al volver aquí.
+
+Archivos del paquete
+index.html                       Selector de clientes.
+compound-labels-NEW.html          Motivated 2.4.3, sin cambios.
+cottonball-labels.html            Cottonball 2.4.4, sin cambios.
+Documentation-ES-EN.html          Manual actualizado en español e inglés.
+cottonball-catalog-reference.csv  Referencia de las fórmulas iniciales.
+MAINTENANCE-ES-EN.txt              Cómo mantener el portal y añadir clientes.
+Verification-Results.json         Comprobaciones del paquete y huellas de archivo.
+
+Datos y publicación
+Label Center no lee, migra, comparte ni borra catálogos, contraseñas o perfiles.
+Cada programa mantiene su almacenamiento actual. Un sitio online usaría otro
+origen del navegador: el traslado de datos requiere un plan independiente.
+Este paquete está listo para uso local; no se ha publicado una dirección web.
+
+ENGLISH
+
+For a workstation that is already printing
+1. Download index.html. If you downloaded the ZIP, extract it first.
+2. Copy only index.html into the folder containing the two existing programs.
+3. Keep the existing HTML files at their usual paths and names.
+   Do not replace them just to install the selector.
+4. Open index.html with the same browser and profile used for printing.
+5. Choose Motivated or Cottonball. The program opens in another tab.
+   Return to the Label Center tab to choose another client.
+
+The supplied links point to compound-labels-NEW.html and cottonball-labels.html
+in the same folder as index.html. If a workstation uses different filenames or
+folders, IT should change only these two links in index.html to point to the
+existing programs. Do not rename or move an existing program to match a link:
+the file path can affect which saved data the browser makes available.
+
+For a new workstation
+1. Extract the entire ZIP into a permanent folder.
+2. Open index.html in Chrome or Edge.
+3. Follow the usual commissioning procedure for each program: review its
+   catalog, configure the printer and check a physical label. The ZIP does not
+   automatically transfer saved data from another workstation.
+
+Daily use
+- Motivated and Cottonball buttons open the original programs in another tab.
+  The entry page contains the logo, title, these two links and a short guide.
+- Use Print labels inside the selected program.
+- Keep unfinished orders open in their program tabs when returning here.
+
+Package files
+index.html                       Client selector.
+compound-labels-NEW.html          Motivated 2.4.3, unchanged.
+cottonball-labels.html            Cottonball 2.4.4, unchanged.
+Documentation-ES-EN.html          Updated English and Spanish manual.
+cottonball-catalog-reference.csv  Reference for the initial formulas.
+MAINTENANCE-ES-EN.txt              Portal maintenance and adding clients.
+Verification-Results.json         Package checks and file hashes.
+
+Data and publication
+Label Center does not read, migrate, share or delete catalogs, passwords or
+profiles. Each program keeps its existing storage behavior. An online site
+would use a different browser origin; moving saved data needs a separate plan.
+This package is ready for local use. No website address has been published.

@@ -1,0 +1,578 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Motivated & Cottonball - ES / EN documentation</title><style>body{margin:0;background:#f2f5f6;color:#172e3b;font:16px/1.6 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:36px 24px}nav{position:sticky;top:0;background:#fff;padding:12px 24px;border-bottom:1px solid #d4dfe2}a{color:#20315c}article{background:white;padding:28px;margin:24px 0;border:1px solid #d4dfe2;border-radius:10px}h1,h2,h3{line-height:1.25}h3{color:#20315c}table{border-collapse:collapse;width:100%;font-size:14px}th{background:#20315c;color:white;text-align:left}td,th{padding:10px;border:1px solid #d4dfe2;vertical-align:top;overflow-wrap:anywhere}td{white-space:pre-wrap}aside{background:#edf2fa;padding:14px;border-left:3px solid #20315c}@media print{nav{position:static}article{break-before:page;border:0}body{background:white}}</style><nav><a href="#es">Español</a> · <a href="#en">English</a></nav><main>
+<section id="es" lang="es"><h1>Documentación en español</h1><ol>
+<li><a href="#es-portal">Label Center: navegación e instalación</a></li>
+<li><a href="#es-0">Guía de uso y mantenimiento</a></li>
+<li><a href="#es-1">Preparar una orden</a></li>
+<li><a href="#es-2">Contenido del QR y temperatura</a></li>
+<li><a href="#es-3">Imprimir y exportar</a></li>
+<li><a href="#es-4">Configurar y guardar la alineación</a></li>
+<li><a href="#es-5">Administrar el catálogo</a></li>
+<li><a href="#es-6">Qué se guarda y cómo cambiar de equipo</a></li>
+<li><a href="#es-7">Resolver incidencias</a></li>
+<li><a href="#es-8">Mapa del código</a></li>
+<li><a href="#es-9">Reglas técnicas que deben conservarse</a></li>
+<li><a href="#es-10">Verificación y mantenimiento</a></li>
+<li><a href="#es-11">Catálogo inicial de Motivated</a></li>
+<li><a href="#es-12">Fórmulas QR de Cottonball · 1/4</a></li>
+<li><a href="#es-13">Fórmulas QR de Cottonball · 2/4</a></li>
+<li><a href="#es-14">Fórmulas QR de Cottonball · 3/4</a></li>
+<li><a href="#es-15">Fórmulas QR de Cottonball · 4/4</a></li>
+</ol>
+<article id="es-portal"><h2>The Pharmacy Hub — Label Center</h2>
+<p>El portal index.html es una portada independiente con el logo original de The Pharmacy Hub, el título Label Center y dos botones: Motivated y Cottonball. Cada botón abre el HTML correspondiente en otra pestaña, con sus formularios y controles de impresión originales. Para cambiar de programa, vuelva a la pestaña Label Center y deje abierta cualquier orden pendiente. La portada funciona sin JavaScript y no contiene controles de impresión. El logo, el título LABEL CENTER, los botones y la guía breve aparecen en una secuencia suave. El fondo tiene un movimiento tenue. Si el equipo tiene activada la preferencia de reducir movimiento, la página se muestra sin animaciones.</p>
+<h3>Instalar en un equipo que ya funciona</h3><p>Copie solo index.html junto a los programas actuales. No mueva ni renombre sus archivos ni borre el almacenamiento del navegador. Los enlaces incluidos apuntan a compound-labels-NEW.html y cottonball-labels.html en esa carpeta. Si las rutas reales son otras, adapte únicamente los href del selector para apuntar a los programas existentes. Use el mismo navegador y perfil de usuario.</p>
+<h3>Instalar en un equipo nuevo</h3><p>Extraiga el paquete completo en una carpeta permanente y abra index.html. Revise el catálogo y configure la impresora mediante el procedimiento habitual. La lista editada, contraseña y perfil de otro equipo no viajan automáticamente con estos HTML.</p>
+<h3>Alcance</h3><p>El selector no imprime, no utiliza iframe ni modifica catálogos, contraseñas, perfiles o modelos de etiqueta. Los dos programas del paquete son copias idénticas a sus versiones aprobadas. No se ha publicado una web online. Un cambio de dominio u origen requiere planificar la transferencia de datos del navegador antes de su uso en producción.</p>
+<p>START-HERE-ES-EN.txt contiene las instrucciones de instalación y MAINTENANCE-ES-EN.txt explica cómo añadir clientes sin modificar los motores existentes. Verification-Results.json registra las comprobaciones y las huellas SHA-256 del paquete.</p></article>
+<article id="es-0"><h2>Guía de uso y mantenimiento</h2>
+<p>Motivated Labels · Cottonball Labels</p>
+<p>Edición de documentación 1.3 · 9 de noviembre de 2026. Esta guía corresponde a Motivated 2.4.3, Cottonball 2.4.4 y Label Center 1.2. La página de selección añade navegación y conserva los dos programas de impresión sin cambios. Las secciones técnicas reflejan la impresión SVG directa y el título actualizado de VX.5.</p>
+<table><thead><tr><th>Archivo</th><th>Uso</th></tr></thead><tbody>
+<tr><td>compound-labels-NEW.html</td><td>Motivated: COMPOUNDED o FILLED; QR con el Lot; Quantity disponible.</td></tr>
+<tr><td>cottonball-labels.html</td><td>Cottonball: solo COMPOUNDED; QR con la fórmula de la variante; sin Quantity.</td></tr>
+</tbody></table>
+<h3>Cómo abrir los programas</h3>
+<p>Abra el HTML correspondiente directamente en Chrome o Edge. Cada archivo incluye la fuente, el generador QR, el logo y el catálogo inicial; no necesita una instalación ni un servidor para generar las etiquetas. Espere a que cargue la fuente antes de imprimir. Conserve una ubicación estable y use siempre el mismo navegador y perfil de usuario.</p>
+<h3>Contenido</h3>
+<table><thead><tr><th>Página</th><th>Tema</th></tr></thead><tbody>
+<tr><td>2</td><td>Preparar una orden</td></tr>
+<tr><td>3</td><td>QR y temperatura</td></tr>
+<tr><td>4</td><td>Impresión y exportación</td></tr>
+<tr><td>5</td><td>Configuración y alineación</td></tr>
+<tr><td>6</td><td>Administración de medicamentos</td></tr>
+<tr><td>7</td><td>Datos guardados y cambio de equipo</td></tr>
+<tr><td>8</td><td>Resolución de problemas</td></tr>
+<tr><td>9–10</td><td>Organización del código y reglas técnicas</td></tr>
+<tr><td>11</td><td>Verificación y mantenimiento</td></tr>
+<tr><td>12–16</td><td>Catálogos incluidos y fórmulas QR</td></tr>
+</tbody></table>
+<aside>Los nombres de campos y botones se mantienen en inglés para encontrarlos en pantalla. El programa coloca los datos suministrados; no determina recetas, fechas de uso ni condiciones de conservación.</aside>
+</article>
+<article id="es-1"><h2>Preparar una orden</h2>
+<h3>Secuencia de trabajo</h3>
+<p>1. Seleccione Medication preset. En Cottonball, seleccione también la variante correcta dentro de su grupo. Compruebe la descripción y el contenido de QR formula (loaded automatically).</p>
+<p>2. En Motivated, seleccione COMPOUNDED o FILLED en Preparation date type. Cottonball fija COMPOUNDED y no muestra ese selector. Complete la fecha de preparación, BUD, Lot y Number of labels.</p>
+<p>3. Revise Quantity cuando corresponda y TEMP si está activado. Espere a que Live label preview termine de comprobar el encaje. Revise también el resumen situado debajo de la vista previa.</p>
+<p>4. Imprima una etiqueta, compruebe la posición y escanee su QR. Después establezca la cantidad del lote y envíe la orden. Los pasos de impresión se detallan en la página 4.</p>
+<table><thead><tr><th>Campo</th><th>Comportamiento</th></tr></thead><tbody>
+<tr><td>Medication / strength</td><td>Hasta 200 caracteres. Se conserva la descripción; el motor decide cómo repartirla en los arcos.</td></tr>
+<tr><td>Preparation date / BUD</td><td>Las etiquetas muestran MM/DD/YYYY. El aspecto del selector depende del navegador. BUD anterior a preparación produce una advertencia; no es un bloqueo automático.</td></tr>
+<tr><td>Lot #</td><td>De 1 a 80 caracteres ASCII imprimibles sin espacios. Conserve ceros iniciales. El límite de longitud no garantiza que cualquier texto encaje.</td></tr>
+<tr><td>Quantity</td><td>Solo Motivated. Texto opcional, hasta 80 caracteres; se coloca debajo del QR.</td></tr>
+<tr><td>Number of labels</td><td>Entero de 1 a 500. Es el número de etiquetas que genera el archivo.</td></tr>
+</tbody></table>
+<h3>Estados de la vista previa</h3>
+<p>Draft indica que faltan datos o que se muestra un borrador. Fits significa que el modelo pasó las comprobaciones del programa. Check fit y DRAFT · DOES NOT FIT indican que no hay un modelo válido para imprimir. Un borrador visible nunca debe confundirse con una autorización de impresión.</p>
+<p>Load reference example sustituye los datos actuales por un ejemplo. Clear label data vacía la orden y restablece la temperatura según el programa; no borra el catálogo ni el perfil de impresora.</p>
+</article>
+<article id="es-2"><h2>Contenido del QR y temperatura</h2>
+<table><thead><tr><th>Característica</th><th>Motivated</th><th>Cottonball</th></tr></thead><tbody>
+<tr><td>Contenido QR</td><td>Lot exacto</td><td>Fórmula exacta de la variante</td></tr>
+<tr><td>Fechas dentro del QR</td><td>No</td><td>No</td></tr>
+<tr><td>Lot dentro del QR</td><td>Sí</td><td>No; se imprime aparte</td></tr>
+<tr><td>Quantity</td><td>Se imprime aparte, si se completa</td><td>No disponible</td></tr>
+<tr><td>TEMP inicial</td><td>Solo las dos fórmulas de Hair Spray</td><td>Activado para todos los presets</td></tr>
+</tbody></table>
+<h3>Cottonball: el nombre no identifica por sí solo la fórmula</h3>
+<p>Varias variantes comparten el mismo nombre impreso. NORMAL, SENSITIVE y las demás variantes pueden contener fórmulas distintas. El QR utiliza el texto guardado para la entrada seleccionada, conservando mayúsculas, porcentajes, signos y espacios. Cambiar Lot o las fechas no modifica esa fórmula.</p>
+<p>Si modifica manualmente Medication / strength en Cottonball, el programa limpia la selección y la fórmula QR para evitar una asociación incorrecta. Para una nueva fórmula, use Edit medications; el cuadro principal de fórmula es de solo lectura.</p>
+<h3>TEMP (°F)</h3>
+<p>La casilla añade o quita el bloque de temperatura. From y To aceptan exactamente dos dígitos cada uno. La unidad F y la palabra TEMP se añaden automáticamente. Compruebe el orden del rango: el código valida dos dígitos, pero no exige From menor que To. Sin números completos, el borrador muestra guiones y la orden no queda habilitada para imprimir.</p>
+<p>El rango incluido es 68–77 F, equivalente a 20–25 °C mediante F = C × 9/5 + 32. Los cuadros actuales reciben Fahrenheit: no convierten automáticamente un número que se escriba en Celsius. Al cambiar de preset se restablecen los valores de temperatura de ese preset.</p>
+<h3>Por qué algunos QR muestran más cuadros</h3>
+<p>La fórmula completa suele necesitar más módulos que un Lot corto. El tamaño de cada módulo se calcula en puntos enteros de la impresora y se conserva un margen blanco. La zona reservada y la matriz negra visible no son la misma medida. El programa no elimina ingredientes ni sustituye la fórmula por un enlace para reducirla.</p>
+</article>
+<article id="es-3"><h2>Imprimir y exportar</h2>
+<h3>Impresión desde el navegador</h3>
+<p>Mantenga activadas Label printing enabled y Use the configured printer settings on this workstation. Complete la orden y espere Fits. Pulse Print labels y elija la impresora correcta.</p>
+<table><thead><tr><th>Opción del diálogo</th><th>Valor de trabajo</th></tr></thead><tbody>
+<tr><td>Papel</td><td>Tamaño real de la etiqueta: 1.00 × 1.00 in para el perfil predeterminado.</td></tr>
+<tr><td>Escala</td><td>100%; sin ajuste automático a la página.</td></tr>
+<tr><td>Márgenes</td><td>None.</td></tr>
+<tr><td>Encabezados y pies</td><td>Desactivados.</td></tr>
+<tr><td>Copias del navegador</td><td>1. El archivo ya crea Number of labels páginas.</td></tr>
+</tbody></table>
+<p>Ejemplo: para 40 etiquetas, escriba 40 en Number of labels y deje 1 copia en Chrome. Pedir además 40 copias en el diálogo multiplicaría la orden. Una segunda orden debe enviarse después de comprobar el estado de la primera.</p>
+<h3>Archivos de salida</h3>
+<p>Download ZPL descarga instrucciones con los píxeles de la etiqueta para un flujo de envío ZPL ya configurado. No envía el archivo a una impresora USB por sí solo. Export SVG descarga la representación de la etiqueta válida. La impresión del navegador y el envío directo de ZPL son rutas distintas y deben comprobarse por separado.</p>
+<h3>Al terminar el diálogo</h3>
+<p>Cerrar el diálogo no prueba que la impresora haya terminado. El HTML no puede consultar ni vaciar la cola de Windows. Si la orden permanece pendiente, no vuelva a enviarla repetidamente: compruebe la cola y el estado de la impresora para evitar duplicados.</p>
+<p>Ambos programas envían directamente el SVG generado por LabelEngine.svg a partir del modelo de puntos validado. Motivated 2.4.3 retiró su conversión intermedia a PNG; conserva el bloqueo de clics duplicados, la reutilización del modelo por copia y la limpieza del documento al terminar. El selector Label Center abre cada programa en una pestaña independiente y no participa en la impresión. La apariencia suavizada en pantalla no sustituye la fuente ni la geometría de impresión.</p>
+<aside>Fits comprueba geometría y datos. La lectura de un QR físico también depende de la impresión, el material y el lector. La comprobación con una etiqueta impresa sigue formando parte de la puesta en servicio.</aside>
+</article>
+<article id="es-4"><h2>Configurar y guardar la alineación</h2>
+<table><thead><tr><th>Control</th><th>Predeterminado / significado</th></tr></thead><tbody>
+<tr><td>Printer resolution</td><td>300 dpi; también existe la opción 203 dpi.</td></tr>
+<tr><td>Physical label diameter</td><td>1.00 in: tamaño de página, no del dibujo interior.</td></tr>
+<tr><td>Content diameter (in)</td><td>0.95 in: área interior. A 1 in de página deja aproximadamente 0.64 mm por lado.</td></tr>
+<tr><td>QR area</td><td>Motivated: 4 puntos por módulo por defecto. Cottonball: Larger formula QR — default.</td></tr>
+<tr><td>X / Y correction (mm)</td><td>0 / 0 inicialmente. X positivo desplaza a la derecha; Y positivo desplaza hacia abajo.</td></tr>
+</tbody></table>
+<h3>Procedimiento por estación</h3>
+<p>1. Confirme impresora, papel y ajustes del diálogo. Use Print 1 alignment test; la prueba no contiene medicamentos. No cambie las medidas para corregir un desplazamiento constante.</p>
+<p>2. Si toda la impresión está desplazada en la misma dirección, ajuste X o Y. Los botones Left / Right / Up / Down 1 dot permiten pasos de un punto. Los valores se redondean a puntos físicos: aproximadamente 0.083 mm a 300 dpi. Zero X / Y elimina las correcciones.</p>
+<p>3. Use Print 10 alignment tests. Compare TEST 01 con TEST 10 y mida la barra horizontal de referencia de 10.16 mm. Un desplazamiento que aumenta durante la tira no se resuelve con una corrección fija de X/Y; revise tamaño de papel, guías y calibración del sensor en la impresora.</p>
+<p>4. Cuando la prueba sea correcta, pulse Save printer settings y después Export printer profile. Identifique el JSON por estación, impresora y método de impresión. Las correcciones se aplican a todos los medicamentos: no deben reajustarse al cambiar de nombre o entre COMPOUNDED y FILLED.</p>
+<p>Import printer profile carga los valores de un JSON; compruebe una prueba y pulse Save printer settings para conservarlos. Cambiar Physical label diameter restablece Content diameter a 0.05 in menos. Evite hacerlo accidentalmente al recuperar un perfil.</p>
+<aside>Impresoras del mismo modelo pueden requerir correcciones iniciales distintas. El HTML no detecta dónde cayó la tinta y no realiza un centrado físico por realimentación.</aside>
+</article>
+<article id="es-5"><h2>Administrar el catálogo</h2>
+<h3>Abrir y proteger la edición</h3>
+<p>Pulse Edit medications. La primera vez, cree una contraseña de al menos ocho caracteres y repítala. En las siguientes sesiones, escriba esa contraseña y pulse Unlock. La contraseña protege la edición de la lista; imprimir no la requiere. Cerrar el cuadro vuelve a bloquear la edición.</p>
+<h3>Añadir o corregir una entrada</h3>
+<p>Use + Add new para una nueva entrada o el lápiz de una fila para editarla. El nombre debe ocupar una línea, sin caracteres de control y con un máximo de 200 caracteres. No se admiten nombres duplicados, aunque solo difieran en mayúsculas y minúsculas.</p>
+<p>En Cottonball complete también QR formula (exact scanned text). El catálogo permite hasta 2000 caracteres almacenados, pero la fórmula todavía debe superar las reglas de capacidad y encaje del QR. Ese límite de almacenamiento no equivale a capacidad de impresión.</p>
+<p>Espere el resultado de las pruebas de muestra. Save se habilita cuando el nombre, la fórmula cuando corresponda y el perfil actual superan la validación. Tras guardar, seleccione la entrada desde el formulario principal y compruebe los datos reales de la orden. Una prueba de catálogo no cubre todos los Lot y fechas posibles.</p>
+<h3>Cambios simultáneos y errores de guardado</h3>
+<p>Si otra pestaña cambia la lista, el programa rechaza una escritura desactualizada o cierra el editor. Vuelva a abrir la lista para ver el estado más reciente. Si el navegador deniega almacenamiento o está lleno, el mensaje indica que el cambio no se guardó. No dé por guardada una entrada solo porque se ve en el editor.</p>
+<h3>Alcance de la contraseña</h3>
+<p>La contraseña se verifica localmente mediante PBKDF2-SHA-256, con sal aleatoria y 600000 iteraciones. Se guarda un verificador, no el texto de la contraseña. Los nombres y fórmulas del catálogo no están cifrados. Este control no equivale a cuentas de usuario de un servidor ni impide que alguien con acceso al equipo modifique el HTML o el almacenamiento.</p>
+<p>La interfaz actual no ofrece eliminación de entradas, exportación completa del catálogo ni recuperación de contraseña. No borre los datos del navegador como primer intento de recuperación: también se perdería la lista local.</p>
+</article>
+<article id="es-6"><h2>Qué se guarda y cómo cambiar de equipo</h2>
+<table><thead><tr><th>Dato</th><th>Dónde queda</th><th>Cómo se conserva</th></tr></thead><tbody>
+<tr><td>Código, logo, fuente y catálogo inicial</td><td>Dentro de cada HTML</td><td>Copiar el archivo completo.</td></tr>
+<tr><td>Perfil de impresora</td><td>Almacenamiento local del navegador</td><td>Save printer settings; respaldo con Export printer profile.</td></tr>
+<tr><td>Medicamentos añadidos o editados</td><td>Almacenamiento local del navegador</td><td>No se incorporan automáticamente al HTML descargado.</td></tr>
+<tr><td>Contraseña del catálogo</td><td>Verificador en el registro local</td><td>No se incluye en el JSON del perfil de impresora.</td></tr>
+<tr><td>Fechas, Lot y datos de la orden</td><td>Sesión del formulario</td><td>No se guardan como historial de órdenes.</td></tr>
+</tbody></table>
+<h3>Instalación en otro PC</h3>
+<p>Copie el HTML de la clínica y ábralo en el navegador elegido. Si dispone del perfil de esa misma estación e impresora, impórtelo, compruebe la alineación y guárdelo. Un perfil de otra impresora sirve como referencia de medidas, pero su corrección X/Y debe verificarse físicamente.</p>
+<p>El catálogo local y su contraseña requieren una transferencia independiente o volver a crear las entradas. La aplicación no proporciona un botón para esa transferencia. Si TI realiza un respaldo del almacenamiento, debe conservar el registro íntegro de cada catálogo, incluyendo esquema, entradas, revisión y verificador de contraseña, y validar su restauración antes de retirar el equipo anterior.</p>
+<h3>GitHub, archivos nuevos y navegación privada</h3>
+<p>Subir el HTML a GitHub conserva el código y los datos incluidos en ese archivo. No sube automáticamente localStorage, una contraseña creada después ni medicamentos añadidos desde la interfaz. Tampoco es necesario publicar el programa para usarlo localmente.</p>
+<p>Un archivo renombrado, otra carpeta, otro perfil del navegador o la navegación privada pueden usar un almacenamiento distinto o temporal. Antes de reemplazar un archivo, conserve el anterior, exporte el perfil y compruebe que la lista local aparece en la nueva copia. No suponga que ambos HTML comparten datos por estar en la misma carpeta.</p>
+</article>
+<article id="es-7"><h2>Resolver incidencias</h2>
+<table><thead><tr><th>Síntoma</th><th>Revisión y acción</th></tr></thead><tbody>
+<tr><td>Print labels deshabilitado</td><td>Complete los campos indicados. Revise las dos casillas de habilitación y espere la carga de la fuente. En Cottonball confirme que hay una fórmula seleccionada.</td></tr>
+<tr><td>Check fit / DOES NOT FIT</td><td>Revise descripción, Lot, medidas y QR area. Use los valores aprobados; no quite ingredientes ni fuerce la impresión. Guarde los datos exactos y una captura para reproducir el caso.</td></tr>
+<tr><td>Un QR se ve más pequeño</td><td>Compare QR + white margin y número de módulos. El espacio reservado incluye margen blanco; no todo el cuadro debe quedar negro. Compruebe la lectura de la fórmula completa en la impresión.</td></tr>
+<tr><td>Todas las etiquetas están desplazadas igual</td><td>Confirme papel, 100% y márgenes; pruebe X/Y y guarde el perfil de esa estación.</td></tr>
+<tr><td>La posición cambia a lo largo de la tira</td><td>Compare las diez pruebas de alineación. Revise alimentación, tamaño de papel, guías y calibración del sensor; un offset fijo no corrige avance acumulado.</td></tr>
+<tr><td>Solo cambian nombres cortos o FILLED al imprimir</td><td>Conserve la receta, modo, perfil y archivo exactos. Compare con una receta larga sin alterar el perfil aprobado. Motivated 2.4.3 utiliza la misma salida SVG directa para nombres cortos y largos. Incluya ambos casos y el cambio COMPOUNDED/FILLED al reproducir el problema.</td></tr>
+<tr><td>Trabajo retenido en la cola</td><td>Revise la cola y el estado de Windows/impresora. No reenvíe repetidamente. El HTML no puede confirmar finalización ni limpiar esa cola.</td></tr>
+<tr><td>Lista o contraseña no aparecen</td><td>Confirme navegador, perfil, ruta del archivo y permisos de almacenamiento. No borre los datos del navegador.</td></tr>
+</tbody></table>
+<h3>Datos útiles para soporte</h3>
+<p>Anote clínica, nombre del HTML, receta y variante, modo, fechas, Lot, temperatura, cantidad, DPI, diámetro, área de contenido, QR area y X/Y. Indique si el error aparece en preview, en impresión del navegador o en ZPL.</p>
+<p>Motivated incluye Download USB diagnostics: descarga un script de consulta para soporte de Windows. Lee estado del spooler, impresoras ZD621, metadatos de trabajos y eventos recientes; genera un JSON. No cancela trabajos ni reinicia servicios. Cottonball no incluye este botón.</p>
+</article>
+<article id="es-8"><h2>Mapa del código</h2>
+<p>Los HTML siguen siendo autónomos. La organización añade títulos de bloque, comentarios de propósito e indentación. Las funciones se conservan en su orden de ejecución y no se han extraído dependencias externas. Busque los números de sección dentro del archivo.</p>
+<table><thead><tr><th>Sección</th><th>Responsabilidad</th></tr></thead><tbody>
+<tr><td>01 · Styles</td><td>Fuente LabelSans integrada, interfaz, diálogo y reglas @media print. El estilo pageSize recibe el tamaño de página dinámico.</td></tr>
+<tr><td>02 · Markup</td><td>Campos y controles identificados por id, preview, printOnly y catálogo. Los id son parte de la conexión con el controlador.</td></tr>
+<tr><td>03 · QR encoder</td><td>qrcode-generator 2.0.4 de Kazuhiko Arase, con licencia MIT conservada.</td></tr>
+<tr><td>04 · LabelEngine</td><td>Medición de texto, arcos, rasterización, QR, búsqueda de encaje, calibración, SVG y ZPL. Coordenadas en puntos físicos.</td></tr>
+<tr><td>05 · Page controller</td><td>settings(), data(), render(), guard(), perfil de impresora, impresión, exportaciones y eventos de la interfaz.</td></tr>
+<tr><td>06 · Local catalog</td><td>Lectura y validación de registros, acceso con contraseña, edición, pruebas de muestra y control de cambios entre pestañas.</td></tr>
+</tbody></table>
+<h3>Flujo de una etiqueta</h3>
+<p>Los campos se leen mediante data() y settings(). LabelEngine construye máscaras de texto y QR, busca un encaje y entrega un modelo con pixels, dimensiones, QR, líneas y estado de validación. render() presenta el modelo o un borrador. guard() limita las acciones de salida al estado válido actual. SVG y ZPL utilizan esos píxeles; no vuelven a distribuir las letras.</p>
+<p>Cottonball usa buildSteps() y buildAsync() para repartir la búsqueda en intervalos cortos y cancelar resultados antiguos al cambiar la selección. Sus cachés se vacían cuando carga la fuente. Motivated mantiene su construcción síncrona y su secuencia de impresión específica.</p>
+<aside>Los recursos de fuente, logo y las licencias siguen dentro del HTML. No sustituya la fuente por una fuente del sistema: cambiarían la medición y el encaje.</aside>
+</article>
+<article id="es-9"><h2>Reglas técnicas que deben conservarse</h2>
+<h3>Unidades, geometría y texto</h3>
+<p>El perfil nominal de 300 dpi utiliza 12 puntos/mm; el de 203 dpi utiliza 8 puntos/mm. Por eso una página de 1 in se representa con unos 305 o 203 puntos, respectivamente. El perfil exportado conserva DPI nominal, diámetro, área interior, módulo QR y correcciones.</p>
+<p>La tipografía se rasteriza a un bit. El motor prueba particiones de la descripción, tamaños permitidos y posiciones de los arcos en un orden definido. No basta con que un texto tenga pocos caracteres: su ancho medido, la segunda línea, Lot y bloques centrales intervienen en el encaje. La separación de referencia entre texto curvo y bloques es aproximadamente 0.02 in.</p>
+<p>Cottonball 2.4.4 coloca “VX.5 UNDEREYE SMOOTHING &amp; BRIGHTENING” en el arco exterior y solo “BALM” en el interior, tanto en NORMAL como en SENSITIVE. Usa los arcos largos habituales, sin la rotación lateral ni el desplazamiento especial del arco interior anteriores. Mantiene el título de 5,5 pt, el bloque COMPOUNDED/fecha de 5 pt y la fórmula, posición y tamaño del QR. TEMP conserva sus 4 pt y baja 0,5 mm solo en VX.5. Lote/BUD mantiene sus opciones de 6 y 5,5 pt; algunos lotes largos usan 5,5 pt para conservar la separación. Las otras 30 variantes conservan su salida anterior. No desactive las comprobaciones de colisión para ocultar un error de encaje.</p>
+<h3>QR</h3>
+<p>Motivated selecciona Numeric, Alphanumeric o Byte según el Lot y usa corrección de errores M. Cottonball codifica la fórmula ASCII completa en Byte. Reserva 37 × moduleDots puntos por lado: con el valor 4, la reserva es de 148 × 148 puntos. Intenta M y después L si necesita conservar al menos tres puntos por módulo.</p>
+<p>Se preserva un margen blanco de al menos cuatro módulos. El QR se coloca en una posición fija para el perfil; la búsqueda de texto no debe moverlo para hacer espacio. El selector de Cottonball ofrece 4 o 5; el valor 3 aparece deshabilitado. Un área mayor puede entrar en conflicto con otros bloques y no sustituye una validación.</p>
+<h3>Persistencia y compatibilidad</h3>
+<table><thead><tr><th>Clave de localStorage</th><th>Contenido</th></tr></thead><tbody>
+<tr><td>compound-labels-printer-v2</td><td>Perfil usado por ambos programas; layoutVersion 4.</td></tr>
+<tr><td>compound-labels-catalog-v1</td><td>Catálogo y verificador de Motivated.</td></tr>
+<tr><td>cottonball-labels-catalog-v1</td><td>Catálogo y verificador de Cottonball.</td></tr>
+</tbody></table>
+<p>La coincidencia de clave de perfil solo comparte valores cuando el navegador asigna el mismo almacenamiento. No cambie estas claves ni elimine las migraciones existentes como parte de una limpieza de código.</p>
+</article>
+<article id="es-10"><h2>Verificación y mantenimiento</h2>
+<h3>Alcance de esta entrega</h3>
+<p>La reorganización modifica la presentación del código y añade comentarios. No cambia recetas, fórmulas, unidades, valores predeterminados, tamaño del QR, perfil de impresora, reglas de encaje, controles ni contraseñas. No incorpora una nueva corrección de impresión ni da por resueltas incidencias físicas anteriores.</p>
+<h3>Comprobaciones realizadas</h3>
+<p>Se compara la estructura sintáctica de los cuatro bloques JavaScript de cada archivo antes y después, excluyendo únicamente posición de código y comentarios. Se comparan texto y atributos HTML, recursos integrados y secuencia de tokens CSS. Las salidas de prueba comparan píxeles, SVG y ZPL con los archivos de partida. El informe de verificación incluido registra los resultados concretos.</p>
+<p>La comparación cubre los presets incluidos, ambos modos de Motivated, ceros iniciales en Lot, temperatura y los casos largos de Cottonball. Se extrae y decodifica el QR generado para verificar su contenido. Estas pruebas son de software; no sustituyen una impresión en Windows ni una lectura con el celular.</p>
+<h3>Antes de distribuir una modificación posterior</h3>
+<p>Conserve los dos HTML de referencia y el perfil aprobado. Registre el cambio previsto y limite la edición al bloque correspondiente. Mantenga las cadenas originales del catálogo, las licencias y el orden de inicialización. Si el cambio es solo de formato, exija equivalencia de la lógica y de las salidas.</p>
+<table><thead><tr><th>Prueba de aceptación en estación</th><th>Qué comprobar</th></tr></thead><tbody>
+<tr><td>Motivated: nombre corto y fórmula larga</td><td>COMPOUNDED y FILLED con el mismo perfil; posición, QR y texto completo.</td></tr>
+<tr><td>Cottonball: VX.5 NORMAL y SENSITIVE</td><td>Fechas y Lot reales, temperatura, Fits y fórmula completa al escanear.</td></tr>
+<tr><td>Secuencia de órdenes</td><td>Una etiqueta, una tanda de 41 y una nueva orden de una; revisar cola y posibles duplicados.</td></tr>
+<tr><td>Perfil y catálogo</td><td>Reabrir el archivo, comprobar valores guardados y confirmar una edición de prueba autorizada.</td></tr>
+</tbody></table>
+<p>Distribuya el archivo solo después de comprobar la estación de destino. Identifique claramente la copia nueva y conserve la anterior para volver a ella si la prueba falla. No mezcle una actualización de código con una recalibración sin registrar ambos cambios.</p>
+</article>
+<article id="es-11"><h2>Catálogo inicial de Motivated</h2>
+<p>Estas 18 entradas están incluidas en el HTML. La lista que ve una estación puede diferir si se ha editado localmente. Los nombres se reproducen como están guardados, sin normalizar su capitalización. El QR de todas estas entradas contiene el Lot introducido en la orden.</p>
+<table><thead><tr><th>N.º</th><th>Medication preset</th></tr></thead><tbody>
+<tr><td>1</td><td>TAD7MG/FLUOXETINE 23MG/ ZINC30MG</td></tr>
+<tr><td>2</td><td>SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU</td></tr>
+<tr><td>3</td><td>SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU</td></tr>
+<tr><td>4</td><td>TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)</td></tr>
+<tr><td>5</td><td>SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)</td></tr>
+<tr><td>6</td><td>Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</td></tr>
+<tr><td>7</td><td>Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</td></tr>
+<tr><td>8</td><td>SILDENAFIL 25MG</td></tr>
+<tr><td>9</td><td>SILDENAFIL 50MG</td></tr>
+<tr><td>10</td><td>SILDENAFIL 100MG</td></tr>
+<tr><td>11</td><td>TADALAFIL 2.5MG</td></tr>
+<tr><td>12</td><td>TADALAFIL 5MG</td></tr>
+<tr><td>13</td><td>TADALAFIL 10MG</td></tr>
+<tr><td>14</td><td>TADALAFIL 20MG</td></tr>
+<tr><td>15</td><td>FINASTERIDE 1MG</td></tr>
+<tr><td>16</td><td>MINOXIDIL 2.5MG</td></tr>
+<tr><td>17</td><td>MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN</td></tr>
+<tr><td>18</td><td>FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN</td></tr>
+</tbody></table>
+<p>TEMP está activado inicialmente para las dos últimas entradas. En las demás comienza desactivado y puede activarse manualmente. En ambos casos los campos usan Fahrenheit.</p>
+</article>
+<article id="es-12"><h2>Fórmulas QR de Cottonball · 1/4</h2>
+<p>Transcripción del catálogo incluido, no una recomendación de formulación. Los códigos y variantes se conservan en inglés. “PDF (12)” y “PDF (2)” distinguen dos referencias RESISTANT diferentes de CX.1; no deben unificarse.</p>
+<table><thead><tr><th>Código / variante</th><th>Contenido QR</th></tr></thead><tbody>
+<tr><td>CX.1 / NORMAL</td><td>Hydroquinone 6.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  1.00% / Tretinoin 0.03%</td></tr>
+<tr><td>CX.1 / SENSITIVE</td><td>Hydroquinone 4.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  2.00% / Tretinoin 0.01%</td></tr>
+<tr><td>CX.1 / RESISTANT — PDF (12)</td><td>Hydroquinone 8.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  1.00% / Tretinoin 0.05%</td></tr>
+<tr><td>VX.1 / NORMAL</td><td>Rapamycin 0.10% / Tretinoin 0.03% / Bakuchiol 0.25%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.1 / SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01% / Bakuchiol 1.00%/ Niacinamide 2.00% Dexpanthenol 1.00%</td></tr>
+<tr><td>VX.1 / RESISTANT SKIN</td><td>Rapamycin 0.10% / Tretinoin 0.05% / Bakuchiol 0.25%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.1 / ACNE-PRONE</td><td>Rapamycin 0.10% / Tretinoin 0.03%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Azelaic Acid  5.00%</td></tr>
+<tr><td>VX.1 / ACNE-PRONE SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01%/ Bakuchiol 1.00%/ Niacinamide 2.00% /Dexpanthenol  1.00% /  Azelaic Acid  5.00%</td></tr>
+</tbody></table>
+<p>El archivo cottonball-catalog-reference.csv incluido conserva las cadenas originales, incluidos los espacios repetidos. Es una referencia de consulta; la aplicación no ofrece importación de ese CSV.</p>
+</article>
+<article id="es-13"><h2>Fórmulas QR de Cottonball · 2/4</h2>
+<p>Transcripción del catálogo incluido, no una recomendación de formulación. Los códigos y variantes se conservan en inglés. “PDF (12)” y “PDF (2)” distinguen dos referencias RESISTANT diferentes de CX.1; no deben unificarse.</p>
+<table><thead><tr><th>Código / variante</th><th>Contenido QR</th></tr></thead><tbody>
+<tr><td>VX.1 / RESISTANT ACNE-PRONE</td><td>Rapamycin 0.10% / Tretinoin 0.05%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Azelaic Acid  5.00%</td></tr>
+<tr><td>VX.1 / HYPER-PIGMENTED</td><td>Rapamycin 0.10% / Tretinoin 0.03%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.1 / HYPER-PIGMENTED SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01%/ Bakuchiol 1.00%/ Niacinamide 2.00% / Dexpanthenol 1.00 % / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.1 / RESISTANT HYPER-PIGMENTED</td><td>Rapamycin 0.10% / Tretinoin 0.05%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / NORMAL</td><td>Tretinoin  0.05%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.2 / SENSITIVE</td><td>Tretinoin  0.02% / Niacinamide 2.00% / Dexpanthenol 1.00%</td></tr>
+<tr><td>VX.2 / RESISTANT SKIN</td><td>Tretinoin  0.10% / Niacinamide 4.00%</td></tr>
+<tr><td>VX.2 / ACNE-PRONE</td><td>Tretinoin  0.05% / Niacinamide 4.00% / Azelaic Acid 5.00%</td></tr>
+</tbody></table>
+<p>El archivo cottonball-catalog-reference.csv incluido conserva las cadenas originales, incluidos los espacios repetidos. Es una referencia de consulta; la aplicación no ofrece importación de ese CSV.</p>
+</article>
+<article id="es-14"><h2>Fórmulas QR de Cottonball · 3/4</h2>
+<p>Transcripción del catálogo incluido, no una recomendación de formulación. Los códigos y variantes se conservan en inglés. “PDF (12)” y “PDF (2)” distinguen dos referencias RESISTANT diferentes de CX.1; no deben unificarse.</p>
+<table><thead><tr><th>Código / variante</th><th>Contenido QR</th></tr></thead><tbody>
+<tr><td>VX.2 / ACNE-PRONE SENSITIVE</td><td>Tretinoin 0.02% / Niacinamide 2% / Dexpanthenol 1% / Azelaic Acid 5%</td></tr>
+<tr><td>VX.2 / RESISTANT ACNE-PRONE</td><td>Tretinoin  0.10% /  Niacinamide 4.00% / Azelaic Acid 5.00%</td></tr>
+<tr><td>VX.2 / HYPER-PIGMENTED</td><td>Tretinoin  0.05% /  Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / HYPER-PIGMENTED SENSITIVE</td><td>Tretinoin  0.02% / Niacinamide 2.00% / Dexpanthenol 1.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / RESISTANT HYPER-PIGMENTED</td><td>Tretinoin  0.10%/ Niacinamide 1.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.3 / NORMAL</td><td>Estriol0.30% /  Ascorbic Acid 2.00%</td></tr>
+<tr><td>VX.3 / SENSITIVE</td><td>Estriol 0.30%/ Ascorbic Acid 1.00%</td></tr>
+<tr><td>VX.3 / ACNE-PRONE</td><td>Estriol 0.30%/ Ascorbic Acid 1.00% / Azelaic Acid 5.00%</td></tr>
+</tbody></table>
+<p>El archivo cottonball-catalog-reference.csv incluido conserva las cadenas originales, incluidos los espacios repetidos. Es una referencia de consulta; la aplicación no ofrece importación de ese CSV.</p>
+</article>
+<article id="es-15"><h2>Fórmulas QR de Cottonball · 4/4</h2>
+<p>Transcripción del catálogo incluido, no una recomendación de formulación. Los códigos y variantes se conservan en inglés. “PDF (12)” y “PDF (2)” distinguen dos referencias RESISTANT diferentes de CX.1; no deben unificarse.</p>
+<table><thead><tr><th>Código / variante</th><th>Contenido QR</th></tr></thead><tbody>
+<tr><td>VX.4 / NORMAL</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid 3.00%/ Tretinoin0.03%/ Alpha Arbutin 2.50%</td></tr>
+<tr><td>VX.4 / SENSITIVE</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid  2.00%/ Tretinoin 0.01%/ Alpha Arbutin 2.50%</td></tr>
+<tr><td>VX.4 / RESISTANT</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid 3.00%/ Tretinoin0.05%/ Alpha Arbutin 2.50%/ Kojic Acid 1.50%</td></tr>
+<tr><td>VX.5 / NORMAL</td><td>Tretinoin 0.01% / Caffeine 0.50% / Ascorbic Acid (Vit C) 4.00% / Phytonadione (Vit K) 0.20%</td></tr>
+<tr><td>VX.5 / SENSITIVE</td><td>Bakuchiol 0.50% / Niacinamide 2.00% / Caffeine 0.50% / Ascorbic Acid (Vit C) 1.00% / Phytonadione (Vit K) 0.20%</td></tr>
+<tr><td>VX.6 / NORMAL</td><td>Tretinoin 0.02% / Niacinamide 2.5% / Tranexamic Acid 2% / Alpha Arbutin 0.5%</td></tr>
+<tr><td>VX.6 / SENSITIVE</td><td>Tretinoin 0.01% / Niacinamide 2.00% / Tranexamic Acid 2.00% / Alpha Arbutin 1.00%</td></tr>
+<tr><td>CX.1 / RESISTANT — PDF (2)</td><td>Hydroquinone 8% / Niacinamide 2% / Fluocinolone 0.01% / Kojic Acid 1% / Tretinoin 0.05% -Resistant</td></tr>
+</tbody></table>
+<p>El archivo cottonball-catalog-reference.csv incluido conserva las cadenas originales, incluidos los espacios repetidos. Es una referencia de consulta; la aplicación no ofrece importación de ese CSV.</p>
+</article>
+</section>
+<section id="en" lang="en"><h1>English documentation</h1><ol>
+<li><a href="#en-portal">Label Center: navigation and setup</a></li>
+<li><a href="#en-0">User and maintenance guide</a></li>
+<li><a href="#en-1">Preparing an order</a></li>
+<li><a href="#en-2">QR content and temperature</a></li>
+<li><a href="#en-3">Printing and exporting</a></li>
+<li><a href="#en-4">Configuring and saving alignment</a></li>
+<li><a href="#en-5">Managing the catalog</a></li>
+<li><a href="#en-6">What is saved and how to move computers</a></li>
+<li><a href="#en-7">Troubleshooting</a></li>
+<li><a href="#en-8">Code map</a></li>
+<li><a href="#en-9">Technical rules to preserve</a></li>
+<li><a href="#en-10">Verification and maintenance</a></li>
+<li><a href="#en-11">Initial Motivated catalog</a></li>
+<li><a href="#en-12">Cottonball QR formulas · 1/4</a></li>
+<li><a href="#en-13">Cottonball QR formulas · 2/4</a></li>
+<li><a href="#en-14">Cottonball QR formulas · 3/4</a></li>
+<li><a href="#en-15">Cottonball QR formulas · 4/4</a></li>
+</ol>
+<article id="en-portal"><h2>The Pharmacy Hub — Label Center</h2>
+<p>The index.html portal is a separate entry page with the original The Pharmacy Hub logo, the Label Center title and two buttons: Motivated and Cottonball. Each button opens the corresponding HTML in another tab with its original forms and print controls. Return to the Label Center tab to switch programs, keeping any unfinished order open. The entry page works without JavaScript and contains no print controls. The logo, LABEL CENTER heading, buttons and short guide appear in a gentle sequence. The background moves subtly. If the system requests reduced motion, the page displays without animations.</p>
+<h3>Installing on a working workstation</h3><p>Copy only index.html beside the existing programs. Do not move or rename those files or clear browser storage. Included links point to compound-labels-NEW.html and cottonball-labels.html in that folder. If actual paths differ, change only the selector href values to point to the existing programs. Use the same browser and user profile.</p>
+<h3>Installing on a new workstation</h3><p>Extract the entire package into a permanent folder and open index.html. Review the catalog and configure the printer using the usual procedure. Another workstation's edited list, password and profile do not automatically travel with these HTML files.</p>
+<h3>Scope</h3><p>The selector does not print, use iframes, or change catalogs, passwords, profiles or label models. The two programs in the package are identical copies of their approved versions. No online website has been published. Changing the domain or origin requires planning browser-data transfer before production use.</p>
+<p>START-HERE-ES-EN.txt contains installation instructions. MAINTENANCE-ES-EN.txt explains how to add clients without modifying existing engines. Verification-Results.json records package checks and SHA-256 hashes.</p></article>
+<article id="en-0"><h2>User and maintenance guide</h2>
+<p>Motivated Labels · Cottonball Labels</p>
+<p>Documentation edition 1.3 · November 9, 2026. This guide covers Motivated 2.4.3, Cottonball 2.4.4 and Label Center 1.2. The selector adds navigation while keeping both printing programs unchanged. Technical sections reflect direct SVG printing and the updated VX.5 title.</p>
+<table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>compound-labels-NEW.html</td><td>Motivated: COMPOUNDED or FILLED; Lot QR; Quantity available.</td></tr>
+<tr><td>cottonball-labels.html</td><td>Cottonball: COMPOUNDED only; variant formula QR; no Quantity.</td></tr>
+</tbody></table>
+<h3>Opening the programs</h3>
+<p>Open the appropriate HTML directly in Chrome or Edge. Each file includes its font, QR encoder, logo and initial catalog; label generation does not require installation or a server. Wait for the font to load before printing. Keep a stable file location and use the same browser and user profile.</p>
+<h3>Contents</h3>
+<table><thead><tr><th>Page</th><th>Topic</th></tr></thead><tbody>
+<tr><td>2</td><td>Preparing an order</td></tr>
+<tr><td>3</td><td>QR and temperature</td></tr>
+<tr><td>4</td><td>Printing and exporting</td></tr>
+<tr><td>5</td><td>Printer setup and alignment</td></tr>
+<tr><td>6</td><td>Medication administration</td></tr>
+<tr><td>7</td><td>Saved data and moving computers</td></tr>
+<tr><td>8</td><td>Troubleshooting</td></tr>
+<tr><td>9–10</td><td>Code organization and technical rules</td></tr>
+<tr><td>11</td><td>Verification and maintenance</td></tr>
+<tr><td>12–16</td><td>Included catalogs and QR formulas</td></tr>
+</tbody></table>
+<aside>Field and button names remain in English so they can be located on screen. The program places the supplied data; it does not determine prescriptions, use dates or storage conditions.</aside>
+</article>
+<article id="en-1"><h2>Preparing an order</h2>
+<h3>Working sequence</h3>
+<p>1. Select Medication preset. In Cottonball, choose the correct variant within its group. Check the description and the content of QR formula (loaded automatically).</p>
+<p>2. In Motivated, choose COMPOUNDED or FILLED in Preparation date type. Cottonball fixes COMPOUNDED and does not show that selector. Complete the preparation date, BUD, Lot and Number of labels.</p>
+<p>3. Review Quantity where applicable and TEMP when enabled. Wait for Live label preview to finish checking fit. Also review the summary below the preview.</p>
+<p>4. Print one label, check its position and scan its QR. Then set the batch quantity and submit the job. Printing steps are detailed on page 4.</p>
+<table><thead><tr><th>Field</th><th>Behavior</th></tr></thead><tbody>
+<tr><td>Medication / strength</td><td>Up to 200 characters. The description is retained; the engine decides how to divide it across the arcs.</td></tr>
+<tr><td>Preparation date / BUD</td><td>Labels display MM/DD/YYYY. Date-picker appearance depends on the browser. A BUD before preparation produces a warning; it is not an automatic block.</td></tr>
+<tr><td>Lot #</td><td>1–80 printable ASCII characters without spaces. Preserve leading zeros. The length limit does not guarantee that every string fits.</td></tr>
+<tr><td>Quantity</td><td>Motivated only. Optional text, up to 80 characters; placed below the QR.</td></tr>
+<tr><td>Number of labels</td><td>Integer from 1 to 500. This is the number of labels generated by the file.</td></tr>
+</tbody></table>
+<h3>Preview states</h3>
+<p>Draft means data are missing or a draft is being shown. Fits means the model passed the program checks. Check fit and DRAFT · DOES NOT FIT indicate that no valid printable model is available. A visible draft must not be mistaken for print approval.</p>
+<p>Load reference example replaces the current data with an example. Clear label data clears the order and restores temperature according to the program; it does not delete the catalog or printer profile.</p>
+</article>
+<article id="en-2"><h2>QR content and temperature</h2>
+<table><thead><tr><th>Feature</th><th>Motivated</th><th>Cottonball</th></tr></thead><tbody>
+<tr><td>QR content</td><td>Exact Lot</td><td>Exact variant formula</td></tr>
+<tr><td>Dates inside QR</td><td>No</td><td>No</td></tr>
+<tr><td>Lot inside QR</td><td>Yes</td><td>No; printed separately</td></tr>
+<tr><td>Quantity</td><td>Printed separately when entered</td><td>Not available</td></tr>
+<tr><td>Initial TEMP</td><td>Only the two Hair Spray formulas</td><td>Enabled for every preset</td></tr>
+</tbody></table>
+<h3>Cottonball: the name alone does not identify the formula</h3>
+<p>Several variants share the same printed name. NORMAL, SENSITIVE and the other variants can contain different formulas. The QR uses the text stored for the selected entry, preserving capitalization, percentages, punctuation and spaces. Changing Lot or dates does not modify that formula.</p>
+<p>If you manually edit Medication / strength in Cottonball, the program clears the selection and QR formula to prevent an incorrect association. For a new formula, use Edit medications; the main formula field is read-only.</p>
+<h3>TEMP (°F)</h3>
+<p>The checkbox adds or removes the temperature block. From and To each accept exactly two digits. The unit F and the word TEMP are added automatically. Check the range order: the code validates two digits but does not require From to be less than To. Without complete numbers, the draft shows dashes and the order is not enabled for printing.</p>
+<p>The included range is 68–77 F, equivalent to 20–25 °C using F = C × 9/5 + 32. The current fields take Fahrenheit: they do not automatically convert a number entered in Celsius. Switching presets restores that preset’s temperature defaults.</p>
+<h3>Why some QR codes show more squares</h3>
+<p>A complete formula usually needs more modules than a short Lot. Each module is sized in whole printer dots and a white margin is retained. The reserved area and the visible black matrix are different measurements. The program does not remove ingredients or replace the formula with a link to make it smaller.</p>
+</article>
+<article id="en-3"><h2>Printing and exporting</h2>
+<h3>Browser printing</h3>
+<p>Keep Label printing enabled and Use the configured printer settings on this workstation checked. Complete the order and wait for Fits. Click Print labels and select the correct printer.</p>
+<table><thead><tr><th>Dialog setting</th><th>Working value</th></tr></thead><tbody>
+<tr><td>Paper</td><td>Actual label size: 1.00 × 1.00 in for the default profile.</td></tr>
+<tr><td>Scale</td><td>100%; no automatic fit to page.</td></tr>
+<tr><td>Margins</td><td>None.</td></tr>
+<tr><td>Headers and footers</td><td>Off.</td></tr>
+<tr><td>Browser copies</td><td>1. The file already creates Number of labels pages.</td></tr>
+</tbody></table>
+<p>Example: for 40 labels, enter 40 in Number of labels and leave Chrome copies at 1. Also requesting 40 copies in the dialog would multiply the job. Submit a second job after checking the first job’s state.</p>
+<h3>Output files</h3>
+<p>Download ZPL downloads instructions containing label pixels for an already configured ZPL delivery workflow. It does not send the file to a USB printer by itself. Export SVG downloads the valid label representation. Browser printing and direct ZPL delivery are different paths and must be checked separately.</p>
+<h3>After the dialog closes</h3>
+<p>Closing the dialog does not prove that the printer has finished. The HTML cannot inspect or clear the Windows queue. If a job remains pending, do not repeatedly resubmit it: check the queue and printer status to avoid duplicates.</p>
+<p>Both programs send the SVG generated by LabelEngine.svg directly from the validated dot model. Motivated 2.4.3 removed its intermediate PNG conversion while retaining duplicate-click blocking, model reuse for copies and print-document cleanup. Label Center opens each program in an independent tab and does not participate in printing. The smooth screen appearance does not replace the printing font or geometry.</p>
+<aside>Fits checks geometry and data. Reading a physical QR also depends on printing, media and the scanner. Checking a printed label remains part of commissioning.</aside>
+</article>
+<article id="en-4"><h2>Configuring and saving alignment</h2>
+<table><thead><tr><th>Control</th><th>Default / meaning</th></tr></thead><tbody>
+<tr><td>Printer resolution</td><td>300 dpi; a 203 dpi option also exists.</td></tr>
+<tr><td>Physical label diameter</td><td>1.00 in: page size, not the inner artwork.</td></tr>
+<tr><td>Content diameter (in)</td><td>0.95 in: inner area. On a 1 in page this leaves about 0.64 mm per side.</td></tr>
+<tr><td>QR area</td><td>Motivated: 4 dots per module by default. Cottonball: Larger formula QR — default.</td></tr>
+<tr><td>X / Y correction (mm)</td><td>Initially 0 / 0. Positive X moves right; positive Y moves down.</td></tr>
+</tbody></table>
+<h3>Workstation procedure</h3>
+<p>1. Confirm the printer, stock and dialog settings. Use Print 1 alignment test; the test contains no medication data. Do not change dimensions to correct a constant positional offset.</p>
+<p>2. If the entire print is consistently displaced in the same direction, adjust X or Y. The Left / Right / Up / Down 1 dot buttons provide one-dot steps. Values are rounded to physical dots: approximately 0.083 mm at 300 dpi. Zero X / Y removes the corrections.</p>
+<p>3. Use Print 10 alignment tests. Compare TEST 01 with TEST 10 and measure the 10.16 mm horizontal reference bar. An offset that increases along the strip is not solved by a fixed X/Y correction; check stock size, guides and sensor calibration at the printer.</p>
+<p>4. When the test is correct, click Save printer settings and then Export printer profile. Identify the JSON by workstation, printer and printing method. Corrections apply to every medication: do not readjust them when changing names or switching between COMPOUNDED and FILLED.</p>
+<p>Import printer profile loads values from a JSON; check a test print and click Save printer settings to retain them. Changing Physical label diameter resets Content diameter to 0.05 in less. Avoid doing this accidentally when restoring a profile.</p>
+<aside>Printers of the same model may require different initial corrections. The HTML does not detect where ink landed and does not perform physical feedback-based centering.</aside>
+</article>
+<article id="en-5"><h2>Managing the catalog</h2>
+<h3>Opening and protecting editing</h3>
+<p>Click Edit medications. The first time, create a password of at least eight characters and confirm it. In later sessions, enter that password and click Unlock. The password protects list editing; printing does not require it. Closing the dialog locks editing again.</p>
+<h3>Adding or correcting an entry</h3>
+<p>Use + Add new for a new entry or the pencil on a row to edit it. The name must be one line, without control characters and with a maximum of 200 characters. Duplicate names are rejected even if they differ only in letter case.</p>
+<p>In Cottonball, also complete QR formula (exact scanned text). The catalog allows up to 2000 stored characters, but the formula must still pass QR capacity and fit rules. That storage limit is not a print-capacity guarantee.</p>
+<p>Wait for the sample-check result. Save is enabled when the name, formula where applicable and current profile pass validation. After saving, select the entry from the main form and check the actual order data. A catalog check does not cover every possible Lot and date.</p>
+<h3>Concurrent changes and save failures</h3>
+<p>If another tab changes the list, the program rejects a stale write or closes the editor. Reopen the list to see its latest state. If the browser denies storage or is full, the message states that the change was not saved. Do not assume an entry was saved merely because it is visible in the editor.</p>
+<h3>Password scope</h3>
+<p>The password is verified locally using PBKDF2-SHA-256, a random salt and 600000 iterations. A verifier is stored, not the password text. Catalog names and formulas are not encrypted. This control is not equivalent to server user accounts and does not prevent someone with computer access from changing the HTML or storage.</p>
+<p>The current interface does not offer entry deletion, full catalog export or password recovery. Do not clear browser data as the first recovery attempt: the local list would also be lost.</p>
+</article>
+<article id="en-6"><h2>What is saved and how to move computers</h2>
+<table><thead><tr><th>Data</th><th>Location</th><th>How to retain it</th></tr></thead><tbody>
+<tr><td>Code, logo, font and initial catalog</td><td>Inside each HTML</td><td>Copy the complete file.</td></tr>
+<tr><td>Printer profile</td><td>Browser local storage</td><td>Save printer settings; back up with Export printer profile.</td></tr>
+<tr><td>Added or edited medications</td><td>Browser local storage</td><td>Not automatically incorporated into the downloaded HTML.</td></tr>
+<tr><td>Catalog password</td><td>Verifier in the local record</td><td>Not included in the printer-profile JSON.</td></tr>
+<tr><td>Dates, Lot and order data</td><td>Form session</td><td>Not saved as an order history.</td></tr>
+</tbody></table>
+<h3>Installing on another PC</h3>
+<p>Copy the clinic HTML and open it in the chosen browser. If you have a profile for that same workstation and printer, import it, check alignment and save it. A profile from another printer is a dimensional reference, but its X/Y correction needs physical verification.</p>
+<p>The local catalog and its password require a separate transfer or recreation of entries. The application does not provide a button for that transfer. If IT backs up storage, it must retain each complete catalog record, including schema, entries, revision and password verifier, and validate restoration before retiring the previous computer.</p>
+<h3>GitHub, new files and private browsing</h3>
+<p>Uploading the HTML to GitHub preserves code and data included in that file. It does not automatically upload localStorage, a password created later or medications added through the interface. Publishing the program is not required for local use.</p>
+<p>A renamed file, another folder, another browser profile or private browsing can use different or temporary storage. Before replacing a file, keep the previous one, export the profile and check that the local list appears in the new copy. Do not assume both HTML files share data merely because they are in the same folder.</p>
+</article>
+<article id="en-7"><h2>Troubleshooting</h2>
+<table><thead><tr><th>Symptom</th><th>Check and action</th></tr></thead><tbody>
+<tr><td>Print labels disabled</td><td>Complete the listed fields. Check both enabling checkboxes and wait for the font. In Cottonball, confirm a formula is selected.</td></tr>
+<tr><td>Check fit / DOES NOT FIT</td><td>Check description, Lot, dimensions and QR area. Use approved values; do not remove ingredients or force printing. Keep the exact data and a screenshot to reproduce the case.</td></tr>
+<tr><td>A QR looks smaller</td><td>Compare QR + white margin and module count. The reserved space includes a white margin; the whole square should not be black. Check the complete formula from a printed scan.</td></tr>
+<tr><td>Every label has the same offset</td><td>Confirm stock, 100% and margins; test X/Y and save that workstation profile.</td></tr>
+<tr><td>Position changes along the strip</td><td>Compare the ten alignment tests. Check feed, stock size, guides and sensor calibration; a fixed offset cannot correct accumulated feed drift.</td></tr>
+<tr><td>Only short names or FILLED shift in print</td><td>Retain the exact recipe, mode, profile and file. Compare a long recipe without altering the approved profile. Motivated 2.4.3 uses the same direct SVG output for short and long names. Include both cases and COMPOUNDED/FILLED switching when reproducing the issue.</td></tr>
+<tr><td>Job stuck in the queue</td><td>Check Windows/printer queue and status. Do not repeatedly resend. The HTML cannot confirm completion or clear that queue.</td></tr>
+<tr><td>List or password missing</td><td>Check browser, profile, file path and storage permissions. Do not clear browser data.</td></tr>
+</tbody></table>
+<h3>Useful support information</h3>
+<p>Record clinic, HTML filename, medication and variant, mode, dates, Lot, temperature, quantity, DPI, diameter, content area, QR area and X/Y. State whether the issue appears in preview, browser printing or ZPL.</p>
+<p>Motivated includes Download USB diagnostics: it downloads a query script for Windows support. It reads spooler status, ZD621 printers, job metadata and recent events, then generates a JSON. It does not cancel jobs or restart services. Cottonball does not include this button.</p>
+</article>
+<article id="en-8"><h2>Code map</h2>
+<p>The HTML files remain standalone. Organization adds block headings, purpose comments and indentation. Functions retain their execution order and no external dependencies were introduced. Search for section numbers inside the file.</p>
+<table><thead><tr><th>Section</th><th>Responsibility</th></tr></thead><tbody>
+<tr><td>01 · Styles</td><td>Embedded LabelSans font, interface, dialog and @media print rules. The pageSize style receives the dynamic page size.</td></tr>
+<tr><td>02 · Markup</td><td>Fields and controls identified by id, preview, printOnly and catalog. IDs are part of the controller connection.</td></tr>
+<tr><td>03 · QR encoder</td><td>Kazuhiko Arase’s qrcode-generator 2.0.4, with its MIT license retained.</td></tr>
+<tr><td>04 · LabelEngine</td><td>Text measurement, arcs, rasterization, QR, fit search, calibration, SVG and ZPL. Coordinates are physical dots.</td></tr>
+<tr><td>05 · Page controller</td><td>settings(), data(), render(), guard(), printer profile, printing, exports and UI events.</td></tr>
+<tr><td>06 · Local catalog</td><td>Record loading and validation, password access, editing, sample checks and cross-tab change control.</td></tr>
+</tbody></table>
+<h3>Label data flow</h3>
+<p>Fields are read through data() and settings(). LabelEngine constructs text and QR masks, searches for a fit and returns a model with pixels, dimensions, QR, lines and validation state. render() presents the model or a draft. guard() restricts output actions to the current valid state. SVG and ZPL use those pixels; they do not reflow the letters.</p>
+<p>Cottonball uses buildSteps() and buildAsync() to split the search into short intervals and cancel old results when the selection changes. Its caches are cleared when the font loads. Motivated retains synchronous construction and its specific print sequence.</p>
+<aside>Font and logo resources and licenses remain inside the HTML. Do not substitute a system font: measurements and fit would change.</aside>
+</article>
+<article id="en-9"><h2>Technical rules to preserve</h2>
+<h3>Units, geometry and text</h3>
+<p>The nominal 300 dpi profile uses 12 dots/mm; the 203 dpi profile uses 8 dots/mm. A 1 in page is therefore represented by about 305 or 203 dots, respectively. The exported profile retains nominal DPI, diameter, inner area, QR module setting and corrections.</p>
+<p>Type is rasterized to one bit. The engine tries description splits, permitted sizes and arc positions in a defined order. A short character count alone does not ensure fit: measured width, the second line, Lot and central blocks all affect fit. The reference clearance between curved text and blocks is approximately 0.02 in.</p>
+<p>Cottonball 2.4.4 places “VX.5 UNDEREYE SMOOTHING &amp; BRIGHTENING” on the outer arc and only “BALM” on the inner arc for NORMAL and SENSITIVE. It uses the usual long-title arcs without the earlier lateral rotation or special inner-arc lift. The 5.5 pt title, 5 pt COMPOUNDED/date block and QR formula, position and size are retained. TEMP keeps its 4 pt size and moves down 0.5 mm for VX.5 only. Lot/BUD retains its 6 and 5.5 pt options; some long Lots use 5.5 pt to maintain clearance. The other 30 variants retain their previous output. Do not disable collision checks to hide a fit error.</p>
+<h3>QR</h3>
+<p>Motivated selects Numeric, Alphanumeric or Byte according to the Lot and uses error correction M. Cottonball encodes the complete ASCII formula in Byte. It reserves 37 × moduleDots dots per side: setting 4 reserves 148 × 148 dots. It tries M and then L if needed to retain at least three dots per module.</p>
+<p>A white margin of at least four modules is preserved. The QR is placed at a fixed position for the profile; text search must not move it to create room. Cottonball’s selector offers 4 or 5; value 3 is disabled. A larger area can conflict with other blocks and does not replace validation.</p>
+<h3>Persistence and compatibility</h3>
+<table><thead><tr><th>localStorage key</th><th>Content</th></tr></thead><tbody>
+<tr><td>compound-labels-printer-v2</td><td>Profile key used by both programs; layoutVersion 4.</td></tr>
+<tr><td>compound-labels-catalog-v1</td><td>Motivated catalog and verifier.</td></tr>
+<tr><td>cottonball-labels-catalog-v1</td><td>Cottonball catalog and verifier.</td></tr>
+</tbody></table>
+<p>The shared profile key only shares values when the browser assigns the same storage area. Do not change these keys or remove existing migrations as part of a code cleanup.</p>
+</article>
+<article id="en-10"><h2>Verification and maintenance</h2>
+<h3>Scope of this delivery</h3>
+<p>This organization changes source presentation and adds comments. It does not change recipes, formulas, units, defaults, QR size, printer profile, fit rules, controls or passwords. It does not introduce a new printing fix or declare previous physical issues resolved.</p>
+<h3>Checks performed</h3>
+<p>The syntax structure of all four JavaScript blocks in each file is compared before and after, excluding only source positions and comments. HTML text and attributes, embedded resources and CSS token sequence are compared. Output tests compare pixels, SVG and ZPL against the starting files. The included verification report records the specific results.</p>
+<p>The comparison covers included presets, both Motivated modes, leading Lot zeros, temperature and Cottonball’s long cases. Generated QR codes are extracted and decoded to verify content. These are software checks; they do not replace a Windows print or a phone scan.</p>
+<h3>Before distributing a later change</h3>
+<p>Keep both reference HTML files and the approved profile. Record the intended change and limit editing to the relevant block. Retain original catalog strings, licenses and initialization order. For formatting-only changes, require equivalent logic and outputs.</p>
+<table><thead><tr><th>Workstation acceptance test</th><th>What to check</th></tr></thead><tbody>
+<tr><td>Motivated: short name and long formula</td><td>COMPOUNDED and FILLED using the same profile; position, QR and complete text.</td></tr>
+<tr><td>Cottonball: VX.5 NORMAL and SENSITIVE</td><td>Actual dates and Lot, temperature, Fits and complete scanned formula.</td></tr>
+<tr><td>Job sequence</td><td>One label, a batch of 41 and another one-label job; inspect queue and possible duplicates.</td></tr>
+<tr><td>Profile and catalog</td><td>Reopen the file, check saved values and confirm an authorized test edit.</td></tr>
+</tbody></table>
+<p>Distribute the file after checking the destination workstation. Clearly identify the new copy and keep the previous one for rollback if the test fails. Do not combine a code update and recalibration without recording both changes.</p>
+</article>
+<article id="en-11"><h2>Initial Motivated catalog</h2>
+<p>These 18 entries are included in the HTML. A workstation list may differ if it was edited locally. Names are reproduced as stored, without normalizing capitalization. Every entry’s QR contains the Lot entered in the order.</p>
+<table><thead><tr><th>No.</th><th>Medication preset</th></tr></thead><tbody>
+<tr><td>1</td><td>TAD7MG/FLUOXETINE 23MG/ ZINC30MG</td></tr>
+<tr><td>2</td><td>SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU</td></tr>
+<tr><td>3</td><td>SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU</td></tr>
+<tr><td>4</td><td>TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)</td></tr>
+<tr><td>5</td><td>SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)</td></tr>
+<tr><td>6</td><td>Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</td></tr>
+<tr><td>7</td><td>Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2</td></tr>
+<tr><td>8</td><td>SILDENAFIL 25MG</td></tr>
+<tr><td>9</td><td>SILDENAFIL 50MG</td></tr>
+<tr><td>10</td><td>SILDENAFIL 100MG</td></tr>
+<tr><td>11</td><td>TADALAFIL 2.5MG</td></tr>
+<tr><td>12</td><td>TADALAFIL 5MG</td></tr>
+<tr><td>13</td><td>TADALAFIL 10MG</td></tr>
+<tr><td>14</td><td>TADALAFIL 20MG</td></tr>
+<tr><td>15</td><td>FINASTERIDE 1MG</td></tr>
+<tr><td>16</td><td>MINOXIDIL 2.5MG</td></tr>
+<tr><td>17</td><td>MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN</td></tr>
+<tr><td>18</td><td>FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN</td></tr>
+</tbody></table>
+<p>TEMP is initially enabled for the last two entries. It starts disabled for the others and can be enabled manually. In either case the fields use Fahrenheit.</p>
+</article>
+<article id="en-12"><h2>Cottonball QR formulas · 1/4</h2>
+<p>Transcription of the included catalog, not formulation advice. Codes and variants remain in English. “PDF (12)” and “PDF (2)” distinguish two different CX.1 RESISTANT references; they must not be merged.</p>
+<table><thead><tr><th>Code / variant</th><th>QR content</th></tr></thead><tbody>
+<tr><td>CX.1 / NORMAL</td><td>Hydroquinone 6.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  1.00% / Tretinoin 0.03%</td></tr>
+<tr><td>CX.1 / SENSITIVE</td><td>Hydroquinone 4.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  2.00% / Tretinoin 0.01%</td></tr>
+<tr><td>CX.1 / RESISTANT — PDF (12)</td><td>Hydroquinone 8.00%/ Niacinamide 2.00%/ Fluocinolone  0.01%/ Kojic acid  1.00% / Tretinoin 0.05%</td></tr>
+<tr><td>VX.1 / NORMAL</td><td>Rapamycin 0.10% / Tretinoin 0.03% / Bakuchiol 0.25%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.1 / SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01% / Bakuchiol 1.00%/ Niacinamide 2.00% Dexpanthenol 1.00%</td></tr>
+<tr><td>VX.1 / RESISTANT SKIN</td><td>Rapamycin 0.10% / Tretinoin 0.05% / Bakuchiol 0.25%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.1 / ACNE-PRONE</td><td>Rapamycin 0.10% / Tretinoin 0.03%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Azelaic Acid  5.00%</td></tr>
+<tr><td>VX.1 / ACNE-PRONE SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01%/ Bakuchiol 1.00%/ Niacinamide 2.00% /Dexpanthenol  1.00% /  Azelaic Acid  5.00%</td></tr>
+</tbody></table>
+<p>The included cottonball-catalog-reference.csv retains the original strings, including repeated spaces. It is a reference file; the application does not provide CSV import.</p>
+</article>
+<article id="en-13"><h2>Cottonball QR formulas · 2/4</h2>
+<p>Transcription of the included catalog, not formulation advice. Codes and variants remain in English. “PDF (12)” and “PDF (2)” distinguish two different CX.1 RESISTANT references; they must not be merged.</p>
+<table><thead><tr><th>Code / variant</th><th>QR content</th></tr></thead><tbody>
+<tr><td>VX.1 / RESISTANT ACNE-PRONE</td><td>Rapamycin 0.10% / Tretinoin 0.05%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Azelaic Acid  5.00%</td></tr>
+<tr><td>VX.1 / HYPER-PIGMENTED</td><td>Rapamycin 0.10% / Tretinoin 0.03%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.1 / HYPER-PIGMENTED SENSITIVE</td><td>Rapamycin 0.10% / Tretinoin 0.01%/ Bakuchiol 1.00%/ Niacinamide 2.00% / Dexpanthenol 1.00 % / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.1 / RESISTANT HYPER-PIGMENTED</td><td>Rapamycin 0.10% / Tretinoin 0.05%/ Bakuchiol 0.25%/ Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / NORMAL</td><td>Tretinoin  0.05%/ Niacinamide 4.00%</td></tr>
+<tr><td>VX.2 / SENSITIVE</td><td>Tretinoin  0.02% / Niacinamide 2.00% / Dexpanthenol 1.00%</td></tr>
+<tr><td>VX.2 / RESISTANT SKIN</td><td>Tretinoin  0.10% / Niacinamide 4.00%</td></tr>
+<tr><td>VX.2 / ACNE-PRONE</td><td>Tretinoin  0.05% / Niacinamide 4.00% / Azelaic Acid 5.00%</td></tr>
+</tbody></table>
+<p>The included cottonball-catalog-reference.csv retains the original strings, including repeated spaces. It is a reference file; the application does not provide CSV import.</p>
+</article>
+<article id="en-14"><h2>Cottonball QR formulas · 3/4</h2>
+<p>Transcription of the included catalog, not formulation advice. Codes and variants remain in English. “PDF (12)” and “PDF (2)” distinguish two different CX.1 RESISTANT references; they must not be merged.</p>
+<table><thead><tr><th>Code / variant</th><th>QR content</th></tr></thead><tbody>
+<tr><td>VX.2 / ACNE-PRONE SENSITIVE</td><td>Tretinoin 0.02% / Niacinamide 2% / Dexpanthenol 1% / Azelaic Acid 5%</td></tr>
+<tr><td>VX.2 / RESISTANT ACNE-PRONE</td><td>Tretinoin  0.10% /  Niacinamide 4.00% / Azelaic Acid 5.00%</td></tr>
+<tr><td>VX.2 / HYPER-PIGMENTED</td><td>Tretinoin  0.05% /  Niacinamide 4.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / HYPER-PIGMENTED SENSITIVE</td><td>Tretinoin  0.02% / Niacinamide 2.00% / Dexpanthenol 1.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.2 / RESISTANT HYPER-PIGMENTED</td><td>Tretinoin  0.10%/ Niacinamide 1.00% / Tranexamic Acid 5.00%</td></tr>
+<tr><td>VX.3 / NORMAL</td><td>Estriol0.30% /  Ascorbic Acid 2.00%</td></tr>
+<tr><td>VX.3 / SENSITIVE</td><td>Estriol 0.30%/ Ascorbic Acid 1.00%</td></tr>
+<tr><td>VX.3 / ACNE-PRONE</td><td>Estriol 0.30%/ Ascorbic Acid 1.00% / Azelaic Acid 5.00%</td></tr>
+</tbody></table>
+<p>The included cottonball-catalog-reference.csv retains the original strings, including repeated spaces. It is a reference file; the application does not provide CSV import.</p>
+</article>
+<article id="en-15"><h2>Cottonball QR formulas · 4/4</h2>
+<p>Transcription of the included catalog, not formulation advice. Codes and variants remain in English. “PDF (12)” and “PDF (2)” distinguish two different CX.1 RESISTANT references; they must not be merged.</p>
+<table><thead><tr><th>Code / variant</th><th>QR content</th></tr></thead><tbody>
+<tr><td>VX.4 / NORMAL</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid 3.00%/ Tretinoin0.03%/ Alpha Arbutin 2.50%</td></tr>
+<tr><td>VX.4 / SENSITIVE</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid  2.00%/ Tretinoin 0.01%/ Alpha Arbutin 2.50%</td></tr>
+<tr><td>VX.4 / RESISTANT</td><td>Niacinamide 2.00%/ Tranexamic Acid 3.00%/ Azelaic Acid 3.00%/ Tretinoin0.05%/ Alpha Arbutin 2.50%/ Kojic Acid 1.50%</td></tr>
+<tr><td>VX.5 / NORMAL</td><td>Tretinoin 0.01% / Caffeine 0.50% / Ascorbic Acid (Vit C) 4.00% / Phytonadione (Vit K) 0.20%</td></tr>
+<tr><td>VX.5 / SENSITIVE</td><td>Bakuchiol 0.50% / Niacinamide 2.00% / Caffeine 0.50% / Ascorbic Acid (Vit C) 1.00% / Phytonadione (Vit K) 0.20%</td></tr>
+<tr><td>VX.6 / NORMAL</td><td>Tretinoin 0.02% / Niacinamide 2.5% / Tranexamic Acid 2% / Alpha Arbutin 0.5%</td></tr>
+<tr><td>VX.6 / SENSITIVE</td><td>Tretinoin 0.01% / Niacinamide 2.00% / Tranexamic Acid 2.00% / Alpha Arbutin 1.00%</td></tr>
+<tr><td>CX.1 / RESISTANT — PDF (2)</td><td>Hydroquinone 8% / Niacinamide 2% / Fluocinolone 0.01% / Kojic Acid 1% / Tretinoin 0.05% -Resistant</td></tr>
+</tbody></table>
+<p>The included cottonball-catalog-reference.csv retains the original strings, including repeated spaces. It is a reference file; the application does not provide CSV import.</p>
+</article>
+</section>
+</main></html>
