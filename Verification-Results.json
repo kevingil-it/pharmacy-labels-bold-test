@@ -1,13 +1,13 @@
 {
   "portal": {
-    "portalVersion": "1.4",
+    "portalVersion": "1.5",
     "programVersions": {
       "Motivated": "2.4.3",
       "Cottonball": "2.4.4"
     },
     "programHashesSha256": {
-      "compound-labels-NEW.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
-      "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324"
+      "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324",
+      "motivated-labels.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf"
     },
     "programsByteIdentical": false,
     "nativeLinksChecked": [
@@ -22,13 +22,14 @@
       "es",
       "en"
     ],
-    "manualEdition": "1.5",
+    "manualEdition": "1.6",
     "catalogReferenceUnchanged": true,
     "realBrowserVisualQA": true,
     "physicalPrinterTestedThisChange": false,
-    "websitePublished": false,
+    "websitePublished": true,
     "functionalCodeUnchanged": true,
-    "officialSymbolSource": "https://www.thepharmacyhub.com/assets/mark-navy-P16WB9v1.png"
+    "officialSymbolSource": "https://www.thepharmacyhub.com/assets/mark-navy-P16WB9v1.png",
+    "publicUrl": "https://kevingil-it.github.io/pharmacy-labels-bold-test/"
   },
   "controls": {
     "onlyNativeNavigation": true,
@@ -370,7 +371,7 @@
       }
     }
   },
-  "verificationLimit": "No physical printer or scanner test. Screen entrance is CSS-only, excluded from print media. The shared catalog is not implemented. Public Pages activation remains pending.",
+  "verificationLimit": "No physical printer or scanner test. Screen entrance is CSS-only, excluded from print media. The shared catalog is not implemented. GitHub Pages is public. No physical printer test was performed for the filename-only change.",
   "applicationPreservation": {
     "compound-labels-NEW.html": {
       "beforeSha256": "d2028c41a16b5a682d3369eb1a4e1da2f1a9f5aa73cd0647c1f8a1ca3247d3fa",
@@ -411,5 +412,15 @@
     "motionObservedAcrossFrames": true,
     "reducedMotionRulePreserved": true,
     "physicalPrintPerformed": false
+  },
+  "clinicFilenameUpdate": {
+    "oldPath": "compound-labels-NEW.html",
+    "canonicalPath": "motivated-labels.html",
+    "legacyRedirectPreserved": true,
+    "programByteIdentical": true,
+    "programSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+    "cottonballUnchanged": true,
+    "presentationChangesApplied": false,
+    "storageKeysUnchanged": true
   }
 }

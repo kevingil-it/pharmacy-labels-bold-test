@@ -1,5 +1,5 @@
 LABEL CENTER — MAINTENANCE / MANTENIMIENTO
-Portal 1.4 · 2026-11-09
+Portal 1.5 · 2026-11-09
 
 ESPAÑOL
 
@@ -23,7 +23,7 @@ recibe eventos del puntero. .ambient limita su desbordamiento al viewport.
 La preferencia prefers-reduced-motion desactiva todas las animaciones.
 
 Entrada de programas
-El único cambio en compound-labels-NEW.html y cottonball-labels.html es el
+El único cambio en motivated-labels.html y cottonball-labels.html es el
 style con id labelCenterEntrance, antes de </head>. Contiene @media screen and
 (prefers-reduced-motion: no-preference). Anima header, los dos section directos
 de .grid y footer, de 650 a 750 ms con retrasos de hasta 230 ms. No modifica
@@ -70,7 +70,7 @@ Decorations are aria-hidden and do not receive pointer events. .ambient clips
 its contents to the viewport. prefers-reduced-motion disables all animations.
 
 Application entrance
-The only addition to compound-labels-NEW.html and cottonball-labels.html is the
+The only addition to motivated-labels.html and cottonball-labels.html is the
 style element with id labelCenterEntrance before </head>. It is scoped to
 @media screen and (prefers-reduced-motion: no-preference). Header, direct .grid
 sections and footer animate for 650–750 ms with delays up to 230 ms. Final
@@ -94,3 +94,10 @@ Verification-Results.json separates historical label checks from current UI
 review. Both links and reference examples were checked in the browser. Removing
 the added CSS reproduces originals and every script remains identical. No
 physical printer test was performed for this visual change.
+
+NOMBRE DEL ARCHIVO / FILENAME
+Motivated: motivated-labels.html. Cottonball: cottonball-labels.html.
+compound-labels-NEW.html es solo una redirección para enlaces anteriores.
+compound-labels-NEW.html is only a redirect for existing links.
+Ambos programas conservan todos sus bytes y estilos; no se añadió un fondo nuevo.
+Both programs retain all bytes and styles; no new background was applied.

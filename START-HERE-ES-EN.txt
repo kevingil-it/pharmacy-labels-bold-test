@@ -1,5 +1,5 @@
 THE PHARMACY HUB — LABEL CENTER
-Portal 1.4 · Motivated engine 2.4.3 · Cottonball engine 2.4.4
+Portal 1.5 · Motivated engine 2.4.3 · Cottonball engine 2.4.4
 9 November 2026 / 9 de noviembre de 2026
 
 ESPAÑOL
@@ -24,8 +24,8 @@ Datos y acceso
 El catálogo y el perfil siguen guardándose en cada navegador y origen. Agregar
 un medicamento NO actualiza otras computadoras. La conexión a un catálogo
 compartido aún no está implementada. Tampoco se migran datos entre dominios.
-Los archivos están preparados para el repositorio existente; la activación de
-GitHub Pages sigue pendiente de resolver su visibilidad.
+Sitio público: https://kevingil-it.github.io/pharmacy-labels-bold-test/
+El repositorio también es público. Los datos locales siguen en cada navegador.
 
 Si solo deseas la portada nueva, reemplaza únicamente index.html. Para tener
 las entradas animadas dentro de los programas, utiliza también los dos HTML
@@ -52,9 +52,8 @@ dimensions and printing are unchanged.
 Data and access
 The catalog and printer profile remain stored per browser and origin. Adding
 a medication does NOT update other computers. A shared catalog connection is
-not implemented yet. Data is not migrated between domains. Files are prepared
-for the existing repository; GitHub Pages activation still depends on its
-visibility decision.
+not implemented yet. Data is not migrated between domains. Public site: https://kevingil-it.github.io/pharmacy-labels-bold-test/
+The repository is public too. Local data stays in each browser.
 
 Replace only index.html if you only want the new landing page. Install both
 application HTML files too for their entrance animations. Preserve filenames
@@ -62,9 +61,16 @@ and existing paths.
 
 PACKAGE / ARCHIVOS
 index.html — Label Center
-compound-labels-NEW.html — Motivated + screen-only entrance
+motivated-labels.html — Motivated + screen-only entrance
 cottonball-labels.html — Cottonball + screen-only entrance
 Documentation-ES-EN.html — Complete bilingual manual
 MAINTENANCE-ES-EN.txt — Presentation maintenance notes
 cottonball-catalog-reference.csv — Initial formula reference
 Verification-Results.json — Validation results and hashes
+
+NOMBRE DEL ARCHIVO / FILENAME
+Motivated: motivated-labels.html. Cottonball: cottonball-labels.html.
+compound-labels-NEW.html es solo una redirección para enlaces anteriores.
+compound-labels-NEW.html is only a redirect for existing links.
+Ambos programas conservan todos sus bytes y estilos; no se añadió un fondo nuevo.
+Both programs retain all bytes and styles; no new background was applied.
