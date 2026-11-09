@@ -6,7 +6,7 @@
       "Cottonball": "2.4.4"
     },
     "programHashesSha256": {
-      "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324",
+      "cottonball-labels.html": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb",
       "motivated-labels.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf"
     },
     "programsByteIdentical": false,
@@ -422,5 +422,18 @@
     "cottonballUnchanged": true,
     "presentationChangesApplied": false,
     "storageKeysUnchanged": true
+  },
+  "cottonballDisplayCleanup": {
+    "scope": "Medication selector display text only",
+    "removedVisibleSuffixes": [
+      "PDF (12)",
+      "PDF (2)"
+    ],
+    "qrPayloadsUnchanged": true,
+    "optionValuesUnchanged": true,
+    "entriesMerged": false,
+    "printEngineUnchanged": true,
+    "motivatedUnchanged": true,
+    "cottonballSha256": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb"
   }
 }
