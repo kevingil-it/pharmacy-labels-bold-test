@@ -1,5 +1,5 @@
 THE PHARMACY HUB — LABEL CENTER
-Portal 1.3 · Motivated engine 2.4.3 · Cottonball engine 2.4.4
+Portal 1.4 · Motivated engine 2.4.3 · Cottonball engine 2.4.4
 9 November 2026 / 9 de noviembre de 2026
 
 ESPAÑOL
@@ -16,7 +16,7 @@ Instalación
 
 Qué cambia
 La portada incluye un símbolo oficial nítido, grande y girando lentamente en
-una esquina. Los programas incorporan una entrada visual breve del encabezado
+la esquina inferior izquierda, con una respiración suave de 8 segundos. Los programas incorporan una entrada visual breve del encabezado
 y los paneles. Las animaciones respetan la preferencia de reducir movimiento.
 No se modifican QR, recetas, tipografía, centrado, tamaños ni impresión.
 
@@ -45,7 +45,7 @@ Installation
 
 What changes
 The landing page includes a crisp official symbol rotating slowly, partially
-outside one corner. Programs add a short header and panel entrance. Animations
+outside the lower-left corner, with a gentle 8-second breathing cycle. Programs add a short header and panel entrance. Animations
 respect reduced-motion preferences. QR, formulas, label typeface, centering,
 dimensions and printing are unchanged.
 

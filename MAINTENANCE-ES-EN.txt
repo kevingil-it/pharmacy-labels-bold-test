@@ -1,5 +1,5 @@
 LABEL CENTER — MAINTENANCE / MANTENIMIENTO
-Portal 1.3 · 2026-11-09
+Portal 1.4 · 2026-11-09
 
 ESPAÑOL
 
@@ -14,9 +14,11 @@ El símbolo procede de https://www.thepharmacyhub.com/ y del recurso oficial
 /assets/mark-navy-P16WB9v1.png (1024 × 1024 RGBA). Se integra como data URL sin
 alterar sus píxeles. La versión blanca se obtiene con un filtro CSS, tanto en
 .brand-symbol como en .corner-mark. El wordmark central previo se conserva.
-.corner-brand determina tamaño, posición y opacidad del símbolo de fondo.
-.symbol-orbit es el nombre conceptual del movimiento; el @keyframes real se
-llama symbol-orbit y dura 100 segundos. La decoración tiene aria-hidden y no
+.corner-brand determina tamaño, posición inferior izquierda y opacidad. Su
+ancho adaptable va de 660 a 1100 px (680 px en pantallas pequeñas). El envoltorio
+.corner-breath aplica symbol-breathe: escala 0.97 → 1.06 → 0.97 en 8 segundos.
+El SVG interior .corner-mark gira con symbol-orbit cada 100 segundos. Los tres
+niveles separan entrada, respiración y giro para no sobrescribir transformaciones. La decoración tiene aria-hidden y no
 recibe eventos del puntero. .ambient limita su desbordamiento al viewport.
 La preferencia prefers-reduced-motion desactiva todas las animaciones.
 
@@ -59,7 +61,11 @@ The symbol comes from https://www.thepharmacyhub.com/ and its official asset
 /assets/mark-navy-P16WB9v1.png (1024 × 1024 RGBA). Original pixels are embedded
 as a data URL. CSS filters display it in white in .brand-symbol and .corner-mark.
 The previous centered wordmark is retained. .corner-brand controls the background
-symbol’s size, position and opacity. symbol-orbit rotates it over 100 seconds.
+symbol’s lower-left position, opacity and responsive width (660–1100 px; 680 px
+on small screens). The .corner-breath wrapper applies symbol-breathe, scaling
+0.97 → 1.06 → 0.97 over 8 seconds. Its inner .corner-mark SVG rotates with
+symbol-orbit over 100 seconds. Separate elements keep entrance, breathing and
+rotation transforms from overwriting one another.
 Decorations are aria-hidden and do not receive pointer events. .ambient clips
 its contents to the viewport. prefers-reduced-motion disables all animations.
 
