@@ -1,20 +1,20 @@
 {
   "portal": {
-    "portalVersion": "1.2",
+    "portalVersion": "1.3",
     "programVersions": {
       "Motivated": "2.4.3",
       "Cottonball": "2.4.4"
     },
     "programHashesSha256": {
-      "compound-labels-NEW.html": "d2028c41a16b5a682d3369eb1a4e1da2f1a9f5aa73cd0647c1f8a1ca3247d3fa",
-      "cottonball-labels.html": "e064e23f9c8665a53ffb9316c1b38af36248543f8fb918fa1f16019f4d596fa7"
+      "compound-labels-NEW.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+      "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324"
     },
-    "programsByteIdentical": true,
+    "programsByteIdentical": false,
     "nativeLinksChecked": [
       "compound-labels-NEW.html",
       "cottonball-labels.html"
     ],
-    "originalBrandUnchanged": true,
+    "originalBrandUnchanged": false,
     "externalDependencies": false,
     "readsOrWritesProgramStorage": false,
     "independentTabs": true,
@@ -22,11 +22,13 @@
       "es",
       "en"
     ],
-    "manualEdition": "1.3",
+    "manualEdition": "1.4",
     "catalogReferenceUnchanged": true,
-    "realBrowserVisualQA": false,
+    "realBrowserVisualQA": true,
     "physicalPrinterTestedThisChange": false,
-    "websitePublished": false
+    "websitePublished": false,
+    "functionalCodeUnchanged": true,
+    "officialSymbolSource": "https://www.thepharmacyhub.com/assets/mark-navy-P16WB9v1.png"
   },
   "controls": {
     "onlyNativeNavigation": true,
@@ -52,9 +54,13 @@
       ],
       "reducedMotionSupported": true,
       "arrowIcons": false,
-      "embeddedTypeface": "Open Sans Light and Semibold; portal only"
+      "embeddedTypeface": "Open Sans Light and Semibold; portal only",
+      "backgroundSymbolRotationSeconds": 100,
+      "applicationEntranceMaxMs": 920,
+      "screenOnly": true,
+      "originalWordmarkUnchanged": true
     },
-    "method": "Static HTML inspection, local link resolution and byte-for-byte application comparison"
+    "method": "Native link and reference-example browser checks; exact reversal of added screen CSS reproduces approved application hashes."
   },
   "priorApplicationValidation": {
     "motivated": {
@@ -357,5 +363,31 @@
       }
     }
   },
-  "verificationLimit": "No real browser visual review or physical printer test was available in this session. Program hashes match the previously validated versions."
+  "verificationLimit": "No physical printer or scanner test. Screen entrance is CSS-only, excluded from print media. The shared catalog is not implemented. Public Pages activation remains pending.",
+  "applicationPreservation": {
+    "compound-labels-NEW.html": {
+      "beforeSha256": "d2028c41a16b5a682d3369eb1a4e1da2f1a9f5aa73cd0647c1f8a1ca3247d3fa",
+      "afterSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+      "onlyAddedScreenEntranceCSS": true,
+      "allOriginalBytesPreserved": true,
+      "scriptsUnchanged": true,
+      "originalPrintStylesUnchanged": true
+    },
+    "cottonball-labels.html": {
+      "beforeSha256": "e064e23f9c8665a53ffb9316c1b38af36248543f8fb918fa1f16019f4d596fa7",
+      "afterSha256": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324",
+      "onlyAddedScreenEntranceCSS": true,
+      "allOriginalBytesPreserved": true,
+      "scriptsUnchanged": true,
+      "originalPrintStylesUnchanged": true
+    }
+  },
+  "currentBrowserChecks": {
+    "mainVisualReview": true,
+    "bothNativeLinksOpenCorrectApplications": true,
+    "motivatedReferencePreviewReady": true,
+    "cottonballReferenceFormulaQRReady": true,
+    "physicalPrintPerformed": false,
+    "mobileViewportVisualReview": false
+  }
 }

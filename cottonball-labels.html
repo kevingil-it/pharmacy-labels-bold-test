@@ -529,6 +529,23 @@ code {
   }
 }
 </style>
+
+<style id="labelCenterEntrance">
+/* Label Center 1.3: UI entrance only / Entrada de interfaz solamente.
+   All selectors and keyframes are confined to screen media. No print, label,
+   storage, form, QR, font or layout rules are modified. Natural state at end. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @keyframes tph-interface-enter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  main > header { animation: tph-interface-enter 650ms cubic-bezier(.16,1,.3,1) backwards; }
+  main > .grid > section { animation: tph-interface-enter 750ms cubic-bezier(.16,1,.3,1) 90ms backwards; }
+  main > .grid > section + section { animation-delay: 170ms; }
+  main > footer { animation: tph-interface-enter 650ms ease-out 230ms backwards; }
+  main > header:focus-within, main > .grid > section:focus-within { animation: none; }
+}
+</style>
 </head><body>
 <!-- 02 / APPLICATION MARKUP: FORM, PREVIEW AND PRINTER CONTROLS -->
 <main><header><div class="brand-lockup"><h1>Cottonball Labels<svg

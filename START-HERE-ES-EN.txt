@@ -1,94 +1,70 @@
 THE PHARMACY HUB — LABEL CENTER
-Portal 1.2 · Motivated 2.4.3 · Cottonball 2.4.4
+Portal 1.3 · Motivated engine 2.4.3 · Cottonball engine 2.4.4
 9 November 2026 / 9 de noviembre de 2026
 
 ESPAÑOL
 
-Para un equipo que ya está imprimiendo
-1. Descarga index.html. Si descargaste el ZIP, extráelo primero.
-2. Copia únicamente index.html en la carpeta donde ya están los dos programas.
-3. Conserva los HTML existentes en su ubicación y con sus nombres habituales.
-   No los reemplaces solo para instalar el selector.
-4. Abre index.html con el mismo navegador y perfil que usan para imprimir.
-5. Elige Motivated o Cottonball. El programa se abre en otra pestaña.
-   Para cambiar de cliente, vuelve a la pestaña Label Center.
-
-Los enlaces incluidos apuntan a compound-labels-NEW.html y cottonball-labels.html
-en la misma carpeta que index.html. Si el equipo utiliza otros nombres o los
-programas están en carpetas distintas, TI debe adaptar únicamente esos dos
-enlaces en index.html para apuntar a los archivos que ya se utilizan. No renombres
-ni muevas un programa existente para hacerlo coincidir con el enlace: la ruta
-del archivo puede afectar a los datos que el navegador muestra como guardados.
-
-Para un equipo nuevo
+Instalación
 1. Extrae el ZIP completo en una carpeta permanente.
-2. Abre index.html en Chrome o Edge.
-3. Usa el procedimiento de puesta en servicio habitual para cada programa:
-   revisar catálogo, configurar la impresora y comprobar una etiqueta física.
-   Los datos guardados en otro equipo no se copian automáticamente con el ZIP.
+2. Para actualizar un equipo existente, conserva una copia anterior y reemplaza
+   los tres HTML en la misma ubicación y con los mismos nombres. No borres los
+   datos del navegador. Usa el mismo navegador y perfil de siempre.
+3. Abre index.html y elige MOTIVATED o COTTONBALL.
+4. Cada programa abre en su propia pestaña. Vuelve a Label Center para cambiar
+   de clínica; una orden pendiente puede permanecer abierta en su pestaña.
+5. Prepara y revisa la etiqueta y utiliza Print labels dentro del programa.
 
-Uso diario
-- Los botones Motivated y Cottonball abren los programas originales en otra
-  pestaña. La portada contiene el logo, el título, esos dos accesos y una guía breve.
-- Usa Print labels dentro del programa correspondiente.
-- Puedes mantener la orden sin terminar abierta en su pestaña al volver aquí.
+Qué cambia
+La portada incluye un símbolo oficial nítido, grande y girando lentamente en
+una esquina. Los programas incorporan una entrada visual breve del encabezado
+y los paneles. Las animaciones respetan la preferencia de reducir movimiento.
+No se modifican QR, recetas, tipografía, centrado, tamaños ni impresión.
 
-Archivos del paquete
-index.html                       Selector de clientes.
-compound-labels-NEW.html          Motivated 2.4.3, sin cambios.
-cottonball-labels.html            Cottonball 2.4.4, sin cambios.
-Documentation-ES-EN.html          Manual actualizado en español e inglés.
-cottonball-catalog-reference.csv  Referencia de las fórmulas iniciales.
-MAINTENANCE-ES-EN.txt              Cómo mantener el portal y añadir clientes.
-Verification-Results.json         Comprobaciones del paquete y huellas de archivo.
+Datos y acceso
+El catálogo y el perfil siguen guardándose en cada navegador y origen. Agregar
+un medicamento NO actualiza otras computadoras. La conexión a un catálogo
+compartido aún no está implementada. Tampoco se migran datos entre dominios.
+Los archivos están preparados para el repositorio existente; la activación de
+GitHub Pages sigue pendiente de resolver su visibilidad.
 
-Datos y publicación
-Label Center no lee, migra, comparte ni borra catálogos, contraseñas o perfiles.
-Cada programa mantiene su almacenamiento actual. Un sitio online usaría otro
-origen del navegador: el traslado de datos requiere un plan independiente.
-Este paquete está listo para uso local; no se ha publicado una dirección web.
+Si solo deseas la portada nueva, reemplaza únicamente index.html. Para tener
+las entradas animadas dentro de los programas, utiliza también los dos HTML
+incluidos en esta entrega. Mantén las rutas y nombres existentes.
 
 ENGLISH
 
-For a workstation that is already printing
-1. Download index.html. If you downloaded the ZIP, extract it first.
-2. Copy only index.html into the folder containing the two existing programs.
-3. Keep the existing HTML files at their usual paths and names.
-   Do not replace them just to install the selector.
-4. Open index.html with the same browser and profile used for printing.
-5. Choose Motivated or Cottonball. The program opens in another tab.
-   Return to the Label Center tab to choose another client.
-
-The supplied links point to compound-labels-NEW.html and cottonball-labels.html
-in the same folder as index.html. If a workstation uses different filenames or
-folders, IT should change only these two links in index.html to point to the
-existing programs. Do not rename or move an existing program to match a link:
-the file path can affect which saved data the browser makes available.
-
-For a new workstation
+Installation
 1. Extract the entire ZIP into a permanent folder.
-2. Open index.html in Chrome or Edge.
-3. Follow the usual commissioning procedure for each program: review its
-   catalog, configure the printer and check a physical label. The ZIP does not
-   automatically transfer saved data from another workstation.
+2. To update an existing workstation, keep a backup and replace the three HTML
+   files at the same paths and with the same names. Do not clear browser data.
+   Use the same browser and profile as before.
+3. Open index.html and choose MOTIVATED or COTTONBALL.
+4. Each program opens in its own tab. Return to Label Center to switch clinics;
+   an unfinished order can stay open in its program tab.
+5. Prepare and review the label, then use Print labels inside the program.
 
-Daily use
-- Motivated and Cottonball buttons open the original programs in another tab.
-  The entry page contains the logo, title, these two links and a short guide.
-- Use Print labels inside the selected program.
-- Keep unfinished orders open in their program tabs when returning here.
+What changes
+The landing page includes a crisp official symbol rotating slowly, partially
+outside one corner. Programs add a short header and panel entrance. Animations
+respect reduced-motion preferences. QR, formulas, label typeface, centering,
+dimensions and printing are unchanged.
 
-Package files
-index.html                       Client selector.
-compound-labels-NEW.html          Motivated 2.4.3, unchanged.
-cottonball-labels.html            Cottonball 2.4.4, unchanged.
-Documentation-ES-EN.html          Updated English and Spanish manual.
-cottonball-catalog-reference.csv  Reference for the initial formulas.
-MAINTENANCE-ES-EN.txt              Portal maintenance and adding clients.
-Verification-Results.json         Package checks and file hashes.
+Data and access
+The catalog and printer profile remain stored per browser and origin. Adding
+a medication does NOT update other computers. A shared catalog connection is
+not implemented yet. Data is not migrated between domains. Files are prepared
+for the existing repository; GitHub Pages activation still depends on its
+visibility decision.
 
-Data and publication
-Label Center does not read, migrate, share or delete catalogs, passwords or
-profiles. Each program keeps its existing storage behavior. An online site
-would use a different browser origin; moving saved data needs a separate plan.
-This package is ready for local use. No website address has been published.
+Replace only index.html if you only want the new landing page. Install both
+application HTML files too for their entrance animations. Preserve filenames
+and existing paths.
+
+PACKAGE / ARCHIVOS
+index.html — Label Center
+compound-labels-NEW.html — Motivated + screen-only entrance
+cottonball-labels.html — Cottonball + screen-only entrance
+Documentation-ES-EN.html — Complete bilingual manual
+MAINTENANCE-ES-EN.txt — Presentation maintenance notes
+cottonball-catalog-reference.csv — Initial formula reference
+Verification-Results.json — Validation results and hashes

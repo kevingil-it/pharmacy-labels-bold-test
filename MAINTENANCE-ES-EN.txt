@@ -1,133 +1,90 @@
 LABEL CENTER — MAINTENANCE / MANTENIMIENTO
-Portal 1.2 · 2026-11-09
+Portal 1.3 · 2026-11-09
 
 ESPAÑOL
 
-Alcance
-index.html es una portada independiente con el logo original, el título Label
-Center y dos enlaces: Motivated y Cottonball. Los dos programas de impresión
-se incluyen sin modificar un solo byte. El fondo azul y las líneas decorativas
-pertenecen exclusivamente a la portada; no son parte de ninguna etiqueta.
+Estructura
+index.html contiene estilos, fuentes integradas, marca y dos enlaces nativos.
+No ejecuta JavaScript ni usa iframe. Sus botones abren documentos independientes
+mediante target="_blank" y rel="noopener". No accede al almacenamiento ni a la
+impresora. Los programas conservan su propio código y sus rutas habituales.
 
-Estructura de index.html
-1. Metadatos: título de la página, viewport y color del navegador.
-2. Estilos comentados: paleta, fondo, marca, enlaces y reglas de accesibilidad.
-3. Fondo decorativo: SVG sin interacción, oculto a lectores de pantalla.
-4. Contenido central: logo original integrado, título y navegación por clínica.
-5. Pie de página: guía breve en tres pasos, centrada y dentro del flujo normal.
-6. Comentario final: atribución y licencia Apache 2.0 de Open Sans.
+Marca y fondo
+El símbolo procede de https://www.thepharmacyhub.com/ y del recurso oficial
+/assets/mark-navy-P16WB9v1.png (1024 × 1024 RGBA). Se integra como data URL sin
+alterar sus píxeles. La versión blanca se obtiene con un filtro CSS, tanto en
+.brand-symbol como en .corner-mark. El wordmark central previo se conserva.
+.corner-brand determina tamaño, posición y opacidad del símbolo de fondo.
+.symbol-orbit es el nombre conceptual del movimiento; el @keyframes real se
+llama symbol-orbit y dura 100 segundos. La decoración tiene aria-hidden y no
+recibe eventos del puntero. .ambient limita su desbordamiento al viewport.
+La preferencia prefers-reduced-motion desactiva todas las animaciones.
 
-No hay JavaScript. Cada enlace abre el archivo HTML correspondiente como un
-documento completo, con target="_blank" y rel="noopener". El portal no carga
-los programas dentro de un iframe ni aplica sus estilos a otras páginas.
-Tampoco lee o escribe catálogos, contraseñas, perfiles o almacenamiento del
-navegador. No interviene en los eventos de impresión ni envía órdenes a la
-impresora. Cualquier comportamiento interno pertenece al HTML de cada clínica.
-
-Modificar la presentación
-Los colores y espacios se ajustan dentro de style. El logo utiliza la imagen
-original integrada en los dos SVG de .brand. La regla filter muestra el dibujo
-en blanco sobre el fondo oscuro; no cambia el archivo de imagen ni los logos
-de los programas. Los estados de hover y foco se definen en .clinic-link.
-En pantallas pequeñas los botones se apilan; el contenido sigue siendo el mismo.
-Los títulos y botones usan Open Sans integrada en WOFF; la tipografía de las
-etiquetas sigue en cada programa, sin cambios. La entrada se escalona mediante
-CSS: marca 100 ms, acento 300 ms, título 360 ms, botones 600/720 ms y guía
-900 ms. Las duraciones son de 900 a 1100 ms; los elementos terminan visibles
-y en su posición natural. El fondo mueve luces y geometría en ciclos de
-18 y 24 segundos, sin JavaScript. prefers-reduced-motion desactiva todo el
-movimiento. Las animaciones de entrada se aplican a los contenedores de los
-botones, por separado del efecto hover de los enlaces; el foco por teclado
-hace visible cada acceso de inmediato. La guía no está fijada ni superpuesta.
+Entrada de programas
+El único cambio en compound-labels-NEW.html y cottonball-labels.html es el
+style con id labelCenterEntrance, antes de </head>. Contiene @media screen and
+(prefers-reduced-motion: no-preference). Anima header, los dos section directos
+de .grid y footer, de 650 a 750 ms con retrasos de hasta 230 ms. No modifica
+tamaños ni posiciones finales. :focus-within evita ocultar controles enfocados.
+Retirar ese bloque exacto devuelve cada programa a su original byte por byte.
+No cambies media screen por all ni animes #printOnly, SVG o clases de etiqueta.
 
 Añadir una clínica
-1. Prepare y valide su programa como archivo independiente: catálogo, fórmula
-   QR, medidas, reglas de encaje y salida física de impresión.
-2. Guarde el archivo con un nombre único y estable junto a index.html.
-3. Dentro de nav.clinics, duplique un contenedor .clinic y su enlace
-   class="clinic-link". Opcionalmente asigne un animation-delay a ese contenedor.
-4. Cambie su href al nombre del nuevo HTML, el texto visible dentro de span y
-   el aria-label. Mantenga target="_blank" y rel="noopener".
-5. Abra la portada y compruebe que cada enlace abre el programa correcto.
-   Compruebe también el foco con Tab y la apertura con Enter.
-6. Compare las huellas de los programas existentes antes y después del cambio.
+Valida su HTML de forma independiente. Colócalo con un nombre único y estable
+junto a index.html. Duplica .clinic y cambia nombre, href y aria-label. Conserva
+la apertura en otra pestaña. Revisa el enlace sin modificar motores existentes.
 
-Rutas en equipos que ya funcionan
-Los enlaces incluidos usan compound-labels-NEW.html y cottonball-labels.html
-en la misma carpeta. Si las ubicaciones reales son otras, adapte solo sus href.
-Mantenga los programas actuales donde están: moverlos, renombrarlos o publicarlos
-en otro origen puede cambiar el almacenamiento que el navegador les presenta.
-Instalar una portada no requiere reemplazar los programas de impresión.
+Catálogo
+Las claves de localStorage y la validación siguen iguales. El catálogo no se
+comparte automáticamente. Una implementación futura necesita base de datos,
+identidad y permisos de escritura por clínica; no pongas credenciales privadas
+de GitHub o base de datos en el HTML. Esta entrega no activa sincronización.
 
 Verificación
-Verification-Results.json registra las versiones y SHA-256 de los HTML incluidos.
-La comparación byte por byte confirma que esta entrega no cambió su código.
-Las comprobaciones actuales cubren estructura, enlaces, recursos integrados y
-conservación de los programas. La validación anterior de las etiquetas figura
-por separado. No se realizó una impresión física ni una revisión visual en un
-navegador real durante este cambio de portada.
+Verification-Results.json separa la validación histórica de etiquetas de la
+revisión visual actual. Se verificaron ambos enlaces y ejemplos en el navegador.
+La eliminación del bloque nuevo reproduce los originales y todos los scripts
+siguen idénticos. No se realizó prueba física de impresión para este cambio.
 
 ENGLISH
 
-Scope
-index.html is a separate entry page with the original logo, the Label Center
-title and two links: Motivated and Cottonball. Both printing programs are
-included without changing a byte. The blue background and decorative lines
-belong only to this page; they are not part of any label.
+Structure
+index.html contains CSS, embedded fonts, branding and two native links. It runs
+no JavaScript and uses no iframe. Links open independent documents with
+target="_blank" and rel="noopener". It accesses neither storage nor printers.
+The applications retain their own code and established paths.
 
-index.html structure
-1. Metadata: page title, viewport and browser theme color.
-2. Commented styles: palette, background, brand, links and accessibility rules.
-3. Decorative background: noninteractive SVG hidden from screen readers.
-4. Central content: embedded original logo, title and clinic navigation.
-5. Footer: a centered, three-step guide kept in normal document flow.
-6. Closing comment: Open Sans attribution and Apache 2.0 license.
+Brand and background
+The symbol comes from https://www.thepharmacyhub.com/ and its official asset
+/assets/mark-navy-P16WB9v1.png (1024 × 1024 RGBA). Original pixels are embedded
+as a data URL. CSS filters display it in white in .brand-symbol and .corner-mark.
+The previous centered wordmark is retained. .corner-brand controls the background
+symbol’s size, position and opacity. symbol-orbit rotates it over 100 seconds.
+Decorations are aria-hidden and do not receive pointer events. .ambient clips
+its contents to the viewport. prefers-reduced-motion disables all animations.
 
-There is no JavaScript. Each link opens its corresponding HTML as a complete
-document using target="_blank" and rel="noopener". The portal neither embeds
-the programs in an iframe nor applies its styles to other pages. It does not
-read or write catalogs, passwords, profiles or browser storage. It handles no
-print events and sends no printer commands. All internal program behavior
-belongs to the individual clinic HTML files.
-
-Changing the presentation
-Colors and spacing are defined inside style. Both .brand SVGs use the original
-embedded artwork. The filter rule displays it in white against the dark
-background; it changes neither the image file nor the programs' logos. Hover
-and focus states are defined on .clinic-link. Buttons stack on small screens;
-the content stays the same.
-Headings and buttons use embedded Open Sans WOFF files; label typography stays
-inside each unchanged program. CSS staggers entry at 100 ms for the brand,
-300 ms for the accent, 360 ms for the heading, 600/720 ms for the buttons and
-900 ms for the guide. Durations range from 900 to 1100 ms; all elements finish
-visible at their natural positions. Background light and geometry move in
-18- and 24-second cycles, without JavaScript. prefers-reduced-motion disables
-all motion. Entry animations run on button wrappers, separately from link
-hover effects; keyboard focus reveals each link immediately. The guide is
-neither fixed nor overlaid.
+Application entrance
+The only addition to compound-labels-NEW.html and cottonball-labels.html is the
+style element with id labelCenterEntrance before </head>. It is scoped to
+@media screen and (prefers-reduced-motion: no-preference). Header, direct .grid
+sections and footer animate for 650–750 ms with delays up to 230 ms. Final
+positions and dimensions do not change. :focus-within keeps focused controls
+visible. Removing that exact block restores the approved original byte for byte.
+Do not change screen to all or animate #printOnly, SVGs or label classes.
 
 Adding a clinic
-1. Prepare and validate its program independently: catalog, QR formula,
-   dimensions, fit rules and physical print output.
-2. Place it beside index.html under a unique, stable filename.
-3. Inside nav.clinics, duplicate a .clinic wrapper and its class="clinic-link"
-   link. Optionally assign an animation-delay to that wrapper.
-4. Set its href to the new HTML filename. Update the visible span text and
-   aria-label. Keep target="_blank" and rel="noopener".
-5. Open the entry page and check that every link opens the correct program.
-   Also check keyboard focus with Tab and activation with Enter.
-6. Compare the existing programs' file hashes before and after the change.
+Validate its HTML independently. Place it under a unique, stable name beside
+index.html. Duplicate .clinic and update its name, href and aria-label. Keep
+new-tab navigation. Check the link without altering existing label engines.
 
-Paths on working workstations
-Included links use compound-labels-NEW.html and cottonball-labels.html in the
-same folder. If actual locations differ, change only their href values. Keep
-the existing programs where they are: moving, renaming or publishing them
-under a different origin may change the storage the browser exposes to them.
-Installing an entry page does not require replacing the printing programs.
+Catalog
+localStorage keys and validation are unchanged. Catalogs do not synchronize.
+A future shared implementation requires a database, authentication and clinic
+write permissions; never embed private GitHub or database credentials in HTML.
+This release does not enable synchronization.
 
 Verification
-Verification-Results.json records included HTML versions and SHA-256 hashes.
-A byte-for-byte comparison confirms their code is unchanged in this delivery.
-Current checks cover structure, links, embedded assets and program preservation.
-Prior label validation is listed separately. No physical print test or visual
-review in a real browser was performed during this entry-page change.
+Verification-Results.json separates historical label checks from current UI
+review. Both links and reference examples were checked in the browser. Removing
+the added CSS reproduces originals and every script remains identical. No
+physical printer test was performed for this visual change.
