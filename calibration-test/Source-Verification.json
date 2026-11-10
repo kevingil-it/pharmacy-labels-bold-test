@@ -1,0 +1,32 @@
+{
+  "purpose": "Isolated baseline for calibration investigation; no alignment fix applied.",
+  "sourceVersions": {
+    "Motivated": "2.4.4",
+    "Cottonball": "2.4.5"
+  },
+  "physicalPrinterTested": false,
+  "files": [
+    {
+      "source": "motivated-labels.html",
+      "sourceSha256": "663fca469fae6d99fedae7f75c8cf635f185763a0f315db0df0c80424cb399c1",
+      "testFile": "motivated-labels-calibration-test.html",
+      "testSha256": "27846a2bbe401d75c100792b661979f009aeaca04b2400f98ab792d789f318dd",
+      "replacements": {
+        "compound-labels-printer-v2": "label-center-calibration-test-printer-v1",
+        "compound-labels-catalog-v1": "label-center-calibration-test-compound-labels-catalog-v1",
+        "zd621-printer-profile.json": "TEST-zd621-printer-profile.json"
+      }
+    },
+    {
+      "source": "cottonball-labels.html",
+      "sourceSha256": "39e46b35528e7afa190b9efccfe0487dd0f14aa348e8fdd70f6afc19ada51e10",
+      "testFile": "cottonball-labels-calibration-test.html",
+      "testSha256": "37b3be28a455a35f1b2e17ca136b4fed10f65c4ceae4cd0c500f3cd11e5cff70",
+      "replacements": {
+        "compound-labels-printer-v2": "label-center-calibration-test-printer-v1",
+        "cottonball-labels-catalog-v1": "label-center-calibration-test-cottonball-labels-catalog-v1",
+        "zd621-printer-profile.json": "TEST-zd621-printer-profile.json"
+      }
+    }
+  ]
+}

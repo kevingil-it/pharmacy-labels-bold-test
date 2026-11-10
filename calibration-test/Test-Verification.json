@@ -1,0 +1,35 @@
+{
+  "physicalPrinterTested": false,
+  "apps": [
+    {
+      "clinic": "motivated",
+      "productionStorageUntouched": true,
+      "testProfileSavedAndReloaded": true,
+      "zeroAndOneDotControls": true,
+      "oneAndTenTargetOutputMatchesOfficial": true,
+      "disabledPrintShortcutBlocked": true,
+      "readKeys": [
+        "label-center-calibration-test-printer-v1",
+        "label-center-calibration-test-compound-labels-catalog-v1"
+      ],
+      "writeKeys": [
+        "label-center-calibration-test-printer-v1"
+      ]
+    },
+    {
+      "clinic": "cottonball",
+      "productionStorageUntouched": true,
+      "testProfileSavedAndReloaded": true,
+      "zeroAndOneDotControls": true,
+      "oneAndTenTargetOutputMatchesOfficial": true,
+      "disabledPrintShortcutBlocked": true,
+      "readKeys": [
+        "label-center-calibration-test-printer-v1",
+        "label-center-calibration-test-cottonball-labels-catalog-v1"
+      ],
+      "writeKeys": [
+        "label-center-calibration-test-printer-v1"
+      ]
+    }
+  ]
+}

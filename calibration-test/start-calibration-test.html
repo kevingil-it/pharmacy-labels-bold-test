@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>The Pharmacy Hub — Calibration Test</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#dceafa,transparent 60%),#f2f6fb;color:#233451;font:16px/1.6 system-ui,sans-serif}
+    main{max-width:880px;margin:48px auto;padding:40px;background:#fff;border:1px solid #d8e2ef;border-radius:22px;box-shadow:0 16px 60px #20315c0d}
+    .brand{font-size:13px;letter-spacing:.16em;font-weight:750;color:#20315c}.badge{display:inline-block;margin:22px 0 8px;padding:5px 10px;background:#fff4d6;border:1px solid #eed69a;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.08em;color:#71520e}
+    h1{margin:0 0 10px;font-size:38px;line-height:1.15;letter-spacing:-.03em}h2{font-size:20px;margin:30px 0 8px}p{margin:10px 0}.intro{color:#596b82;max-width:680px}
+    .links{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0}.links a{display:block;text-align:center;text-decoration:none;color:#fff;background:#20315c;padding:18px 14px;border-radius:10px;font-weight:650;letter-spacing:.05em;transition:background .15s,transform .15s}.links a:hover{background:#304c84;transform:translateY(-2px)}a:focus-visible{outline:3px solid #558ed2;outline-offset:4px}
+    li{padding-left:4px;margin:10px 0}ol{padding-left:22px}.note{padding:16px 18px;background:#eef4fb;border-left:3px solid #527ead;border-radius:7px}.note p{margin:0}.warning{background:#fff8e8;border-color:#c89a40;color:#614c1c}strong{font-weight:650}.meta{font-size:12px;color:#687b93;margin-top:28px;padding-top:18px;border-top:1px solid #e0e7f0}
+    @media(max-width:650px){main{margin:16px;padding:24px}.links{grid-template-columns:1fr}h1{font-size:30px}}
+  </style>
+</head>
+<body><main>
+  <div class="brand">THE PHARMACY HUB</div>
+  <div class="badge">SEPARATE TEST COPY · 1.0</div>
+  <h1>Label alignment test</h1>
+  <p class="intro">Check the starting position and repeatability of your round labels. Choose a clinic, print the alignment targets, then adjust one dot at a time.</p>
+  <div class="links">
+    <a href="motivated-labels-calibration-test.html">MOTIVATED — TEST</a>
+    <a href="cottonball-labels-calibration-test.html">COTTONBALL — TEST</a>
+  </div>
+  <div class="note"><p>These copies use their own saved settings and catalogs. The official programs keep their current settings, rules and links. No automatic alignment correction has been added.</p></div>
+  <h2>Start with one printer</h2>
+  <ol>
+    <li><strong>Keep the current Windows printer settings for the first run.</strong> Record the printer, its Top / Left settings and the label size. Use the same roll throughout the comparison.</li>
+    <li>Open a test copy. Choose <strong>Printer &amp; alignment</strong> and check the resolution and physical label diameter. For the current 1-inch stock: <strong>300 dpi, 1.00-inch page, 0.95-inch content.</strong></li>
+    <li>Choose <strong>Zero test X / Y</strong>, then <strong>Print 1 test</strong>. In Chrome use the intended Zebra printer, matching paper size, scale 100%, no margins, headers and footers off, and <strong>Copies: 1</strong>.</li>
+    <li>If the target is visible, choose <strong>Print 10 tests</strong>. Keep the strip intact and compare TEST 01 with TEST 10.</li>
+    <li>If all targets have the same small offset, use <strong>Left / Right / Up / Down 1 dot</strong>. Print again, then choose <strong>Save printer settings</strong> when the position is consistent. This saves only the test profile.</li>
+  </ol>
+  <h2>Read the result</h2>
+  <p><strong>Same offset on every label:</strong> a fixed correction may help. <strong>Changing position, skipped labels or only the first label displaced:</strong> record the pattern; repeatedly changing X / Y will not fix inconsistent feeding. Keep the strip and send a photo showing several complete labels.</p>
+  <p>Zero means the center of the page sent by the program. It does not measure the physical sticker. One dot is approximately 0.083 mm at the 300-dpi Zebra setting. Large shifts can clip a label; the existing fit checks remain active.</p>
+  <div class="note warning"><p><strong>Windows and the physical printer are still shared.</strong> These copies do not change driver settings or run printer calibration. A later test with driver Top / Left at zero needs the working settings recorded and restored, or a dedicated test printer setup.</p></div>
+  <h2>After the alignment targets</h2>
+  <p>Compare a short name and a long name, and Compound / Fill in Motivated. Check Cottonball VX.5 too. Keep the same profile for all comparisons. After replacing a roll, repeat the targets before a medication batch.</p>
+  <p>To compare against your exact saved production settings, export the profile from the official program and import it here. Importing fills the test controls; use Save printer settings to keep it. Custom medications are not imported automatically.</p>
+  <p class="meta">Based on Motivated 2.4.4 and Cottonball 2.4.5 · November 10, 2026<br>Same label engine, fonts, QR and date / fit validation. The two test apps share a test printer profile on this browser and computer. Physical printer validation is still required.</p>
+</main></body></html>
