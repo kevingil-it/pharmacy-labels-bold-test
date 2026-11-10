@@ -618,7 +618,7 @@ code {
 <p class="note" id="anchorMetric"></p><div class="review" id="review">The QR contains only the exact Lot, as in the original file.</div>
 <div class="small-actions"><button id="svg" disabled>Export SVG</button></div>
 </div>
-</section></div><footer>Offline file · Version 2.4.3 · Local medication list · 2026-11-09 · Physical print and scanner validation required before production.</footer></main>
+</section></div><footer>Offline file · Version 2.4.4 · Local medication list · 2026-11-10 · Physical print and scanner validation required before production.</footer></main>
 <div id="printOnly"></div>
 <!-- Local medication catalog. Independent of the label renderer and print coordinates. -->
 <style id="catalogStyles">
@@ -1779,6 +1779,16 @@ const LabelEngine = (() => {
     if (d.getUTCFullYear() !== +m[1] || d.getUTCMonth() !== +m[2] - 1 || d.getUTCDate() !== +m[3]) throw Error('Enter a valid date.');
     return `${m[2]}/${m[3]}/${m[1]}`;
   }
+  /* Calendar validity and chronology are required for every printable label.
+   * ISO input dates compare without timezones. Same-day BUD remains allowed.
+   * This validates entered dates; it does not calculate an approved shelf life. */
+  function validateDates(data) {
+    if (!data.made) throw Error('Enter the preparation date before printing.');
+    if (!data.bud) throw Error('Enter the beyond-use date (BUD) before printing.');
+    try { date(data.made); } catch { throw Error('Enter a valid preparation date.'); }
+    try { date(data.bud); } catch { throw Error('Enter a valid beyond-use date (BUD).'); }
+    if (data.bud < data.made) throw Error('Beyond-use date (BUD) cannot be earlier than the preparation date. Correct the dates before printing.');
+  }
   function displayDate(value) {
     if (!value) return '--/--/----';
     try {
@@ -1829,6 +1839,7 @@ const LabelEngine = (() => {
       lot = data.lot;
     if (!preview && (!desc || desc.length > 200 || /[\u0000-\u001f\u007f]/.test(desc))) throw Error('Enter a medication description (maximum 200 characters; no control characters).');
     if (!preview && !['COMPOUNDED', 'FILLED'].includes(data.kind)) throw Error('Choose Compounded or Filled.');
+    if (!preview) validateDates(data);
     const made = preview ? displayDate(data.made) : date(data.made),
       bud = preview ? displayDate(data.bud) : date(data.bud);
     if (!preview && (!Number.isInteger(+data.copies) || +data.copies < 1 || +data.copies > 500)) throw Error('Copies must be an integer from 1 to 500.');
@@ -2354,7 +2365,8 @@ const LabelEngine = (() => {
     zpl,
     calibration,
     date,
-    displayDate
+    displayDate,
+    validateDates
   };
 })();
 </script>
@@ -2473,7 +2485,7 @@ function render() {
   $('anchorMetric').textContent = `Fixed QR anchor · X ${((shown.qr.x + shown.qr.side / 2) / shown.dotsPerMm).toFixed(2)} mm · Y ${((shown.qr.y + shown.qr.side / 2) / shown.dotsPerMm).toFixed(2)} mm from page origin. Same anchor for every medication with this printer profile.`;
   $('previewBadge').textContent = model ? 'Fits' : fitFailed ? 'Check fit' : 'Draft';
   $('review').textContent = `${d.description || '[Medication / strength]'} | ${d.kind}: ${LabelEngine.displayDate(d.made)} | BUD: ${LabelEngine.displayDate(d.bud)} | Lot / QR: ${d.lot || '[Enter Lot]'}${d.quantity ? ' | ' + d.quantity : ''}. ${shown.qr.placeholder ? 'The page creates the QR automatically from the Lot field. No external QR is needed.' : `QR: ${shown.qr.modules} × ${shown.qr.modules}, ${shown.qr.moduleDots} dots/module; 4-module quiet zone.`}`;
-  if (!fontReady) status(fontFailed ? 'Live draft shown with a fallback font. The print font could not load; printing is disabled.' : 'Live draft shown. Loading the embedded print font…', fontFailed ? 'warn' : '');else if (settingsFallback) status(error + ' Preview uses the last valid printer settings.', 'error');else if (missing.length) status('Live draft — complete: ' + missing.join(', ') + '. Final fit is checked when all required fields are filled.', '');else if (!shown.fits) status('The current content does not fit. It remains visible for adjustment; printing is disabled.', 'error');else if (error) status(error + ' The current draft remains visible.', 'error');else if (d.bud < d.made) status(`Date notice: BUD ${LabelEngine.displayDate(d.bud)} is earlier than ${d.kind.toLowerCase()} ${LabelEngine.displayDate(d.made)}. Printing is enabled; the dates will print exactly as entered.`, 'warn');else status(model.qr.moduleDots < 4 ? 'Fits digitally. The 3-dot profile requires a physical scan trial.' : 'Preview ready. Verify the printed text, alignment, and scanned Lot before production.', model.qr.moduleDots < 4 ? 'warn' : 'good');
+  if (!fontReady) status(fontFailed ? 'Live draft shown with a fallback font. The print font could not load; printing is disabled.' : 'Live draft shown. Loading the embedded print font…', fontFailed ? 'warn' : '');else if (settingsFallback) status(error + ' Preview uses the last valid printer settings.', 'error');else if (missing.length) status('Live draft — complete: ' + missing.join(', ') + '. Final fit is checked when all required fields are filled.', '');else if (!shown.fits) status('The current content does not fit. It remains visible for adjustment; printing is disabled.', 'error');else if (error) status(error + ' The current draft remains visible.', 'error');else status(model.qr.moduleDots < 4 ? 'Fits digitally. The 3-dot profile requires a physical scan trial.' : 'Preview ready. Verify the printed text, alignment, and scanned Lot before production.', model.qr.moduleDots < 4 ? 'warn' : 'good');
   buttons();
 }
 function schedule() {
@@ -2498,7 +2510,22 @@ function fileName(ext) {
   return 'compound-label-' + $('lot').value.replace(/[^A-Za-z0-9_-]/g, '_') + '-' + $('dpi').value + 'dpi.' + ext;
 }
 /* Recheck current state before any print or export action. */
+/* Recheck dates synchronously, including a browser-menu print with stale pages. */
+function validatePrintDates() {
+  try {
+    LabelEngine.validateDates(data());
+    return true;
+  } catch (error) {
+    model = null;
+    $('printOnly').innerHTML = '';
+    lastPrintJob = [];
+    status(error.message, 'error');
+    buttons();
+    return false;
+  }
+}
 function guard() {
+  if (!validatePrintDates()) return false;
   clearTimeout(pending);
   render();
   return model && $('reviewed').checked && $('confirmed').checked;
@@ -2594,6 +2621,7 @@ window.addEventListener('afterprint', () => {
   if (!printBusy) clearPrintJob();
 });
 window.addEventListener('beforeprint', () => {
+  if (lastPrintJob.some(m => m.qr) && !validatePrintDates()) return;
   if (!printBusy && !lastPrintJob.length && guard()) preparePrint(Array.from({
     length: model.copies
   }, () => model));

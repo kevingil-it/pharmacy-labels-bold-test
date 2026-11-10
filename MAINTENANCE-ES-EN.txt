@@ -101,3 +101,19 @@ compound-labels-NEW.html es solo una redirección para enlaces anteriores.
 compound-labels-NEW.html is only a redirect for existing links.
 Ambos programas conservan todos sus bytes y estilos; no se añadió un fondo nuevo.
 Both programs retain all bytes and styles; no new background was applied.
+
+
+ACTUALIZACION / UPDATE — 2026-11-10
+Motivated 2.4.4 · Cottonball 2.4.5 · Manual 1.8
+Fechas obligatorias y válidas; BUD anterior a preparación bloquea Print y
+exportación de etiquetas. Se permite el mismo día. No se intercambian fechas.
+Cottonball: 31 variantes tras consolidar los dos CX.1 Resistant originales.
+Se preservan fórmulas editadas y se marcan para revisión.
+No se modificó la calibración, geometría, fuente ni perfil de impresora.
+
+Valid preparation and BUD dates are mandatory; a BUD before preparation
+blocks label Print and export. Same-day BUD is allowed. Dates are not swapped.
+Cottonball: 31 variants after consolidating the original CX.1 Resistant pair.
+Edited formulas are preserved and flagged for review.
+Calibration, geometry, typeface and printer profiles are unchanged.
+See Catalog-Audit.html, Catalog-Audit.csv and Catalog-Date-Verification.json.

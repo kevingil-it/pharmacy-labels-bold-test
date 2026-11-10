@@ -1,439 +1,691 @@
 {
-  "portal": {
-    "portalVersion": "1.5",
-    "programVersions": {
-      "Motivated": "2.4.3",
-      "Cottonball": "2.4.4"
-    },
-    "programHashesSha256": {
-      "cottonball-labels.html": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb",
-      "motivated-labels.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf"
-    },
-    "programsByteIdentical": false,
-    "nativeLinksChecked": [
-      "compound-labels-NEW.html",
-      "cottonball-labels.html"
-    ],
-    "originalBrandUnchanged": false,
-    "externalDependencies": false,
-    "readsOrWritesProgramStorage": false,
-    "independentTabs": true,
-    "manualLanguages": [
-      "es",
-      "en"
-    ],
-    "manualEdition": "1.6",
-    "catalogReferenceUnchanged": true,
-    "realBrowserVisualQA": true,
-    "physicalPrinterTestedThisChange": false,
-    "websitePublished": true,
-    "functionalCodeUnchanged": true,
-    "officialSymbolSource": "https://www.thepharmacyhub.com/assets/mark-navy-P16WB9v1.png",
-    "publicUrl": "https://kevingil-it.github.io/pharmacy-labels-bold-test/"
+  "releaseDate": "2026-11-10",
+  "versions": {
+    "portal": "1.5",
+    "motivated": "2.4.4",
+    "cottonball": "2.4.5",
+    "manual": "1.8"
   },
-  "controls": {
-    "onlyNativeNavigation": true,
-    "clientNames": [
-      "Motivated",
-      "Cottonball"
-    ],
-    "javascript": false,
-    "embeddedApplications": false,
-    "presentation": {
-      "entrySequence": [
-        "brand",
-        "accent",
-        "heading",
-        "Motivated",
-        "Cottonball",
-        "guide"
-      ],
-      "entryCompletesMs": 1900,
-      "backgroundCyclesSeconds": [
-        18,
-        24
-      ],
-      "reducedMotionSupported": true,
-      "arrowIcons": false,
-      "embeddedTypeface": "Open Sans Light and Semibold; portal only",
-      "backgroundSymbolRotationSeconds": 100,
-      "applicationEntranceMaxMs": 920,
-      "screenOnly": true,
-      "originalWordmarkUnchanged": true,
-      "backgroundSymbolPosition": "lower-left",
-      "backgroundSymbolMaxWidthPx": 1100,
-      "backgroundSymbolBreathingSeconds": 8,
-      "backgroundSymbolBreathingScales": [
-        0.97,
-        1.06
-      ]
-    },
-    "method": "Native link and reference-example browser checks; exact reversal of added screen CSS reproduces approved application hashes."
-  },
-  "priorApplicationValidation": {
-    "motivated": {
-      "version": "2.4.3",
-      "report": {
-        "presets": 18,
-        "modes": [
-          "COMPOUNDED",
-          "FILLED"
-        ],
-        "cases": 72,
-        "allAcceptedPixelsMatch": true,
-        "allPrintedCoordinatesMatch": true,
-        "qrDecoded": 72,
-        "allPrintPagesUseCottonballSvg": true,
-        "printJobs": [
-          {
-            "pages": 1,
-            "bytes": 44885,
-            "mode": "normal"
-          },
-          {
-            "pages": 40,
-            "bytes": 1795400,
-            "mode": "normal"
-          },
-          {
-            "pages": 41,
-            "bytes": 1840285,
-            "mode": "normal"
-          },
-          {
-            "pages": 100,
-            "bytes": 4488500,
-            "mode": "normal"
-          },
-          {
-            "pages": 500,
-            "bytes": 22442500,
-            "mode": "normal"
-          },
-          {
-            "pages": 1,
-            "bytes": 44885,
-            "mode": "normal"
-          },
-          {
-            "pages": 1,
-            "bytes": 44885,
-            "mode": "throw"
-          },
-          {
-            "pages": 1,
-            "bytes": 44885,
-            "mode": "no-afterprint"
-          },
-          {
-            "pages": 41,
-            "bytes": 1840285,
-            "mode": "normal"
-          },
-          {
-            "pages": 1,
-            "bytes": 44885,
-            "mode": "normal"
-          },
-          {
-            "pages": 1,
-            "bytes": 13826,
-            "mode": "normal"
-          },
-          {
-            "pages": 10,
-            "bytes": 139114,
-            "mode": "normal"
-          }
-        ],
-        "cleanupCases": [
-          "throw",
-          "no-afterprint",
-          "duplicate-click-blocked",
-          "browser-menu",
-          "Ctrl-P",
-          "calibration",
-          "draft-blocked"
-        ],
-        "physicalPrinterTested": false
+  "changes": [
+    "Strict preparation/BUD validation on print and export in both apps",
+    "Cottonball CX.1 Resistant catalog reconciliation with conservative saved-catalog migration"
+  ],
+  "publicationStatus": "Release files prepared; deployment of this release has not been verified.",
+  "baselineCommit": "34e10f94f74b2f2296af44c5ad314a2333f41bb2",
+  "verification": {
+    "date": "2026-11-10",
+    "physicalPrinterTested": false,
+    "environment": "JavaScript controller/engine harness with canvas",
+    "validOutputCases": 67,
+    "qrDecoded": 67,
+    "dateCases": [
+      {
+        "clinic": "motivated",
+        "made": "2026-11-10",
+        "bud": "2026-11-09",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2027-01-01",
+        "bud": "2026-12-31",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-12-01",
+        "bud": "2026-11-30",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-11-10",
+        "bud": "2026-11-10",
+        "accepted": true
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-12-31",
+        "bud": "2027-01-01",
+        "accepted": true
+      },
+      {
+        "clinic": "motivated",
+        "made": "2028-02-29",
+        "bud": "2028-03-01",
+        "accepted": true
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-02-29",
+        "bud": "2026-03-01",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-02-01",
+        "bud": "2026-02-30",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "",
+        "bud": "2026-11-10",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-11-10",
+        "bud": "",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "11/10/2026",
+        "bud": "2026-11-11",
+        "accepted": false
+      },
+      {
+        "clinic": "motivated",
+        "made": "2026-13-01",
+        "bud": "2027-01-01",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-11-10",
+        "bud": "2026-11-09",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2027-01-01",
+        "bud": "2026-12-31",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-12-01",
+        "bud": "2026-11-30",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-11-10",
+        "bud": "2026-11-10",
+        "accepted": true
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-12-31",
+        "bud": "2027-01-01",
+        "accepted": true
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2028-02-29",
+        "bud": "2028-03-01",
+        "accepted": true
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-02-29",
+        "bud": "2026-03-01",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-02-01",
+        "bud": "2026-02-30",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "",
+        "bud": "2026-11-10",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-11-10",
+        "bud": "",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "11/10/2026",
+        "bud": "2026-11-11",
+        "accepted": false
+      },
+      {
+        "clinic": "cottonball",
+        "made": "2026-13-01",
+        "bud": "2027-01-01",
+        "accepted": false
       }
-    },
-    "cottonball": {
-      "version": "2.4.4",
-      "report": {
-        "cases": 128,
-        "unchangedOthers": 120,
-        "correctedVX5": 8,
-        "qrDecoded": 128,
-        "failures": [],
-        "details": [
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
-            "fixture": 0,
-            "ms": 86,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 5.5,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
-            "fixture": 1,
-            "ms": 30,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 6,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
-            "fixture": 2,
-            "ms": 33,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 5.5,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
-            "fixture": 3,
-            "ms": 21,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 6,
-            "lotBudSizeAfter": 6
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
-            "fixture": 0,
-            "ms": 53,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 5.5,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
-            "fixture": 1,
-            "ms": 27,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 6,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
-            "fixture": 2,
-            "ms": 28,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 5.5,
-            "lotBudSizeAfter": 5.5
-          },
-          {
-            "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
-            "fixture": 3,
-            "ms": 18,
-            "bounds": [
-              {
-                "left": 9,
-                "right": 295,
-                "delta": 0
-              },
-              {
-                "left": 123,
-                "right": 181,
-                "delta": 0
-              }
-            ],
-            "adjustment": {
-              "topInset": 0,
-              "innerLift": 0,
-              "innerExpansion": 0,
-              "spacing": "square"
-            },
-            "lotBudSizeBefore": 6,
-            "lotBudSizeAfter": 6
-          }
+    ],
+    "blockedActions": [
+      {
+        "clinic": "motivated",
+        "print": true,
+        "zpl": true,
+        "svg": true,
+        "ctrlP": true,
+        "browserMenu": true
+      },
+      {
+        "clinic": "cottonball",
+        "print": true,
+        "zpl": true,
+        "svg": true,
+        "ctrlP": true,
+        "browserMenu": true
+      }
+    ],
+    "catalogMigrationCases": [
+      "default32",
+      "no-payload32",
+      "already31",
+      "legacy-only",
+      "custom-legacy",
+      "custom-canonical",
+      "write-denied",
+      "fresh-password-protected-catalog"
+    ],
+    "productionPrintStylesUnchanged": true,
+    "fontsUnchanged": true
+  },
+  "catalogAudit": {
+    "originalPdfs": 32,
+    "decodedQrs": 32,
+    "originalCatalogEntries": 32,
+    "distinctCodeVariantFormulaCombinations": 31,
+    "sourcePdfsMissingFromOriginalCatalog": 0,
+    "originalCatalogEntriesWithoutPdf": 0,
+    "sourceQrByteMatchesBefore": 32,
+    "exactOriginalPayloadsRetainedAfter": 31,
+    "sourceIngredientStrengthMatchesAfter": 32,
+    "duplicateGroups": [
+      {
+        "code": "CX.1",
+        "variant": "RESISTANT",
+        "ingredients": [
+          [
+            "fluocinolone",
+            "0.01"
+          ],
+          [
+            "hydroquinone",
+            "8"
+          ],
+          [
+            "kojic acid",
+            "1"
+          ],
+          [
+            "niacinamide",
+            "2"
+          ],
+          [
+            "tretinoin",
+            "0.05"
+          ]
+        ],
+        "files": [
+          "CX_1_Advanced_Dark_Spot_Treatment_Resistant (2).pdf",
+          "CX_1_Advanced_Dark_Spot_Treatment_Resistant_ (12).pdf"
         ]
       }
-    }
-  },
-  "verificationLimit": "No physical printer or scanner test. Screen entrance is CSS-only, excluded from print media. The shared catalog is not implemented. GitHub Pages is public. No physical printer test was performed for the filename-only change.",
-  "applicationPreservation": {
-    "compound-labels-NEW.html": {
-      "beforeSha256": "d2028c41a16b5a682d3369eb1a4e1da2f1a9f5aa73cd0647c1f8a1ca3247d3fa",
-      "afterSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
-      "onlyAddedScreenEntranceCSS": true,
-      "allOriginalBytesPreserved": true,
-      "scriptsUnchanged": true,
-      "originalPrintStylesUnchanged": true
-    },
-    "cottonball-labels.html": {
-      "beforeSha256": "e064e23f9c8665a53ffb9316c1b38af36248543f8fb918fa1f16019f4d596fa7",
-      "afterSha256": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324",
-      "onlyAddedScreenEntranceCSS": true,
-      "allOriginalBytesPreserved": true,
-      "scriptsUnchanged": true,
-      "originalPrintStylesUnchanged": true
-    }
-  },
-  "currentBrowserChecks": {
-    "mainVisualReview": true,
-    "bothNativeLinksOpenCorrectApplications": true,
-    "motivatedReferencePreviewReady": true,
-    "cottonballReferenceFormulaQRReady": true,
-    "physicalPrintPerformed": false,
-    "mobileViewportVisualReview": false
-  },
-  "portalVisualUpdate": {
-    "date": "2026-11-09",
-    "onlyPortalAndDocumentationChanged": true,
-    "applicationHashesUnchanged": {
-      "compound-labels-NEW.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
-      "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324"
-    },
-    "artworkPixelsUnchanged": true,
-    "mainAndFooterDOMUnchanged": true,
-    "nativeLinksUnchanged": true,
-    "browserDesktopReviewed": true,
-    "motionObservedAcrossFrames": true,
-    "reducedMotionRulePreserved": true,
-    "physicalPrintPerformed": false
-  },
-  "clinicFilenameUpdate": {
-    "oldPath": "compound-labels-NEW.html",
-    "canonicalPath": "motivated-labels.html",
-    "legacyRedirectPreserved": true,
-    "programByteIdentical": true,
-    "programSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
-    "cottonballUnchanged": true,
-    "presentationChangesApplied": false,
-    "storageKeysUnchanged": true
-  },
-  "cottonballDisplayCleanup": {
-    "scope": "Medication selector display text only",
-    "removedVisibleSuffixes": [
-      "PDF (12)",
-      "PDF (2)"
     ],
-    "qrPayloadsUnchanged": true,
-    "optionValuesUnchanged": true,
-    "entriesMerged": false,
-    "printEngineUnchanged": true,
-    "motivatedUnchanged": true,
-    "cottonballSha256": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb"
+    "motivatedEntries": 18,
+    "motivatedNormalizedNameDuplicates": 0,
+    "motivatedComparison": "18 current entries match the pre-change release; no entries missing from the two available uploaded HTML catalogs. No independent Motivated formula-PDF set was found.",
+    "localUserCatalogs": "Browser-local user changes cannot be inventoried remotely. Migration preserves custom formulas for manual review.",
+    "physicalPrinterTested": false,
+    "sourceArchiveSha256": "1f5e28b16833aa2d8dbba066dd6d6d4e41ad1bd531270dc346db95ab77970feb"
+  },
+  "limitations": [
+    "No physical printer or mobile scanner test",
+    "No independent Motivated formula-PDF set available",
+    "Browser-local user catalogs cannot be remotely inventoried"
+  ],
+  "previousReleaseEvidence": {
+    "portal": {
+      "portalVersion": "1.5",
+      "programVersions": {
+        "Motivated": "2.4.3",
+        "Cottonball": "2.4.4"
+      },
+      "programHashesSha256": {
+        "cottonball-labels.html": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb",
+        "motivated-labels.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf"
+      },
+      "programsByteIdentical": false,
+      "nativeLinksChecked": [
+        "compound-labels-NEW.html",
+        "cottonball-labels.html"
+      ],
+      "originalBrandUnchanged": false,
+      "externalDependencies": false,
+      "readsOrWritesProgramStorage": false,
+      "independentTabs": true,
+      "manualLanguages": [
+        "es",
+        "en"
+      ],
+      "manualEdition": "1.6",
+      "catalogReferenceUnchanged": true,
+      "realBrowserVisualQA": true,
+      "physicalPrinterTestedThisChange": false,
+      "websitePublished": true,
+      "functionalCodeUnchanged": true,
+      "officialSymbolSource": "https://www.thepharmacyhub.com/assets/mark-navy-P16WB9v1.png",
+      "publicUrl": "https://kevingil-it.github.io/pharmacy-labels-bold-test/"
+    },
+    "controls": {
+      "onlyNativeNavigation": true,
+      "clientNames": [
+        "Motivated",
+        "Cottonball"
+      ],
+      "javascript": false,
+      "embeddedApplications": false,
+      "presentation": {
+        "entrySequence": [
+          "brand",
+          "accent",
+          "heading",
+          "Motivated",
+          "Cottonball",
+          "guide"
+        ],
+        "entryCompletesMs": 1900,
+        "backgroundCyclesSeconds": [
+          18,
+          24
+        ],
+        "reducedMotionSupported": true,
+        "arrowIcons": false,
+        "embeddedTypeface": "Open Sans Light and Semibold; portal only",
+        "backgroundSymbolRotationSeconds": 100,
+        "applicationEntranceMaxMs": 920,
+        "screenOnly": true,
+        "originalWordmarkUnchanged": true,
+        "backgroundSymbolPosition": "lower-left",
+        "backgroundSymbolMaxWidthPx": 1100,
+        "backgroundSymbolBreathingSeconds": 8,
+        "backgroundSymbolBreathingScales": [
+          0.97,
+          1.06
+        ]
+      },
+      "method": "Native link and reference-example browser checks; exact reversal of added screen CSS reproduces approved application hashes."
+    },
+    "priorApplicationValidation": {
+      "motivated": {
+        "version": "2.4.3",
+        "report": {
+          "presets": 18,
+          "modes": [
+            "COMPOUNDED",
+            "FILLED"
+          ],
+          "cases": 72,
+          "allAcceptedPixelsMatch": true,
+          "allPrintedCoordinatesMatch": true,
+          "qrDecoded": 72,
+          "allPrintPagesUseCottonballSvg": true,
+          "printJobs": [
+            {
+              "pages": 1,
+              "bytes": 44885,
+              "mode": "normal"
+            },
+            {
+              "pages": 40,
+              "bytes": 1795400,
+              "mode": "normal"
+            },
+            {
+              "pages": 41,
+              "bytes": 1840285,
+              "mode": "normal"
+            },
+            {
+              "pages": 100,
+              "bytes": 4488500,
+              "mode": "normal"
+            },
+            {
+              "pages": 500,
+              "bytes": 22442500,
+              "mode": "normal"
+            },
+            {
+              "pages": 1,
+              "bytes": 44885,
+              "mode": "normal"
+            },
+            {
+              "pages": 1,
+              "bytes": 44885,
+              "mode": "throw"
+            },
+            {
+              "pages": 1,
+              "bytes": 44885,
+              "mode": "no-afterprint"
+            },
+            {
+              "pages": 41,
+              "bytes": 1840285,
+              "mode": "normal"
+            },
+            {
+              "pages": 1,
+              "bytes": 44885,
+              "mode": "normal"
+            },
+            {
+              "pages": 1,
+              "bytes": 13826,
+              "mode": "normal"
+            },
+            {
+              "pages": 10,
+              "bytes": 139114,
+              "mode": "normal"
+            }
+          ],
+          "cleanupCases": [
+            "throw",
+            "no-afterprint",
+            "duplicate-click-blocked",
+            "browser-menu",
+            "Ctrl-P",
+            "calibration",
+            "draft-blocked"
+          ],
+          "physicalPrinterTested": false
+        }
+      },
+      "cottonball": {
+        "version": "2.4.4",
+        "report": {
+          "cases": 128,
+          "unchangedOthers": 120,
+          "correctedVX5": 8,
+          "qrDecoded": 128,
+          "failures": [],
+          "details": [
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
+              "fixture": 0,
+              "ms": 86,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 5.5,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
+              "fixture": 1,
+              "ms": 30,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 6,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
+              "fixture": 2,
+              "ms": 33,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 5.5,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
+              "fixture": 3,
+              "ms": 21,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 6,
+              "lotBudSizeAfter": 6
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
+              "fixture": 0,
+              "ms": 53,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 5.5,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
+              "fixture": 1,
+              "ms": 27,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 6,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
+              "fixture": 2,
+              "ms": 28,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 5.5,
+              "lotBudSizeAfter": 5.5
+            },
+            {
+              "name": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
+              "fixture": 3,
+              "ms": 18,
+              "bounds": [
+                {
+                  "left": 9,
+                  "right": 295,
+                  "delta": 0
+                },
+                {
+                  "left": 123,
+                  "right": 181,
+                  "delta": 0
+                }
+              ],
+              "adjustment": {
+                "topInset": 0,
+                "innerLift": 0,
+                "innerExpansion": 0,
+                "spacing": "square"
+              },
+              "lotBudSizeBefore": 6,
+              "lotBudSizeAfter": 6
+            }
+          ]
+        }
+      }
+    },
+    "verificationLimit": "No physical printer or scanner test. Screen entrance is CSS-only, excluded from print media. The shared catalog is not implemented. GitHub Pages is public. No physical printer test was performed for the filename-only change.",
+    "applicationPreservation": {
+      "compound-labels-NEW.html": {
+        "beforeSha256": "d2028c41a16b5a682d3369eb1a4e1da2f1a9f5aa73cd0647c1f8a1ca3247d3fa",
+        "afterSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+        "onlyAddedScreenEntranceCSS": true,
+        "allOriginalBytesPreserved": true,
+        "scriptsUnchanged": true,
+        "originalPrintStylesUnchanged": true
+      },
+      "cottonball-labels.html": {
+        "beforeSha256": "e064e23f9c8665a53ffb9316c1b38af36248543f8fb918fa1f16019f4d596fa7",
+        "afterSha256": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324",
+        "onlyAddedScreenEntranceCSS": true,
+        "allOriginalBytesPreserved": true,
+        "scriptsUnchanged": true,
+        "originalPrintStylesUnchanged": true
+      }
+    },
+    "currentBrowserChecks": {
+      "mainVisualReview": true,
+      "bothNativeLinksOpenCorrectApplications": true,
+      "motivatedReferencePreviewReady": true,
+      "cottonballReferenceFormulaQRReady": true,
+      "physicalPrintPerformed": false,
+      "mobileViewportVisualReview": false
+    },
+    "portalVisualUpdate": {
+      "date": "2026-11-09",
+      "onlyPortalAndDocumentationChanged": true,
+      "applicationHashesUnchanged": {
+        "compound-labels-NEW.html": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+        "cottonball-labels.html": "8a8145e8d6d6a9af1db036678a7f38aefa60f7c18d65785ed561acbd1159a324"
+      },
+      "artworkPixelsUnchanged": true,
+      "mainAndFooterDOMUnchanged": true,
+      "nativeLinksUnchanged": true,
+      "browserDesktopReviewed": true,
+      "motionObservedAcrossFrames": true,
+      "reducedMotionRulePreserved": true,
+      "physicalPrintPerformed": false
+    },
+    "clinicFilenameUpdate": {
+      "oldPath": "compound-labels-NEW.html",
+      "canonicalPath": "motivated-labels.html",
+      "legacyRedirectPreserved": true,
+      "programByteIdentical": true,
+      "programSha256": "cd63ba49e9596792c9d2371ce0ea1b52c5f72eddd3c676ca27d075216d2645bf",
+      "cottonballUnchanged": true,
+      "presentationChangesApplied": false,
+      "storageKeysUnchanged": true
+    },
+    "cottonballDisplayCleanup": {
+      "scope": "Medication selector display text only",
+      "removedVisibleSuffixes": [
+        "PDF (12)",
+        "PDF (2)"
+      ],
+      "qrPayloadsUnchanged": true,
+      "optionValuesUnchanged": true,
+      "entriesMerged": false,
+      "printEngineUnchanged": true,
+      "motivatedUnchanged": true,
+      "cottonballSha256": "cdd999c7a4ce19beb0d4cf4b42d44ba695edea470691c1df00f9f8519bebf6fb"
+    }
   }
 }

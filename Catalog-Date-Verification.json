@@ -1,0 +1,183 @@
+{
+  "date": "2026-11-10",
+  "physicalPrinterTested": false,
+  "environment": "JavaScript controller/engine harness with canvas",
+  "validOutputCases": 67,
+  "qrDecoded": 67,
+  "dateCases": [
+    {
+      "clinic": "motivated",
+      "made": "2026-11-10",
+      "bud": "2026-11-09",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2027-01-01",
+      "bud": "2026-12-31",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-12-01",
+      "bud": "2026-11-30",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-11-10",
+      "bud": "2026-11-10",
+      "accepted": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-12-31",
+      "bud": "2027-01-01",
+      "accepted": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2028-02-29",
+      "bud": "2028-03-01",
+      "accepted": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-02-29",
+      "bud": "2026-03-01",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-02-01",
+      "bud": "2026-02-30",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "",
+      "bud": "2026-11-10",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-11-10",
+      "bud": "",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "11/10/2026",
+      "bud": "2026-11-11",
+      "accepted": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-13-01",
+      "bud": "2027-01-01",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-10",
+      "bud": "2026-11-09",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2027-01-01",
+      "bud": "2026-12-31",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-12-01",
+      "bud": "2026-11-30",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-10",
+      "bud": "2026-11-10",
+      "accepted": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-12-31",
+      "bud": "2027-01-01",
+      "accepted": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2028-02-29",
+      "bud": "2028-03-01",
+      "accepted": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-02-29",
+      "bud": "2026-03-01",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-02-01",
+      "bud": "2026-02-30",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "",
+      "bud": "2026-11-10",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-10",
+      "bud": "",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "11/10/2026",
+      "bud": "2026-11-11",
+      "accepted": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-13-01",
+      "bud": "2027-01-01",
+      "accepted": false
+    }
+  ],
+  "blockedActions": [
+    {
+      "clinic": "motivated",
+      "print": true,
+      "zpl": true,
+      "svg": true,
+      "ctrlP": true,
+      "browserMenu": true
+    },
+    {
+      "clinic": "cottonball",
+      "print": true,
+      "zpl": true,
+      "svg": true,
+      "ctrlP": true,
+      "browserMenu": true
+    }
+  ],
+  "catalogMigrationCases": [
+    "default32",
+    "no-payload32",
+    "already31",
+    "legacy-only",
+    "custom-legacy",
+    "custom-canonical",
+    "write-denied",
+    "fresh-password-protected-catalog"
+  ],
+  "productionPrintStylesUnchanged": true,
+  "fontsUnchanged": true
+}
