@@ -1,0 +1,1088 @@
+{
+  "date": "2026-11-12",
+  "baseCommit": "904698e8a5e4a0971d8f355c7108efac8c61c5ae",
+  "physicalPrinterTested": false,
+  "cases": [
+    {
+      "clinic": "motivated",
+      "med": "TAD7MG/FLUOXETINE 23MG/ ZINC30MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TAD7MG/FLUOXETINE 23MG/ ZINC30MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 65
+    },
+    {
+      "clinic": "motivated",
+      "med": "TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 65
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 65
+    },
+    {
+      "clinic": "motivated",
+      "med": "Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 65
+    },
+    {
+      "clinic": "motivated",
+      "med": "Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 25MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 25MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 50MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 50MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 100MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "SILDENAFIL 100MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 2.5MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 2.5MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 5MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 5MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 10MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 10MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 20MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "TADALAFIL 20MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "FINASTERIDE 1MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "FINASTERIDE 1MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "MINOXIDIL 2.5MG",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "MINOXIDIL 2.5MG",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 64
+    },
+    {
+      "clinic": "motivated",
+      "med": "MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 72
+    },
+    {
+      "clinic": "motivated",
+      "med": "MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 72
+    },
+    {
+      "clinic": "motivated",
+      "med": "FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 72
+    },
+    {
+      "clinic": "motivated",
+      "med": "FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN",
+      "kind": "FILLED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 72
+    },
+    {
+      "clinic": "cottonball",
+      "med": "CX.1 ADVANCED DARK SPOT TREATMENT / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "CX.1 ADVANCED DARK SPOT TREATMENT / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "CX.1 ADVANCED DARK SPOT TREATMENT / RESISTANT",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / RESISTANT SKIN",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / ACNE-PRONE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / ACNE-PRONE SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / RESISTANT ACNE-PRONE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / HYPER-PIGMENTED",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / HYPER-PIGMENTED SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.1 ADVANCED ANTI-AGING & REPAIR COMPLEX / RESISTANT HYPER-PIGMENTED",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / RESISTANT SKIN",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / ACNE-PRONE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / ACNE-PRONE SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / RESISTANT ACNE-PRONE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / HYPER-PIGMENTED",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / HYPER-PIGMENTED SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.2 WRINKLE-SMOOTHING & PREVENTION COMPLEX / RESISTANT HYPER-PIGMENTED",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.3 HORMONE RENEWAL COMPLEX / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.3 HORMONE RENEWAL COMPLEX / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.3 HORMONE RENEWAL COMPLEX / ACNE-PRONE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.4 DAILY SKIN-BRIGHTENING FORMULA / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.4 DAILY SKIN-BRIGHTENING FORMULA / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.4 DAILY SKIN-BRIGHTENING FORMULA / RESISTANT",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 69
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.5 UNDEREYE SMOOTHING & BRIGHTENING BALM / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.6 PRECISION NECK-SCULPTING COMPLEX / NORMAL",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    },
+    {
+      "clinic": "cottonball",
+      "med": "VX.6 PRECISION NECK-SCULPTING COMPLEX / SENSITIVE",
+      "kind": "COMPOUNDED",
+      "fits": true,
+      "geometryUnchanged": true,
+      "qrPayloadAndQuietZoneUnchanged": true,
+      "zplMatchesRaster": true,
+      "removedPixels": 70
+    }
+  ],
+  "dateChecks": [
+    {
+      "clinic": "motivated",
+      "made": "2026-11-12",
+      "bud": "2026-11-11",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2027-01-01",
+      "bud": "2026-12-31",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-11-12",
+      "bud": "2026-11-12",
+      "valid": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-12-31",
+      "bud": "2027-01-01",
+      "valid": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2028-02-29",
+      "bud": "2028-03-01",
+      "valid": true
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-02-29",
+      "bud": "2026-03-01",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-02-01",
+      "bud": "2026-02-30",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "",
+      "bud": "2026-11-12",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "2026-11-12",
+      "bud": "",
+      "valid": false
+    },
+    {
+      "clinic": "motivated",
+      "made": "11/12/2026",
+      "bud": "2026-11-13",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-12",
+      "bud": "2026-11-11",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2027-01-01",
+      "bud": "2026-12-31",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-12",
+      "bud": "2026-11-12",
+      "valid": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-12-31",
+      "bud": "2027-01-01",
+      "valid": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2028-02-29",
+      "bud": "2028-03-01",
+      "valid": true
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-02-29",
+      "bud": "2026-03-01",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-02-01",
+      "bud": "2026-02-30",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "",
+      "bud": "2026-11-12",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "2026-11-12",
+      "bud": "",
+      "valid": false
+    },
+    {
+      "clinic": "cottonball",
+      "made": "11/12/2026",
+      "bud": "2026-11-13",
+      "valid": false
+    }
+  ],
+  "printChecks": [
+    {
+      "clinic": "motivated",
+      "threeCopies": true,
+      "oneDotOffsets": true,
+      "invalidDatesBlockPrintAndExports": true,
+      "staleJobsCleared": true
+    },
+    {
+      "clinic": "cottonball",
+      "threeCopies": true,
+      "oneDotOffsets": true,
+      "invalidDatesBlockPrintAndExports": true,
+      "staleJobsCleared": true
+    }
+  ],
+  "storageChecks": [
+    {
+      "clinic": "motivated",
+      "printerProfilePreserved": true,
+      "customCatalogAndPasswordPreserved": true
+    },
+    {
+      "clinic": "cottonball",
+      "printerProfilePreserved": true,
+      "customCatalogAndPasswordPreserved": true
+    }
+  ],
+  "unchangedWithoutMetadataSix": [
+    "motivated",
+    "cottonball"
+  ],
+  "motivatedSelectorGrouping": {
+    "source": "ivanmarquez-pharm/pharmacy-labels/index.html",
+    "sourceBlob": "41e20b4eabe8e7e204755851f3a0fe86b815108a",
+    "groups": [
+      {
+        "label": "Compound formulations",
+        "ids": [
+          "original-1",
+          "original-2",
+          "original-3",
+          "original-4",
+          "original-5",
+          "original-6",
+          "original-7"
+        ]
+      },
+      {
+        "label": "Sildenafil",
+        "ids": [
+          "original-8",
+          "original-9",
+          "original-10"
+        ]
+      },
+      {
+        "label": "Tadalafil",
+        "ids": [
+          "original-11",
+          "original-12",
+          "original-13",
+          "original-14"
+        ]
+      },
+      {
+        "label": "Hair / Other",
+        "ids": [
+          "original-15",
+          "original-16"
+        ]
+      },
+      {
+        "label": "Hair Spray",
+        "ids": [
+          "original-17",
+          "original-18"
+        ]
+      }
+    ],
+    "labels": [
+      {
+        "name": "TAD7MG/FLUOXETINE 23MG/ ZINC30MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TAD7MG/FLUOXETINE 23MG/ ZINC30MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL60MG/TAD11MG/PT-141-2.5MG/OXY50IU",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL90MG/TAD18MG/PT-141 2.5MG/OXY50IU",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TAD7/CAF75/ZINC30/B3-15/B6-25/B12-1(MG)",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SIL60/TAD11/CAF75/B3-15/B6-25/B12-1(MG)",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "Fin1.1/Min3.3/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "Min1.5/Bio2.5/L-Cys70/Zin10/B6 4.5/GHK-Cu2",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 25MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 25MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 50MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 50MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 100MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "SILDENAFIL 100MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 2.5MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 2.5MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 5MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 5MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 10MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 10MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 20MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "TADALAFIL 20MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "FINASTERIDE 1MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "FINASTERIDE 1MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "MINOXIDIL 2.5MG",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "MINOXIDIL 2.5MG",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - WOMEN",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN",
+        "kind": "COMPOUNDED",
+        "modelPreviewSvgAndZplIdentical": true
+      },
+      {
+        "name": "FINASTERIDE 0.3% MINOXIDIL 6% MELATONIN 0.005% GHK-CU 0.1% - MEN",
+        "kind": "FILLED",
+        "modelPreviewSvgAndZplIdentical": true
+      }
+    ],
+    "savedCatalogChecks": [
+      {
+        "case": "existing catalog",
+        "pass": true,
+        "storageUnchanged": true,
+        "selectionPreserved": true
+      },
+      {
+        "case": "renamed original and custom entry",
+        "pass": true,
+        "storageUnchanged": true,
+        "selectionPreserved": true
+      },
+      {
+        "case": "known name with custom id",
+        "pass": true,
+        "storageUnchanged": true,
+        "selectionPreserved": true
+      },
+      {
+        "case": "new combined entry stays separate",
+        "pass": true,
+        "storageUnchanged": true,
+        "selectionPreserved": true
+      }
+    ]
+  }
+}

@@ -1,14 +1,16 @@
 # The Pharmacy Hub — Label Center
 
-Paquete para GitHub Pages / GitHub Pages package · 2026-11-10
+Paquete para GitHub Pages / GitHub Pages package · 2026-11-12
 
-Label Center 1.5 · Motivated 2.4.4 · Cottonball 2.4.5 · Manual 1.8
+Label Center 1.5 · Motivated 2.4.5 · Cottonball 2.4.6 · Manual 1.8
 
 ## Español
 
 Esta entrega corrige el catálogo de Cottonball y bloquea fechas inválidas o
-invertidas en ambos programas. La portada, las fuentes, la geometría y los
-ajustes de impresión conservan su comportamiento anterior. Los archivos HTML contienen las fuentes, las imágenes
+invertidas en ambos programas. La actualización del 12 de noviembre abre la parte superior del dígito 6
+únicamente en fecha de preparación, BUD, lote y temperatura. La portada,
+la tipografía de medicamentos, la geometría y los ajustes de impresión
+conservan su comportamiento anterior. Los archivos HTML contienen las fuentes, las imágenes
 y el generador QR. No requieren instalación, compilación, Vercel ni un servidor
 de aplicaciones.
 
@@ -90,8 +92,9 @@ navegador como primer paso, porque contienen ajustes y catálogo local.
 ## English
 
 This release reconciles the Cottonball catalog and blocks invalid or reversed
-dates in both applications. The landing page, fonts, label geometry and printer
-settings retain their previous behavior. Fonts, images and the QR encoder are embedded
+dates in both applications. The November 12 update opens the upper terminal of digit 6 only in
+preparation date, BUD, Lot and temperature. The landing page, medication
+typography, label geometry and printer settings retain their previous behavior. Fonts, images and the QR encoder are embedded
 in the HTML files. No installation, build, Vercel or application server is
 required.
 
@@ -214,3 +217,52 @@ have not been altered.
 Calibration test copies are distributed separately. Publishing these release
 files updates the official applications; preparing this ZIP does not itself
 update the public site.
+
+
+## Digit 6 readability · 2026-11-12
+
+**Español.** Motivated 2.4.5 y Cottonball 2.4.6 incorporan la forma de 6
+aprobada en las copias R3. Solo cambia ese dígito en fecha de preparación,
+BUD, lote y TEMP. Los nombres, concentraciones, cantidad y el resto de los
+caracteres mantienen su tipografía. El motor calcula medidas y encaje con
+la fuente original; después elimina los puntos necesarios para abrir la
+parte superior del 6, sin añadir tinta ni alterar posiciones. El QR y su
+margen blanco permanecen intactos. Se conservan las claves de almacenamiento
+oficiales: la actualización no reinicia perfiles, catálogos ni contraseñas.
+La portada y las pruebas de calibración no forman parte de este cambio.
+
+**English.** Motivated 2.4.5 and Cottonball 2.4.6 promote the digit 6 shape
+accepted in the R3 test copies. Only that digit changes in preparation date,
+BUD, Lot and TEMP. Medication names, strengths, quantity and all other glyphs
+retain their original typography. The engine measures and validates with the
+original font, then removes only the ink needed to open the upper terminal of
+6. It adds no ink and moves no content. QR data and its white margin remain
+unchanged. Production storage keys are retained, preserving saved printer
+profiles, catalogs and passwords. The landing page and calibration tests are
+outside this change.
+
+Validation is recorded in [Digit-6-Verification.json](Digit-6-Verification.json).
+It covers all 67 catalog/mode combinations, QR decoding, unchanged geometry,
+ZPL/raster agreement, date guards, copies, offsets and saved data. These are
+software checks; the deployment process does not exercise a physical printer.
+
+## Motivated medication groups · 2026-11-12
+
+**Español.** El selector vuelve a mostrar las cinco secciones de la página
+original: Compound formulations, Sildenafil, Tadalafil, Hair / Other y Hair
+Spray. Se conservan los 18 medicamentos, sus valores exactos y su orden.
+Las secciones se mantienen al cargar un catálogo guardado. Las entradas
+originales editadas conservan su sección; los medicamentos nuevos sin una
+coincidencia conocida aparecen en Custom medications. Esta organización es
+solo visual: no modifica registros guardados, fórmulas, selección activa ni
+datos enviados al motor de impresión. Cottonball conserva su selector actual.
+
+**English.** The Motivated selector restores the original five sections:
+Compound formulations, Sildenafil, Tadalafil, Hair / Other and Hair Spray.
+All 18 medication values and their original order are retained. Groups also
+apply to saved catalogs. Edited original entries retain their section;
+unmatched new entries appear under Custom medications. Grouping is display
+metadata only: it does not rewrite saved entries, formulas, the current
+selection or print inputs. Cottonball's selector is unchanged. Verification
+compares all 36 Motivated medication/mode outputs with the accepted digit-6
+release and checks saved catalogs, custom entries and cross-tab refresh.

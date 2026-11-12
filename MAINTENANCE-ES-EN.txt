@@ -117,3 +117,48 @@ Cottonball: 31 variants after consolidating the original CX.1 Resistant pair.
 Edited formulas are preserved and flagged for review.
 Calibration, geometry, typeface and printer profiles are unchanged.
 See Catalog-Audit.html, Catalog-Audit.csv and Catalog-Date-Verification.json.
+
+
+2026-11-12 · METADATA DIGIT 6 / DIGITO 6 EN DATOS
+Motivated 2.4.5 · Cottonball 2.4.6
+
+ES: LabelMetadataDigits es una fuente integrada derivada con el mismo ancho
+de caracteres que LabelSans. Solo el contorno de six cambia. LabelSans sigue
+siendo la única fuente usada para medir y validar el encaje. La función
+applyMetadataDigitSix se ejecuta después de aceptar la geometría; resta tinta
+solo en fecha de preparación, arco Lot/BUD y TEMP, protegiendo todo el cuadro
+del QR y su margen. La vista previa usa la fuente derivada en esos campos.
+La impresión y ZPL siguen serializando los mismos píxeles aceptados. Ambas
+fuentes deben cargarse antes de habilitar la impresión. No reutilizar las
+claves de almacenamiento ni los encabezados de las copias de prueba.
+
+EN: LabelMetadataDigits is an embedded derivative with the same advance
+widths as LabelSans; only the six outline differs. LabelSans remains the
+measurement and fit-validation font. applyMetadataDigitSix runs after layout
+acceptance and subtracts ink only in preparation date, the Lot/BUD arc and
+TEMP, protecting the entire QR and quiet-zone rectangle. Screen preview uses
+the derivative in those fields. Printing and ZPL still serialize the accepted
+raster. Both embedded fonts must load before printing is enabled. Production
+storage keys and page headings must remain independent of trial-copy keys.
+
+When editing the derivative font, verify CFF advance widths as well as hmtx.
+CFF charstring widths are relative to nominalWidthX. Changing one without the
+other can produce browser spacing errors even when canvas fit checks pass.
+
+2026-11-12 · MOTIVATED SELECTOR GROUPS / GRUPOS DEL SELECTOR
+ES: Los optgroup y presetGroups reproducen la organización original de
+Motivated. groupByName reconoce nombres actuales sin cambiar sus valores;
+groupById conserva la sección de entradas originales editadas. Los nuevos
+medicamentos sin coincidencia se muestran en Custom medications. presets()
+reconstruye los grupos sin escribir almacenamiento ni llamar al motor de
+impresión. Conservar los IDs original-1 a original-18 y sus valores; el orden
+plano inicial también se usa para asignar IDs y agregar los dos hair sprays.
+
+EN: Static optgroups and presetGroups reproduce Motivated's original
+organization. groupByName recognizes current names without changing values;
+groupById retains the section of edited original entries. Unmatched additions
+appear in Custom medications. presets() rebuilds the groups without writing
+storage or invoking the print engine. Preserve original-1 through original-18
+and their values; initial option order also assigns IDs and identifies the
+two bundled hair sprays. Never infer a clinical category from an unknown
+custom formula. This change does not modify Cottonball's catalog interface.
